@@ -8,9 +8,10 @@
 
 import UIKit
 
-class IVViewController: UIViewController {
+class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataSource{
     
-    @IBOutlet weak var selectionContainer: UIView!
+
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var poweredLabel: UILabel!
     @IBOutlet weak var pokemonName: UILabel!
 
@@ -34,6 +35,10 @@ class IVViewController: UIViewController {
         super.viewDidLoad()
         initSwitch()
         self.buttonPressed.hidden = true
+        self.tableView.hidden = true
+    }
+    override func viewDidAppear(animated: Bool) {
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,12 +76,40 @@ class IVViewController: UIViewController {
     }
 
     @IBAction func buttonPressed(sender: AnyObject) {
-        self.selectionContainer.hidden = false
-        self.addButton.hidden = true
+        self.tableView.hidden = false
+        print("pokemon Pressed")
     }
     @IBAction func addPressed(sender: AnyObject) {
-        self.selectionContainer.hidden = false
+        self.tableView.hidden = false
+        print("add button pressed")
     }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return pokemonList.count
+    }
+    
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        
+        (cell.viewWithTag(100) as! UIImageView).image = pokemonList[indexPath.row].img
+        (cell.viewWithTag(101) as! UILabel).text = pokemonList[indexPath.row].name
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        self.selectedPokemon = indexPath.row
+        self.buttonPressed.hidden = false
+        self.addButton.hidden = true
+        self.buttonPressed.setImage(pokemonList[indexPath.row].img, forState: .Normal)
+        self.tableView.hidden = true
+    }
+    
 
 
     /*
