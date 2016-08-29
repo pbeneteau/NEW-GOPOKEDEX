@@ -8,7 +8,7 @@
 
 import UIKit
 
-class IVViewController: UIViewController, ContainerToMaster {
+class IVViewController: UIViewController {
     
     @IBOutlet weak var selectionContainer: UIView!
     @IBOutlet weak var poweredLabel: UILabel!
@@ -77,13 +77,7 @@ class IVViewController: UIViewController, ContainerToMaster {
     @IBAction func addPressed(sender: AnyObject) {
         self.selectionContainer.hidden = false
     }
-    
-    func passData(selectedPokemonId: Int) {
-        self.selectedPokemon = selectedPokemonId
-        self.selectionContainer.hidden = true
-        self.buttonPressed.hidden = false
-        self.buttonPressed.setImage(pokemonList[selectedPokemonId].img, forState: .Normal)
-    }
+
 
     /*
     // MARK: - Navigation

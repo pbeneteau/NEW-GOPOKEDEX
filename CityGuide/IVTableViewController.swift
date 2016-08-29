@@ -8,15 +8,10 @@
 
 import UIKit
 
-protocol ContainerToMaster {
-    func passData(selectedPokemonId: Int)
-}
-
 class IVTableViewController: UITableViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     var selectedPokemonId = 0
-    var containerToMaster:ContainerToMaster?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +47,11 @@ class IVTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         selectedPokemonId = indexPath.row
-        containerToMaster?.passData(indexPath.row)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("IVViewController") as! IVViewController
+        vc.buttonPressed.hidden = false
+        vc.buttonPressed.setImage(pokemonList[selectedPokemonId].img, forState: .Normal)
+        vc.selectionContainer.hidden = true
     }
 
 
