@@ -12,7 +12,55 @@ class PokedexViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        ////////////////START RATE MY APP/////////////////
+        
+        var iMinSessions = 3
+        
+        // func start
+        func showRateMe() {
+            print("func rate started")
+            let alert = UIAlertController(title: "Rate us!", message: "Thanks for using GO Pokedex", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Rate our app", style: UIAlertActionStyle.Default, handler: { alertAction in
+                NSUserDefaults.standardUserDefaults().setBool(true, forKey: "neverRate")
+                UIApplication.sharedApplication().openURL(NSURL(string : "itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=<iTUNES CONNECT APP ID>")!)
+                alert.dismissViewControllerAnimated(true, completion: nil)
+            }))
+            alert.addAction(UIAlertAction(title: "No Thanks", style: UIAlertActionStyle.Default, handler: { alertAction in
+                NSUserDefaults.standardUserDefaults().setBool(true, forKey: "neverRate")
+                alert.dismissViewControllerAnimated(true, completion: nil)
+            }))
+            alert.addAction(UIAlertAction(title: "Maybe Later", style: UIAlertActionStyle.Default, handler: { alertAction in
+                NSUserDefaults.standardUserDefaults().setBool(true, forKey: "maybeLater")
+                alert.dismissViewControllerAnimated(true, completion: nil)
+            }))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        // func end
+        
+        let maybeLater = NSUserDefaults.standardUserDefaults().boolForKey("maybeLater")
+        let neverRate = NSUserDefaults.standardUserDefaults().boolForKey("neverRate")
+        var numLaunches = NSUserDefaults.standardUserDefaults().integerForKey("numLaunches") + 1
+        
+        
+        if (numLaunches == iMinSessions)
+        {
+            showRateMe()
+            numLaunches = 0
+        }
+        else if (neverRate) {
+            numLaunches = 4
+        }
+        else if (maybeLater) {
+            numLaunches = 0
+            NSUserDefaults.standardUserDefaults().setBool(false, forKey: "maybeLater")
+        }
+        
+        NSUserDefaults.standardUserDefaults().setInteger(numLaunches, forKey: "numLaunches")
+        
+        print("numLaunches= \(numLaunches)")
+        
+        ////////////////END RATE MY APP/////////////////
     }
     
     override func viewWillAppear(animated: Bool) {
