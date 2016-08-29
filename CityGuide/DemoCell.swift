@@ -12,7 +12,7 @@ class DemoCell: FoldingCell {
     
     @IBOutlet weak var _imgBack: UIView!
     @IBOutlet weak var _img: UIImageView!
-    @IBOutlet weak var _idLabel: UILabel!
+   // @IBOutlet weak var _idLabel: UILabel!
     
     @IBOutlet weak var _nameLabel: UILabel!
     @IBOutlet weak var _barView: UIView!
@@ -57,8 +57,8 @@ class DemoCell: FoldingCell {
     func initHeader(pokemon: Pokemon) {
         self._img.image = pokemon.img
         self._img2.image = pokemon.img
-        self._idLabel.text = "#\(pokemon.id)"
-        self._idLabel2.text = "#\(pokemon.id)"
+        //self._idLabel.text = "#\(pokemon.id)"
+        //self._idLabel2.text = "#\(pokemon.id)"
         self._nameLabel.text = pokemon.name.capitalizedString
         self._nameLabel2.text = pokemon.name.capitalizedString
         self._description.text = pokemon.description
