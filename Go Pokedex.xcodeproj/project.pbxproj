@@ -91,7 +91,6 @@
 		00A4AA351D69B8660013B4A2 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A4AA341D69B8660013B4A2 /* MenuController.swift */; };
 		00A4AA3E1D6A52AE0013B4A2 /* Fire.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00A4AA3D1D6A52AE0013B4A2 /* Fire.jpg */; };
 		00A4AA421D6A75640013B4A2 /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A4AA411D6A75640013B4A2 /* TipsViewController.swift */; };
-		00A540F71D738B060096D1C0 /* IVTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A540F61D738B060096D1C0 /* IVTableViewController.swift */; };
 		00BD02371D64DF4A00EAAB9D /* FoldingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD02361D64DF4A00EAAB9D /* FoldingCell.swift */; };
 		00BD02391D64E04600EAAB9D /* DemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD02381D64E04600EAAB9D /* DemoCell.swift */; };
 		00BD023B1D64E0E100EAAB9D /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD023A1D64E0E100EAAB9D /* MainTableViewController.swift */; };
@@ -233,7 +232,6 @@
 		00A4AA341D69B8660013B4A2 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		00A4AA3D1D6A52AE0013B4A2 /* Fire.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Fire.jpg; sourceTree = "<group>"; };
 		00A4AA411D6A75640013B4A2 /* TipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
-		00A540F61D738B060096D1C0 /* IVTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IVTableViewController.swift; sourceTree = "<group>"; };
 		00BD02361D64DF4A00EAAB9D /* FoldingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoldingCell.swift; sourceTree = "<group>"; };
 		00BD02381D64E04600EAAB9D /* DemoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCell.swift; sourceTree = "<group>"; };
 		00BD023A1D64E0E100EAAB9D /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
@@ -334,7 +332,6 @@
 			children = (
 				0036E42A1D73122000C98905 /* SevenSwitch.swift */,
 				0036E4241D73110A00C98905 /* IVViewController.swift */,
-				00A540F61D738B060096D1C0 /* IVTableViewController.swift */,
 			);
 			name = "IV Calculator";
 			sourceTree = "<group>";
@@ -857,7 +854,6 @@
 				00877C791D63A11700570241 /* NVActivityIndicatorViewable.swift in Sources */,
 				9562A86B1C343CD4009C0411 /* CustomData.m in Sources */,
 				006B888F1D6C8D4C00FC68C4 /* QuickMove.swift in Sources */,
-				00A540F71D738B060096D1C0 /* IVTableViewController.swift in Sources */,
 				00877C551D63A11700570241 /* NVActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
 				9562A8161C343A30009C0411 /* ViewController.swift in Sources */,
 				00877C731D63A11700570241 /* NVActivityIndicatorAnimationSquareSpin.swift in Sources */,
