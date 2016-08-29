@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import QuartzCore
 
-class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataSource{
+
+class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource {
     
 
     @IBOutlet weak var tableView: UITableView!
@@ -29,7 +31,10 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
     
     let mySwitch = SevenSwitch()
     var powered: Bool = false
-    var selectedPokemon = 0
+    var selectedPokemon = Pokemon(id: "", name: "")
+    
+    var pickerViewStardust = UIPickerView()
+    var pickerViewLevel = UIPickerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +44,9 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
     }
     override func viewDidAppear(animated: Bool) {
         self.tableView.reloadData()
+        initPickerView(pickerViewStardust, textField: stardustTextField)
+        pickerViewStardust.selectedRowInComponent(5)
+        stardustTextField.inputView = pickerViewStardust
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,10 +74,49 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
         poweredSwitchView.addSubview(mySwitch)
     }
     
+    func initPickerView(picker: UIPickerView, textField: UITextField) {
+        picker.showsSelectionIndicator = true
+        picker.delegate = self
+        
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.Default
+        toolBar.translucent = true
+        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(IVViewController.donePicker))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+        
+        toolBar.setItems([spaceButton, doneButton], animated: false)
+        toolBar.userInteractionEnabled = true
+        
+        textField.inputView = picker
+        textField.inputAccessoryView = toolBar
+    }
+    
+    func donePicker() {
+        self.view.endEditing(true)
+    }
+    
+    func searchIV() {
+        
+    }
+    
     func switchChanged(sender: SevenSwitch) {
         if powered {
             powered = false
+            poweredLabel.layer.shadowColor = UIColor(red:0.60, green:0.58, blue:0.58, alpha:1.0).CGColor
+            poweredLabel.layer.shadowRadius = 0
+            poweredLabel.layer.shadowOpacity = 0
+            poweredLabel.layer.masksToBounds = false
+            poweredLabel.textColor = UIColor(red:0.60, green:0.58, blue:0.58, alpha:1.0)
         } else {
+            poweredLabel.layer.shadowColor = UIColor(red:0.18, green:0.80, blue:0.44, alpha:1.0).CGColor
+            poweredLabel.layer.shadowRadius = 4.0
+            poweredLabel.layer.shadowOpacity = 0.9
+            poweredLabel.layer.shadowOffset = CGSizeZero
+            poweredLabel.layer.masksToBounds = false
+            poweredLabel.textColor = UIColor(red:0.18, green:0.80, blue:0.44, alpha:1.0)
             powered = true
         }
         print(powered)
@@ -102,15 +149,32 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
         return cell
     }
     
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        self.selectedPokemon = indexPath.row
-        self.buttonPressed.hidden = false
-        self.addButton.hidden = true
-        self.buttonPressed.setImage(pokemonList[indexPath.row].img, forState: .Normal)
-        self.tableView.hidden = true
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if !self.tableView.hidden {
+            self.selectedPokemon = pokemonList[indexPath.row]
+            self.buttonPressed.hidden = false
+            self.addButton.hidden = true
+            self.buttonPressed.setImage(pokemonList[indexPath.row].img, forState: .Normal)
+            self.tableView.hidden = true
+        }
     }
     
-
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return stardustOption.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return stardustOption[row]
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        stardustTextField.text = stardustOption[row]
+    }
+    
 
     /*
     // MARK: - Navigation
