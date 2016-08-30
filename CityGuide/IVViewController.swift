@@ -10,24 +10,27 @@ import UIKit
 import QuartzCore
 
 
-class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource {
+class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataSource, hpModalViewProtocol, cpModalViewProtocol {
     
+    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var pokemonImage: UIButton!
+    @IBOutlet weak var hpLabel: UILabel!
+    @IBOutlet weak var stardustLabel: UILabel!
+    @IBOutlet weak var cpLabel: UILabel!
+    @IBOutlet weak var levelLabel: UILabel!
 
+    @IBOutlet weak var resultsMainView: UIView!
+    @IBOutlet weak var noCombinaisonLabel2: UILabel!
+    @IBOutlet weak var noCombinaisonLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var poweredLabel: UILabel!
-    @IBOutlet weak var pokemonName: UILabel!
 
-    @IBOutlet weak var hpTextField: UITextField!
-    @IBOutlet weak var cpTextFiels: UITextField!
-    @IBOutlet weak var stardustTextField: UITextField!
     @IBOutlet weak var poweredSwitchView: UIView!
     @IBOutlet weak var attackDefenseIv: UILabel!
     @IBOutlet weak var staminaIv: UILabel!
     @IBOutlet weak var battleRatingPerCent: UILabel!
     @IBOutlet weak var cpRatingPerCent: UILabel!
     @IBOutlet weak var hpPerCent: UILabel!
-    @IBOutlet weak var buttonPressed: UIButton!
-    @IBOutlet weak var addButton: UIButton!
     
     let mySwitch = SevenSwitch()
     var powered: Bool = false
@@ -36,23 +39,41 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
     var pickerViewStardust = UIPickerView()
     var pickerViewLevel = UIPickerView()
     
+    var levels = [String]()
+    var IV: [String:[Double]]! = nil
+    var hp: Int!
+    var cp: Int!
+    var stardust:Int!
+    var level: String!
+    
+    var hpOK: Bool! = false
+    var cpOK: Bool! = false
+    var stardustOK: Bool! = false
+    var levelOK: Bool! = false
+    var levelCanBePressed = false
+    
+    // Initials
+    var startForStardust = 5
+    var starterForHp = 53
+    var starterForCp = 504
+    var starterForLevel: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initSwitch()
-        self.buttonPressed.hidden = true
-        self.tableView.hidden = true
+        //self.tableView.hidden = true
     }
     override func viewDidAppear(animated: Bool) {
-        self.tableView.reloadData()
-        initPickerView(pickerViewStardust, textField: stardustTextField)
-        pickerViewStardust.selectedRowInComponent(5)
-        stardustTextField.inputView = pickerViewStardust
+        selectedPokemon = pokemonList[3]
+        //self.tableView.reloadData()
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     
     func initSwitch() {
@@ -73,34 +94,55 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
         mySwitch.isRounded = false
         poweredSwitchView.addSubview(mySwitch)
     }
-    
-    func initPickerView(picker: UIPickerView, textField: UITextField) {
-        picker.showsSelectionIndicator = true
-        picker.delegate = self
-        
-        let toolBar = UIToolbar()
-        toolBar.barStyle = UIBarStyle.Default
-        toolBar.translucent = true
-        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
-        toolBar.sizeToFit()
-        
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(IVViewController.donePicker))
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
-        
-        toolBar.setItems([spaceButton, doneButton], animated: false)
-        toolBar.userInteractionEnabled = true
-        
-        textField.inputView = picker
-        textField.inputAccessoryView = toolBar
-    }
-    
-    func donePicker() {
-        self.view.endEditing(true)
-    }
-    
-    func searchIV() {
-        
-    }
+
+//    
+//    func findLevel() {
+//        if (stardustTextField.text != nil) {
+//            levels = findLevels(Int(stardustTextField.text!)!, powered: powered)
+//        }
+//    }
+//    
+//    func allStatsEntered()->Bool {
+//        if (cpTextFiels.text != nil) {
+//            if (hpTextField.text != nil) {
+//                if (levelTextView.text != nil) {
+//                    return true
+//                }
+//            }
+//        }
+//        return false
+//    }
+//    
+//    func getAllIV() {
+//        if (cpTextFiels.text != nil) {
+//            if (hpTextField.text != nil) {
+//                if (levelTextView.text != nil) {
+//                    IV = getIV(selectedPokemon, cp: Int(cpTextFiels.text!)!, hp: Int(hpTextField.text!)!, stardust: Int(stardustTextField.text!)!, powered: powered)
+//                }
+//            }
+//        }
+//    }
+//    
+//    
+//    func reloadIV() {
+//        if (IV != nil) {
+//            if IV[levelTextView.text!]![0] != 1111.11111 {
+//                let stamina = Double(IV[levelTextView.text!]![0])/15.0
+//                let attackDefense = Double(IV[levelTextView.text!]![1])/30.0
+//                attackDefenseIv.text = "\(IV[levelTextView.text!]![1])"
+//                staminaIv.text = "\(IV[levelTextView.text!]![0])"
+//                battleRatingPerCent.text = "\(floor(((attackDefense)) * 100))%"
+//                hpPerCent.text = "\(floor((stamina) * 100))%"
+//                cpRatingPerCent.text = "\((floor((stamina) * 100) + floor(((attackDefense)) * 100)) / 2.0)%"
+//                self.noCombinaisonLabel.hidden = true
+//                self.noCombinaisonLabel2.hidden = true
+//            } else {
+//                self.resultsMainView.hidden = true
+//                self.noCombinaisonLabel.hidden = false
+//                self.noCombinaisonLabel2.hidden = false
+//            }
+//        }
+//    }
     
     func switchChanged(sender: SevenSwitch) {
         if powered {
@@ -121,15 +163,87 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
         }
         print(powered)
     }
-
-    @IBAction func buttonPressed(sender: AnyObject) {
-        self.tableView.hidden = false
-        print("pokemon Pressed")
+    
+    @IBAction func hpPressed(sender: AnyObject) {
+        let view = HpModalView.instantiateFromNib()
+        let window = UIApplication.sharedApplication().delegate?.window!
+        let modal = PathDynamicModal()
+        view.vc = self
+        view.hpTextField.text = "\(starterForHp)"
+        modal.showMagnitude = 200.0
+        modal.closeMagnitude = 130.0
+        view.closeButtonHandler = {[weak modal] in
+            modal?.closeWithLeansRandom()
+            return
+        }
+        view.bottomButtonHandler = {[weak modal] in
+            modal?.closeWithLeansRandom()
+            return
+        }
+        modal.show(modalView: view, inView: window!)
     }
-    @IBAction func addPressed(sender: AnyObject) {
-        self.tableView.hidden = false
-        print("add button pressed")
+    @IBAction func cpPressed(sender: AnyObject) {
+        let view = CpModalView.instantiateFromNib()
+        let window = UIApplication.sharedApplication().delegate?.window!
+        let modal = PathDynamicModal()
+        view.vc = self
+        view.cpTextField.text = "\(starterForCp)"
+        modal.showMagnitude = 200.0
+        modal.closeMagnitude = 130.0
+        view.closeButtonHandler = {[weak modal] in
+            modal?.closeWithLeansRandom()
+            return
+        }
+        view.bottomButtonHandler = {[weak modal] in
+            modal?.closeWithLeansRandom()
+            return
+        }
+        modal.show(modalView: view, inView: window!)
     }
+    @IBAction func stardustPressed(sender: AnyObject) {
+        let view = StardustModalView.instantiateFromNib()
+        let window = UIApplication.sharedApplication().delegate?.window!
+        let modal = PathDynamicModal()
+        view.vc = self
+        view.pickerView.selectRow(startForStardust, inComponent: 0, animated: true)
+        view.stardustTextField.text = stardustOption[startForStardust]
+        modal.showMagnitude = 200.0
+        modal.closeMagnitude = 130.0
+        view.closeButtonHandler = {[weak modal] in
+            modal?.closeWithLeansRandom()
+            return
+        }
+        view.bottomButtonHandler = {[weak modal] in
+            modal?.closeWithLeansRandom()
+            return
+        }
+        modal.show(modalView: view, inView: window!)
+    }
+    @IBAction func levelPressed(sender: AnyObject) {
+        if  levelCanBePressed {
+            let view = LevelModalView.instantiateFromNib()
+            let window = UIApplication.sharedApplication().delegate?.window!
+            let modal = PathDynamicModal()
+            view.vc = self
+            view.levelsToPick = findLevels(self.stardust, powered: powered)
+            view.levelTextField.text = (findLevels(self.stardust, powered: powered))[0]
+            view.pickerView.selectRow(0, inComponent: 0, animated: true)
+            modal.showMagnitude = 200.0
+            modal.closeMagnitude = 130.0
+            view.closeButtonHandler = {[weak modal] in
+                modal?.closeWithLeansRandom()
+                return
+            }
+            view.bottomButtonHandler = {[weak modal] in
+                modal?.closeWithLeansRandom()
+                return
+            }
+            modal.show(modalView: view, inView: window!)
+        } else {
+            print("Can't choose level now")
+        }
+    }
+    
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -149,41 +263,45 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if !self.tableView.hidden {
-            self.selectedPokemon = pokemonList[indexPath.row]
-            self.buttonPressed.hidden = false
-            self.addButton.hidden = true
-            self.buttonPressed.setImage(pokemonList[indexPath.row].img, forState: .Normal)
-            self.tableView.hidden = true
-        }
+//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        if !self.tableView.hidden {
+//            self.selectedPokemon = pokemonList[indexPath.row]
+//            self.buttonPressed.hidden = false
+//            self.addButton.hidden = true
+//            self.buttonPressed.setImage(pokemonList[indexPath.row].img, forState: .Normal)
+//            self.tableView.hidden = true
+//            self.pokemonName.text = selectedPokemon.name
+//        }
+//    }
+//
+    
+    func passHp(hp: Int) {
+        self.hp = hp
+        print(self.hp)
+        print("hp sent")
+        self.hpOK = true
     }
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
+    func passCp(cp: Int) {
+        self.cp = cp
+        print(self.cp)
+        print("cp sent")
+        self.cpOK = true
     }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return stardustOption.count
+    func passStardust(stardust: Int) {
+        self.stardust = stardust
+        print(self.stardust)
+        print("stardust sent")
+        self.stardustOK = true
+        self.levelCanBePressed = true
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return stardustOption[row]
+    func passLevel(level: String) {
+        self.level = level
+        print(self.level)
+        print("level sent")
+        self.levelOK = true
     }
-    
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        stardustTextField.text = stardustOption[row]
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

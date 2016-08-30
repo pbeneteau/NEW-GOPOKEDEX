@@ -52,20 +52,6 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
         initAllPokemonInfos(pokemonList, quickMoveList: quickMoveList, chargeMoveList: chargeMoveList, typeList: typeList)
         addTypes(chargeMoveList, typeList: typeList)
         addTypes(quickMoveList, typeList: typeList)
-        print(pokemonList[8].name)
-        let IV = getIV(pokemonList[8], cp: 1554, hp: 111, stardust: 3500, powered: true)
-        print("IV:")
-        let levels = findLevels(3500, powered: true)
-        for level in levels {
-            let stamina = Double(IV[level]![0])/15.0
-            let attackDefense = Double(IV[level]![1])/30.0
-            print("For level \(level):")
-            print("\(IV[level]![0])/15")
-            print("\(IV[level]![1])/30")
-            print("Stamina: \(round(((stamina)) * 100))%")
-            print("Attack+Defense: : \(round(((attackDefense)) * 100))%")
-            print("All stats: \(round(((stamina + attackDefense)/3.0) * 100))%")
-        }
         
         kRowsCount = pokemonList.count
         createCellHeightsArray()

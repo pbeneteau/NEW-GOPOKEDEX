@@ -82,6 +82,15 @@
 		00877C771D63A11700570241 /* NVActivityIndicatorShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00877C511D63A11700570241 /* NVActivityIndicatorShape.swift */; };
 		00877C781D63A11700570241 /* NVActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00877C531D63A11700570241 /* NVActivityIndicatorView.swift */; };
 		00877C791D63A11700570241 /* NVActivityIndicatorViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00877C541D63A11700570241 /* NVActivityIndicatorViewable.swift */; };
+		008C6FB41D75129100A8A7FB /* PathDynamicModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008C6FB31D75129100A8A7FB /* PathDynamicModal.swift */; };
+		008C6FBB1D751C2800A8A7FB /* HpModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008C6FB91D751C2800A8A7FB /* HpModalView.swift */; };
+		008C6FBC1D751C2800A8A7FB /* HpModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008C6FBA1D751C2800A8A7FB /* HpModalView.xib */; };
+		008C6FBE1D7594A600A8A7FB /* CpModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008C6FBD1D7594A600A8A7FB /* CpModalView.swift */; };
+		008C6FC01D7594DA00A8A7FB /* CpModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008C6FBF1D7594DA00A8A7FB /* CpModalView.xib */; };
+		008C6FC21D75B76A00A8A7FB /* StardustModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008C6FC11D75B76A00A8A7FB /* StardustModalView.xib */; };
+		008C6FC41D75B7BF00A8A7FB /* StardustModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008C6FC31D75B7BF00A8A7FB /* StardustModalView.swift */; };
+		008C6FC61D75BDAC00A8A7FB /* LevelModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008C6FC51D75BDAC00A8A7FB /* LevelModalView.swift */; };
+		008C6FC81D75BDBF00A8A7FB /* LevelModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008C6FC71D75BDBF00A8A7FB /* LevelModalView.xib */; };
 		009A7F091D6D27130024109F /* GoPokedex_Evolutions.csv in Resources */ = {isa = PBXBuildFile; fileRef = 009A7F081D6D27130024109F /* GoPokedex_Evolutions.csv */; };
 		009A7F0B1D6D2ADF0024109F /* balea.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 009A7F0A1D6D2ADF0024109F /* balea.gpx */; };
 		009A7F131D6F4D6A0024109F /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009A7F121D6F4D6A0024109F /* MenuViewController.swift */; };
@@ -223,6 +232,15 @@
 		00877C521D63A11700570241 /* NVActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NVActivityIndicatorView.h; sourceTree = "<group>"; };
 		00877C531D63A11700570241 /* NVActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVActivityIndicatorView.swift; sourceTree = "<group>"; };
 		00877C541D63A11700570241 /* NVActivityIndicatorViewable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVActivityIndicatorViewable.swift; sourceTree = "<group>"; };
+		008C6FB31D75129100A8A7FB /* PathDynamicModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathDynamicModal.swift; sourceTree = "<group>"; };
+		008C6FB91D751C2800A8A7FB /* HpModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HpModalView.swift; sourceTree = "<group>"; };
+		008C6FBA1D751C2800A8A7FB /* HpModalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HpModalView.xib; sourceTree = "<group>"; };
+		008C6FBD1D7594A600A8A7FB /* CpModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CpModalView.swift; sourceTree = "<group>"; };
+		008C6FBF1D7594DA00A8A7FB /* CpModalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CpModalView.xib; sourceTree = "<group>"; };
+		008C6FC11D75B76A00A8A7FB /* StardustModalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StardustModalView.xib; sourceTree = "<group>"; };
+		008C6FC31D75B7BF00A8A7FB /* StardustModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StardustModalView.swift; sourceTree = "<group>"; };
+		008C6FC51D75BDAC00A8A7FB /* LevelModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelModalView.swift; sourceTree = "<group>"; };
+		008C6FC71D75BDBF00A8A7FB /* LevelModalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LevelModalView.xib; sourceTree = "<group>"; };
 		009A7F081D6D27130024109F /* GoPokedex_Evolutions.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GoPokedex_Evolutions.csv; sourceTree = "<group>"; };
 		009A7F0A1D6D2ADF0024109F /* balea.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = balea.gpx; sourceTree = "<group>"; };
 		009A7F121D6F4D6A0024109F /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -330,6 +348,14 @@
 		0036E4231D7310E500C98905 /* IV Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				008C6FC51D75BDAC00A8A7FB /* LevelModalView.swift */,
+				008C6FC71D75BDBF00A8A7FB /* LevelModalView.xib */,
+				008C6FC31D75B7BF00A8A7FB /* StardustModalView.swift */,
+				008C6FC11D75B76A00A8A7FB /* StardustModalView.xib */,
+				008C6FB91D751C2800A8A7FB /* HpModalView.swift */,
+				008C6FBA1D751C2800A8A7FB /* HpModalView.xib */,
+				008C6FBD1D7594A600A8A7FB /* CpModalView.swift */,
+				008C6FBF1D7594DA00A8A7FB /* CpModalView.xib */,
 				0036E42A1D73122000C98905 /* SevenSwitch.swift */,
 				0036E4241D73110A00C98905 /* IVViewController.swift */,
 			);
@@ -620,6 +646,7 @@
 				0036E4231D7310E500C98905 /* IV Calculator */,
 				9562A8131C343A30009C0411 /* AppDelegate.swift */,
 				9562A8151C343A30009C0411 /* ViewController.swift */,
+				008C6FB31D75129100A8A7FB /* PathDynamicModal.swift */,
 				0036E42E1D732FA800C98905 /* Assets.xcassets */,
 				0007B3471D706CB300821141 /* Settings */,
 				9562A8171C343A30009C0411 /* Main.storyboard */,
@@ -793,12 +820,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				00ECECDC1D67CDA000443918 /* Steel.jpg in Resources */,
+				008C6FC81D75BDBF00A8A7FB /* LevelModalView.xib in Resources */,
 				00BD02471D64E23F00EAAB9D /* OpenSans-Bold.ttf in Resources */,
 				00ECECDD1D67CDA000443918 /* Water.jpg in Resources */,
 				00ECECD31D67CDA000443918 /* Bug.jpg in Resources */,
 				006B88511D6B3BE500FC68C4 /* TipsHeaderView.xib in Resources */,
 				00A4AA3E1D6A52AE0013B4A2 /* Fire.jpg in Resources */,
+				008C6FBC1D751C2800A8A7FB /* HpModalView.xib in Resources */,
 				00ECECD41D67CDA000443918 /* Dragon.jpg in Resources */,
+				008C6FC21D75B76A00A8A7FB /* StardustModalView.xib in Resources */,
 				9562A81E1C343A30009C0411 /* LaunchScreen.storyboard in Resources */,
 				0007B35D1D71141500821141 /* GoPokedex_Descriptions.csv in Resources */,
 				00ECECD91D67CDA000443918 /* Normal.jpg in Resources */,
@@ -806,6 +836,7 @@
 				00ECECD81D67CDA000443918 /* Ice.jpg in Resources */,
 				00ECECD71D67CDA000443918 /* Grass.jpg in Resources */,
 				0007B3611D71C28700821141 /* GoPokedex_SpeciesFinal.csv in Resources */,
+				008C6FC01D7594DA00A8A7FB /* CpModalView.xib in Resources */,
 				0007B3651D724A9200821141 /* GoPokedex_ChargeMovesFinal.csv in Resources */,
 				000B7AE31D6892C700B39A1B /* Pokemon Solid.ttf in Resources */,
 				0036E42F1D732FA800C98905 /* Assets.xcassets in Resources */,
@@ -849,6 +880,7 @@
 				006B88531D6B3D2100FC68C4 /* TipsDescriptionl.swift in Sources */,
 				000B7AD71D68921000B39A1B /* OpenSans-Bold.ttf in Sources */,
 				000B7ADB1D68921000B39A1B /* OpenSans-Italic.ttf in Sources */,
+				008C6FBB1D751C2800A8A7FB /* HpModalView.swift in Sources */,
 				000B7ADC1D68921000B39A1B /* OpenSans-Light.ttf in Sources */,
 				000B7ADF1D68921000B39A1B /* OpenSans-Semibold.ttf in Sources */,
 				00877C791D63A11700570241 /* NVActivityIndicatorViewable.swift in Sources */,
@@ -863,6 +895,7 @@
 				00877C621D63A11700570241 /* NVActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
 				006B88591D6B43F600FC68C4 /* Tips.swift in Sources */,
 				00877C5E1D63A11700570241 /* NVActivityIndicatorAnimationBallPulseSync.swift in Sources */,
+				008C6FC61D75BDAC00A8A7FB /* LevelModalView.swift in Sources */,
 				00877C761D63A11700570241 /* NVActivityIndicatorAnimationDelegate.swift in Sources */,
 				00877C5B1D63A11700570241 /* NVActivityIndicatorAnimationBallGridPulse.swift in Sources */,
 				00877C6E1D63A11700570241 /* NVActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
@@ -877,6 +910,7 @@
 				00877C251D63A06600570241 /* RAMBounceAnimation.swift in Sources */,
 				00877C6D1D63A11700570241 /* NVActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
 				00877C571D63A11700570241 /* NVActivityIndicatorAnimationBallClipRotate.swift in Sources */,
+				008C6FB41D75129100A8A7FB /* PathDynamicModal.swift in Sources */,
 				00877C2B1D63A06600570241 /* RAMBadge.swift in Sources */,
 				00877C711D63A11700570241 /* NVActivityIndicatorAnimationPacman.swift in Sources */,
 				00A4AA421D6A75640013B4A2 /* TipsViewController.swift in Sources */,
@@ -901,11 +935,13 @@
 				006B88971D6C8D6C00FC68C4 /* utils.swift in Sources */,
 				00BD023B1D64E0E100EAAB9D /* MainTableViewController.swift in Sources */,
 				006B888D1D6C8D4C00FC68C4 /* ChargeMove.swift in Sources */,
+				008C6FC41D75B7BF00A8A7FB /* StardustModalView.swift in Sources */,
 				00BD02391D64E04600EAAB9D /* DemoCell.swift in Sources */,
 				00A4AA301D69B7140013B4A2 /* PathMenu.swift in Sources */,
 				00877C661D63A11700570241 /* NVActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
 				0036E4251D73110A00C98905 /* IVViewController.swift in Sources */,
 				00877C291D63A06600570241 /* RAMTransitionItemAnimations.swift in Sources */,
+				008C6FBE1D7594A600A8A7FB /* CpModalView.swift in Sources */,
 				00877C5A1D63A11700570241 /* NVActivityIndicatorAnimationBallGridBeat.swift in Sources */,
 				00877C591D63A11700570241 /* NVActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */,
 				00877C611D63A11700570241 /* NVActivityIndicatorAnimationBallScale.swift in Sources */,
@@ -1079,6 +1115,7 @@
 				INFOPLIST_FILE = CityGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tastyapp.gopokedex;
 				PRODUCT_NAME = "Go Pokedex";
 				PROVISIONING_PROFILE = "";
@@ -1105,6 +1142,7 @@
 				INFOPLIST_FILE = CityGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tastyapp.gopokedex;
 				PRODUCT_NAME = "Go Pokedex";
 				PROVISIONING_PROFILE = "";
