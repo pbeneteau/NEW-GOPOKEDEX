@@ -90,7 +90,9 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
     func initStats() {
         self.hpLabel.text = "\(self.starterForHp)"
         self.cpLabel.text = "\(self.starterForCp)"
+        self.stardust = Int(stardustOption[self.startForStardust])
         self.stardustLabel.text = stardustOption[self.startForStardust]
+        self.starterForLevel = findLevels(Int(stardustOption[self.startForStardust])!, powered: powered)[0]
     }
     
     func hideAllStats(hide: Bool) {
@@ -157,7 +159,7 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
             poweredLabel.layer.shadowOpacity = 0
             poweredLabel.layer.masksToBounds = false
             poweredLabel.textColor = UIColor(red:0.60, green:0.58, blue:0.58, alpha:1.0)
-            self.levelLabel.text = findLevels(self.stardust, powered: powered)[0]
+            self.levelLabel.text = findLevels(Int(stardustOption[self.stardust])!, powered: powered)[0]
         } else {
             powered = true
             poweredLabel.layer.shadowColor = UIColor(red:0.18, green:0.80, blue:0.44, alpha:1.0).CGColor
@@ -166,7 +168,7 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
             poweredLabel.layer.shadowOffset = CGSizeZero
             poweredLabel.layer.masksToBounds = false
             poweredLabel.textColor = UIColor(red:0.18, green:0.80, blue:0.44, alpha:1.0)
-            self.levelLabel.text = findLevels(self.stardust, powered: powered)[0]
+            self.levelLabel.text = findLevels(Int(stardustOption[self.stardust])!, powered: powered)[0]
         }
         print(powered)
     }
@@ -307,7 +309,7 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
         print("stardust sent")
         self.stardustOK = true
         self.levelCanBePressed = true
-        self.levelLabel.text = findLevels(self.stardust, powered: powered)[0]
+        self.levelLabel.text = findLevels(Int(stardustOption[self.stardust])!, powered: powered)[0]
     }
     
     func passLevel(level: String) {
