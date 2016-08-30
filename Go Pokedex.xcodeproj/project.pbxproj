@@ -120,6 +120,7 @@
 		00ECECDC1D67CDA000443918 /* Steel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00ECECD11D67CDA000443918 /* Steel.jpg */; };
 		00ECECDD1D67CDA000443918 /* Water.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00ECECD21D67CDA000443918 /* Water.jpg */; };
 		00ECECDF1D67CDBF00443918 /* chargeMovesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ECECDE1D67CDBF00443918 /* chargeMovesViewController.swift */; };
+		3848D15F1D76386100F49F50 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3848D15E1D76386100F49F50 /* CustomTabBarController.swift */; };
 		38F07F291D704591008B1E91 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F07F281D704591008B1E91 /* SettingsViewController.swift */; };
 		9562A8141C343A30009C0411 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562A8131C343A30009C0411 /* AppDelegate.swift */; };
 		9562A8161C343A30009C0411 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562A8151C343A30009C0411 /* ViewController.swift */; };
@@ -270,6 +271,7 @@
 		00ECECD11D67CDA000443918 /* Steel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Steel.jpg; sourceTree = "<group>"; };
 		00ECECD21D67CDA000443918 /* Water.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Water.jpg; sourceTree = "<group>"; };
 		00ECECDE1D67CDBF00443918 /* chargeMovesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chargeMovesViewController.swift; sourceTree = "<group>"; };
+		3848D15E1D76386100F49F50 /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		38F07F281D704591008B1E91 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9562A8101C343A30009C0411 /* Go Pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Go Pokedex.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9562A8131C343A30009C0411 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 		006B884E1D6B3B2600FC68C4 /* PokemonDetails */ = {
 			isa = PBXGroup;
 			children = (
+				3848D15E1D76386100F49F50 /* CustomTabBarController.swift */,
 				000B7AD41D68902300B39A1B /* PokedexViewController.swift */,
 				00BD023A1D64E0E100EAAB9D /* MainTableViewController.swift */,
 				95CE1E551C3549F600D51E3B /* DetailViewController.swift */,
@@ -958,6 +961,7 @@
 				00877C5F1D63A11700570241 /* NVActivityIndicatorAnimationBallRotate.swift in Sources */,
 				00A4AA351D69B8660013B4A2 /* MenuController.swift in Sources */,
 				00877C561D63A11700570241 /* NVActivityIndicatorAnimationBallBeat.swift in Sources */,
+				3848D15F1D76386100F49F50 /* CustomTabBarController.swift in Sources */,
 				006B88551D6B3D8E00FC68C4 /* TipsHeaderView.swift in Sources */,
 				00877C281D63A06600570241 /* RAMRotationAnimation.swift in Sources */,
 				00877C2C1D63A06600570241 /* RAMItemAnimationProtocol.swift in Sources */,
