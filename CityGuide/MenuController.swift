@@ -16,7 +16,7 @@ func createrMenu(view: UIView) ->PathMenu{
     let pokedexMenuItem = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: UIImage(named: "pokedex-1")!)
     let backpackMenuItem = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: UIImage(named: "backpack-1")!)
     let tipsMenuItem = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: UIImage(named: "tips-1")!)
-    let ivMenuItem = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: UIImage(named: "tips-1")!)
+    let ivMenuItem = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: UIImage(named: "IV")!)
     let settingsMenuItem = PathMenuItem(image: menuItemImage, highlightedImage: menuItemHighlitedImage, contentImage: UIImage(named: "Settings-1")!)
     
     let items = [backpackMenuItem,pokedexMenuItem,tipsMenuItem, ivMenuItem, settingsMenuItem]
@@ -36,7 +36,7 @@ func createrMenu(view: UIView) ->PathMenu{
     menu.endRadius      = 100.0
     menu.animationDuration = 0.25
     
-    view.insertSubview(menu, atIndex: 5)
+    view.insertSubview(menu, atIndex: 8)
 
     return menu
 }
@@ -87,7 +87,7 @@ extension MenuViewController: PathMenuDelegate {
     
     func pathMenuWillAnimateOpen(menu: PathMenu) {
         print("Menu will open!")
-        self.view.insertSubview(self.blurViewMenu, atIndex: 4)
+        self.view.insertSubview(self.blurViewMenu, atIndex: 7)
         self.blurViewMenu.fadeInMenu()
     }
     
