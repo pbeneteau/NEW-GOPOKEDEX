@@ -208,6 +208,7 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
             }, completion: nil)
     }
     
+    // Animation tableview
     func animateTable() {
         tableview.reloadData()
         

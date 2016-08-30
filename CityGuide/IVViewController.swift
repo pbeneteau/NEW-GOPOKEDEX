@@ -64,6 +64,7 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
         initStats()
         hideAllStats(true)
         getAllIV()
+        loadIVForLevel()
         self.tableView.reloadData()
     }
     
