@@ -505,6 +505,9 @@
                                     <constraint firstAttribute="height" constant="40" id="QLS-v5-jzF"/>
                                 </constraints>
                                 <state key="normal" image="plusImage"/>
+                                <connections>
+                                    <action selector="addButtonPressed:" destination="Veb-09-ivV" eventType="touchUpInside" id="zbv-qG-e20"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ak-st-uJk">
                                 <rect key="frame" x="130" y="75" width="60" height="60"/>
@@ -513,6 +516,9 @@
                                     <constraint firstAttribute="width" constant="60" id="qkm-dD-tqD"/>
                                 </constraints>
                                 <state key="normal" image="1"/>
+                                <connections>
+                                    <action selector="pokemonPressed:" destination="Veb-09-ivV" eventType="touchUpInside" id="5Pd-Su-oe4"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1300" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyZ-1F-O98">
                                 <rect key="frame" x="65" y="162" width="39" height="21"/>
@@ -551,7 +557,7 @@
                                     <constraint firstAttribute="width" constant="63" id="FmU-bo-dfz"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WQD-Y2-QaY">
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WQD-Y2-QaY">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -559,10 +565,10 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XpL-US-cEs" id="2aL-3Z-ChF">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="A4729AE3-048E-4ACC-A47F-DF1B0DD15077" translatesAutoresizingMaskIntoConstraints="NO" id="rMF-Xt-iP2">
+                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="C2442991-B29F-4611-9F58-8B8907F77F36" translatesAutoresizingMaskIntoConstraints="NO" id="rMF-Xt-iP2">
                                                     <rect key="frame" x="8" y="-1" width="45" height="45"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="45" id="H8D-c5-OHK"/>
@@ -663,7 +669,7 @@
                     <navigationItem key="navigationItem" id="LYR-yz-krR"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="addButton" destination="9sQ-om-TTU" id="acL-VY-Zbz"/>
+                        <outlet property="addButton" destination="9sQ-om-TTU" id="CiR-bk-jHL"/>
                         <outlet property="attackDefenseIv" destination="57k-DP-8Ys" id="vUL-Ng-i7m"/>
                         <outlet property="battleRatingPerCent" destination="9bK-T3-fIL" id="Erx-dD-iEK"/>
                         <outlet property="cpLabel" destination="uBS-kk-X5K" id="shD-qd-RL5"/>
@@ -673,7 +679,7 @@
                         <outlet property="levelLabel" destination="LHx-zS-i4Q" id="KW5-pL-vEj"/>
                         <outlet property="noCombinaisonLabel" destination="JGS-D8-xWA" id="Qin-jN-JuO"/>
                         <outlet property="noCombinaisonLabel2" destination="0nc-sq-bmB" id="YQq-oW-wPs"/>
-                        <outlet property="pokemonImage" destination="8Ak-st-uJk" id="9Eg-nG-5pr"/>
+                        <outlet property="pokemonImage" destination="8Ak-st-uJk" id="Cgd-sL-ChB"/>
                         <outlet property="poweredLabel" destination="lgw-IW-bQl" id="JXf-t6-m2q"/>
                         <outlet property="poweredSwitchView" destination="7Oj-68-u7f" id="wjU-eD-v0t"/>
                         <outlet property="resultsMainView" destination="Zk9-4p-rNH" id="xSZ-5G-XL2"/>
@@ -684,7 +690,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vKh-x5-UKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="341" y="-1292"/>
+            <point key="canvasLocation" x="289" y="-1299"/>
         </scene>
         <!--TIPS-->
         <scene sceneID="HPX-80-GQk">
@@ -2424,7 +2430,7 @@
         <image name="2.png" width="120" height="120"/>
         <image name="4.png" width="120" height="120"/>
         <image name="5.png" width="120" height="120"/>
-        <image name="A4729AE3-048E-4ACC-A47F-DF1B0DD15077" width="120" height="120">
+        <image name="C2442991-B29F-4611-9F58-8B8907F77F36" width="120" height="120">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

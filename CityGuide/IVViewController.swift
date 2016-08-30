@@ -65,6 +65,7 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
     }
     override func viewDidAppear(animated: Bool) {
         selectedPokemon = pokemonList[3]
+        initStats()
         self.pokemonImage.hidden = true
         hideAllStats(true)
         getAllIV()
@@ -86,6 +87,12 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
         self.navigationItem.title = "Choose your pokemon"
     }
     
+    func initStats() {
+        self.hpLabel.text = "\(self.starterForHp)"
+        self.cpLabel.text = "\(self.starterForCp)"
+        self.stardustLabel.text = stardustOption[self.startForStardust]
+    }
+    
     func hideAllStats(hide: Bool) {
         self.attackDefenseIv.hidden = hide
         self.staminaIv.hidden = hide
@@ -93,7 +100,6 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
         self.cpRatingPerCent.hidden = hide
         self.hpPerCent.hidden = hide
     }
-    
     
     func initSwitch() {
         mySwitch.addTarget(self, action: #selector(IVViewController.switchChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
@@ -151,14 +157,16 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
             poweredLabel.layer.shadowOpacity = 0
             poweredLabel.layer.masksToBounds = false
             poweredLabel.textColor = UIColor(red:0.60, green:0.58, blue:0.58, alpha:1.0)
+            self.levelLabel.text = findLevels(self.stardust, powered: powered)[0]
         } else {
+            powered = true
             poweredLabel.layer.shadowColor = UIColor(red:0.18, green:0.80, blue:0.44, alpha:1.0).CGColor
             poweredLabel.layer.shadowRadius = 4.0
             poweredLabel.layer.shadowOpacity = 0.9
             poweredLabel.layer.shadowOffset = CGSizeZero
             poweredLabel.layer.masksToBounds = false
             poweredLabel.textColor = UIColor(red:0.18, green:0.80, blue:0.44, alpha:1.0)
-            powered = true
+            self.levelLabel.text = findLevels(self.stardust, powered: powered)[0]
         }
         print(powered)
     }
@@ -263,14 +271,12 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if !self.tableView.hidden {
             self.selectedPokemon = pokemonList[indexPath.row]
             self.pokemonImage.hidden = false
             self.addButton.hidden = true
             self.pokemonImage.setImage(pokemonList[indexPath.row].img, forState: .Normal)
             self.tableView.hidden = true
             self.navigationItem.title = selectedPokemon.name
-        }
     }
     
     
@@ -301,6 +307,7 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
         print("stardust sent")
         self.stardustOK = true
         self.levelCanBePressed = true
+        self.levelLabel.text = findLevels(self.stardust, powered: powered)[0]
     }
     
     func passLevel(level: String) {
