@@ -322,10 +322,10 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XpL-US-cEs" id="2aL-3Z-ChF">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3C2E0289-B24D-4CFA-A394-9C38C2B3FE1F" translatesAutoresizingMaskIntoConstraints="NO" id="rMF-Xt-iP2">
+                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="A01F4184-200B-47FB-A1E4-0536BD34AFDE" translatesAutoresizingMaskIntoConstraints="NO" id="rMF-Xt-iP2">
                                                     <rect key="frame" x="8" y="-1" width="45" height="45"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="45" id="H8D-c5-OHK"/>
@@ -2422,7 +2422,9 @@
         <image name="1.png" width="120" height="120"/>
         <image name="10.png" width="120" height="120"/>
         <image name="2.png" width="120" height="120"/>
-        <image name="3C2E0289-B24D-4CFA-A394-9C38C2B3FE1F" width="120" height="120">
+        <image name="4.png" width="120" height="120"/>
+        <image name="5.png" width="120" height="120"/>
+        <image name="A01F4184-200B-47FB-A1E4-0536BD34AFDE" width="120" height="120">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -3433,8 +3435,6 @@ AL8AxADbAN0A3+qB6obqkeqa6q3qseq86sXqyurS6tXq2urp6u3q9Or86wnrDusQ6xLrF+sf6yLrJ+sv
 6zLrROtH60wAAAAAAAACAQAAAAAAAABBAAAAAAAAAAAAAAAAAADrTg
 </mutableData>
         </image>
-        <image name="4.png" width="120" height="120"/>
-        <image name="5.png" width="120" height="120"/>
         <image name="Poke Ball" width="320" height="568"/>
         <image name="Psychic.jpg" width="800" height="533"/>
         <image name="SplashScreen" width="320" height="568"/>
