@@ -18,24 +18,20 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var stardustLabel: UILabel!
     @IBOutlet weak var cpLabel: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
-
+    
     @IBOutlet weak var resultsMainView: UIView!
     @IBOutlet weak var noCombinaisonLabel2: UILabel!
     @IBOutlet weak var noCombinaisonLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var poweredLabel: UILabel!
-
+    
     @IBOutlet weak var poweredSwitchView: UIView!
     @IBOutlet weak var attackDefenseIv: UILabel!
     @IBOutlet weak var staminaIv: UILabel!
     @IBOutlet weak var battleRatingPerCent: UILabel!
     @IBOutlet weak var cpRatingPerCent: UILabel!
     @IBOutlet weak var hpPerCent: UILabel!
-    var booooooooooooo = 1
-    var hetal = 4
-    //paul dfihdfsqd^jkd
     
-    //antoine
     let mySwitch = SevenSwitch()
     var powered: Bool = false
     var selectedPokemon = Pokemon(id: "", name: "")
@@ -65,19 +61,38 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
         initSwitch()
-        //self.tableView.hidden = true
+        self.tableView.hidden = true
     }
     override func viewDidAppear(animated: Bool) {
         selectedPokemon = pokemonList[3]
-        //self.tableView.reloadData()
+        self.pokemonImage.hidden = true
+        hideAllStats(true)
+        getAllIV()
+        self.tableView.reloadData()
     }
     
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func addButtonPressed(sender: AnyObject) {
+        self.tableView.hidden = false
+        self.navigationItem.title = "Choose your pokemon"
+    }
+    @IBAction func pokemonPressed(sender: AnyObject) {
+        self.tableView.hidden = false
+        self.navigationItem.title = "Choose your pokemon"
+    }
+    
+    func hideAllStats(hide: Bool) {
+        self.attackDefenseIv.hidden = hide
+        self.staminaIv.hidden = hide
+        self.battleRatingPerCent.hidden = hide
+        self.cpRatingPerCent.hidden = hide
+        self.hpPerCent.hidden = hide
+    }
     
     
     func initSwitch() {
@@ -98,55 +113,35 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
         mySwitch.isRounded = false
         poweredSwitchView.addSubview(mySwitch)
     }
-
-//    
-//    func findLevel() {
-//        if (stardustTextField.text != nil) {
-//            levels = findLevels(Int(stardustTextField.text!)!, powered: powered)
-//        }
-//    }
-//    
-//    func allStatsEntered()->Bool {
-//        if (cpTextFiels.text != nil) {
-//            if (hpTextField.text != nil) {
-//                if (levelTextView.text != nil) {
-//                    return true
-//                }
-//            }
-//        }
-//        return false
-//    }
-//    
-//    func getAllIV() {
-//        if (cpTextFiels.text != nil) {
-//            if (hpTextField.text != nil) {
-//                if (levelTextView.text != nil) {
-//                    IV = getIV(selectedPokemon, cp: Int(cpTextFiels.text!)!, hp: Int(hpTextField.text!)!, stardust: Int(stardustTextField.text!)!, powered: powered)
-//                }
-//            }
-//        }
-//    }
-//    
-//    
-//    func reloadIV() {
-//        if (IV != nil) {
-//            if IV[levelTextView.text!]![0] != 1111.11111 {
-//                let stamina = Double(IV[levelTextView.text!]![0])/15.0
-//                let attackDefense = Double(IV[levelTextView.text!]![1])/30.0
-//                attackDefenseIv.text = "\(IV[levelTextView.text!]![1])"
-//                staminaIv.text = "\(IV[levelTextView.text!]![0])"
-//                battleRatingPerCent.text = "\(floor(((attackDefense)) * 100))%"
-//                hpPerCent.text = "\(floor((stamina) * 100))%"
-//                cpRatingPerCent.text = "\((floor((stamina) * 100) + floor(((attackDefense)) * 100)) / 2.0)%"
-//                self.noCombinaisonLabel.hidden = true
-//                self.noCombinaisonLabel2.hidden = true
-//            } else {
-//                self.resultsMainView.hidden = true
-//                self.noCombinaisonLabel.hidden = false
-//                self.noCombinaisonLabel2.hidden = false
-//            }
-//        }
-//    }
+    
+    
+    
+    func getAllIV() {
+        if (hpOK && cpOK && stardustOK && levelOK) {
+            IV = getIV(selectedPokemon, cp: self.cp, hp: self.hp, stardust: self.stardust, powered: powered)
+            self.hideAllStats(false)
+        }
+    }
+    
+    func loadIVForLevel() {
+        if (IV != nil) {
+            if IV[self.level]![0] != 1111.11111 {
+                let stamina = Double(IV[self.level]![0])/15.0
+                let attackDefense = Double(IV[self.level]![1])/30.0
+                attackDefenseIv.text = "\(IV[self.level]![1])"
+                staminaIv.text = "\(IV[self.level]![0])"
+                battleRatingPerCent.text = "\(floor(((attackDefense)) * 100))%"
+                hpPerCent.text = "\(floor((stamina) * 100))%"
+                cpRatingPerCent.text = "\((floor((stamina) * 100) + floor(((attackDefense)) * 100)) / 2.0)%"
+                self.noCombinaisonLabel.hidden = true
+                self.noCombinaisonLabel2.hidden = true
+            } else {
+                self.resultsMainView.hidden = true
+                self.noCombinaisonLabel.hidden = false
+                self.noCombinaisonLabel2.hidden = false
+            }
+        }
+    }
     
     func switchChanged(sender: SevenSwitch) {
         if powered {
@@ -267,34 +262,41 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
         return cell
     }
     
-//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        if !self.tableView.hidden {
-//            self.selectedPokemon = pokemonList[indexPath.row]
-//            self.buttonPressed.hidden = false
-//            self.addButton.hidden = true
-//            self.buttonPressed.setImage(pokemonList[indexPath.row].img, forState: .Normal)
-//            self.tableView.hidden = true
-//            self.pokemonName.text = selectedPokemon.name
-//        }
-//    }
-//
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if !self.tableView.hidden {
+            self.selectedPokemon = pokemonList[indexPath.row]
+            self.pokemonImage.hidden = false
+            self.addButton.hidden = true
+            self.pokemonImage.setImage(pokemonList[indexPath.row].img, forState: .Normal)
+            self.tableView.hidden = true
+            self.navigationItem.title = selectedPokemon.name
+        }
+    }
+    
     
     func passHp(hp: Int) {
         self.hp = hp
+        self.hpLabel.text = "\(self.hp)"
         print(self.hp)
         print("hp sent")
         self.hpOK = true
+        getAllIV()
+        loadIVForLevel()
     }
     
     func passCp(cp: Int) {
         self.cp = cp
+        self.cpLabel.text = "\(self.cp)"
         print(self.cp)
         print("cp sent")
         self.cpOK = true
+        getAllIV()
+        loadIVForLevel()
     }
     
     func passStardust(stardust: Int) {
         self.stardust = stardust
+        self.stardustLabel.text = "\(self.stardust)"
         print(self.stardust)
         print("stardust sent")
         self.stardustOK = true
@@ -303,9 +305,13 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
     
     func passLevel(level: String) {
         self.level = level
+        self.levelLabel.text = "\(self.level)"
         print(self.level)
         print("level sent")
         self.levelOK = true
+        self.hideAllStats(false)
+        getAllIV()
+        loadIVForLevel()
     }
-
+    
 }
