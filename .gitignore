@@ -10,3 +10,12 @@ build/*
 # osx noise
 .DS_Store
 profile
+
+
+Go Pokedex.xcodeproj/
+!Go Pokedex.xcodeproj/project.pbxproj
+core-plot/framework/build
+core-plot/framework/CorePlot-CocoaTouch.xcodeproj/
+!core-plot/framework/CorePlot-CocoaTouch.xcodeproj/project.pbxproj
+.DS_Store
+Classes/.DS_Store
