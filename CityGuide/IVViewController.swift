@@ -41,22 +41,17 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
     
     var levels = [String]()
     var IV: [String:[Double]]! = nil
-    var hp: Int!
-    var cp: Int!
-    var stardust:Int!
-    var level: String!
+    var hp = 53
+    var cp = 504
+    var stardust = 3000
+    var level = "21.0"
     
-    var hpOK: Bool! = false
-    var cpOK: Bool! = false
-    var stardustOK: Bool! = false
-    var levelOK: Bool! = false
+    var hpOK: Bool! = true
+    var cpOK: Bool! = true
+    var stardustOK: Bool! = true
+    var levelOK: Bool! = true
     var levelCanBePressed = false
     
-    // Initials
-    var startForStardust = 3000
-    var starterForHp = 53
-    var starterForCp = 504
-    var starterForLevel = "21.0"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,8 +60,8 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
     }
     override func viewDidAppear(animated: Bool) {
         selectedPokemon = pokemonList[3]
-        initStats()
         self.pokemonImage.hidden = true
+        initStats()
         hideAllStats(true)
         getAllIV()
         self.tableView.reloadData()
@@ -78,6 +73,13 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
         // Dispose of any resources that can be recreated.
     }
     
+    func initStats() {
+        self.hpLabel.text = "\(self.hp)"
+        self.cpLabel.text = "\(self.cp)"
+        self.stardustLabel.text = "\(self.stardust)"
+        self.levelLabel.text = level
+    }
+    
     @IBAction func addButtonPressed(sender: AnyObject) {
         self.tableView.hidden = false
         self.navigationItem.title = "Choose your pokemon"
@@ -85,16 +87,6 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
     @IBAction func pokemonPressed(sender: AnyObject) {
         self.tableView.hidden = false
         self.navigationItem.title = "Choose your pokemon"
-    }
-    
-    func initStats() {
-        self.hpLabel.text = "\(self.starterForHp)"
-        self.cpLabel.text = "\(self.starterForCp)"
-        self.stardust = self.startForStardust
-        self.stardustLabel.text = "\(self.startForStardust)"
-        self.starterForLevel = findLevels(self.stardust, powered: powered)[0]
-        self.cpOK = true
-        self.hpOK = true
     }
     
     func hideAllStats(hide: Bool) {
@@ -184,7 +176,7 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
         let window = UIApplication.sharedApplication().delegate?.window!
         let modal = PathDynamicModal()
         view.vc = self
-        view.hpTextField.text = "\(starterForHp)"
+        view.hpTextField.text = "\(self.hp)"
         modal.showMagnitude = 200.0
         modal.closeMagnitude = 130.0
         view.closeButtonHandler = {[weak modal] in
@@ -202,7 +194,7 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
         let window = UIApplication.sharedApplication().delegate?.window!
         let modal = PathDynamicModal()
         view.vc = self
-        view.cpTextField.text = "\(starterForCp)"
+        view.cpTextField.text = "\(self.cp)"
         modal.showMagnitude = 200.0
         modal.closeMagnitude = 130.0
         view.closeButtonHandler = {[weak modal] in
@@ -220,7 +212,7 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
         let window = UIApplication.sharedApplication().delegate?.window!
         let modal = PathDynamicModal()
         view.vc = self
-        view.pickerView.selectRow(startForStardust, inComponent: 0, animated: true)
+        view.pickerView.selectRow(self.stardust, inComponent: 0, animated: true)
         view.stardustTextField.text = "\(self.stardust)"
         modal.showMagnitude = 200.0
         modal.closeMagnitude = 130.0
