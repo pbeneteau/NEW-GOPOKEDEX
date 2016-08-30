@@ -53,10 +53,10 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
     var levelCanBePressed = false
     
     // Initials
-    var startForStardust = 5
+    var startForStardust = 3000
     var starterForHp = 53
     var starterForCp = 504
-    var starterForLevel: String!
+    var starterForLevel = "21.0"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,7 +90,11 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
     func initStats() {
         self.hpLabel.text = "\(self.starterForHp)"
         self.cpLabel.text = "\(self.starterForCp)"
-        self.stardustLabel.text = stardustOption[self.startForStardust]
+        self.stardust = self.startForStardust
+        self.stardustLabel.text = "\(self.startForStardust)"
+        self.starterForLevel = findLevels(self.stardust, powered: powered)[0]
+        self.cpOK = true
+        self.hpOK = true
     }
     
     func hideAllStats(hide: Bool) {
@@ -158,6 +162,8 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
             poweredLabel.layer.masksToBounds = false
             poweredLabel.textColor = UIColor(red:0.60, green:0.58, blue:0.58, alpha:1.0)
             self.levelLabel.text = findLevels(self.stardust, powered: powered)[0]
+            getAllIV()
+            loadIVForLevel()
         } else {
             powered = true
             poweredLabel.layer.shadowColor = UIColor(red:0.18, green:0.80, blue:0.44, alpha:1.0).CGColor
@@ -167,6 +173,8 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
             poweredLabel.layer.masksToBounds = false
             poweredLabel.textColor = UIColor(red:0.18, green:0.80, blue:0.44, alpha:1.0)
             self.levelLabel.text = findLevels(self.stardust, powered: powered)[0]
+            getAllIV()
+            loadIVForLevel()
         }
         print(powered)
     }
@@ -213,7 +221,7 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
         let modal = PathDynamicModal()
         view.vc = self
         view.pickerView.selectRow(startForStardust, inComponent: 0, animated: true)
-        view.stardustTextField.text = stardustOption[startForStardust]
+        view.stardustTextField.text = "\(self.stardust)"
         modal.showMagnitude = 200.0
         modal.closeMagnitude = 130.0
         view.closeButtonHandler = {[weak modal] in
