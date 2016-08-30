@@ -33,6 +33,7 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var hpPerCent: UILabel!
     var booooooooooooo = 1
     var hetal = 4
+    //paul dfihdfsqd^jkd
     
     
     let mySwitch = SevenSwitch()
