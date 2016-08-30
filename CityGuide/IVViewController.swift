@@ -35,8 +35,12 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
     var hetal = 4
     //ddfdfdgdfdfds
     //gevisvsvsdvdx
+    //ffffff
+    //ffefef
     
-    fchdhdhd
+    //fchdhdhd
+    //c  c
+   // c c
     
     let mySwitch = SevenSwitch()
     var powered: Bool = false
