@@ -36,6 +36,8 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
     //ddfdfdgdfdfds
     //gevisvsvsdvdx
     
+    fchdhdhd
+    
     let mySwitch = SevenSwitch()
     var powered: Bool = false
     var selectedPokemon = Pokemon(id: "", name: "")
