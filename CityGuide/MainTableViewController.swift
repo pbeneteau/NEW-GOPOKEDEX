@@ -32,17 +32,34 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
     var animated = false
     
     var needClose: Bool = false
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         initActivityIndicator()
         searchBar.hidden = true
+        tableview.backgroundColor = UIColor(red:0.17, green:0.24, blue:0.31, alpha:1.0)
     }
     
     override func viewDidAppear(animated: Bool) {
         initPokemon()
         initSearch()
         animateTable()
+        delay(1.5) {
+            self.tableview.backgroundColor = UIColor(red:0.16, green:0.50, blue:0.73, alpha:1.0)
+        }
+            }
+   
+    func delay(delay: Double, closure: ()->()) {
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(),
+            closure
+        )
     }
     
     func initPokemon() {
