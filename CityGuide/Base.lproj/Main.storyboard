@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A304a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A313a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -116,7 +116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-616.79999999999995" y="474.75333333333333"/>
+            <point key="canvasLocation" x="-885.5" y="470.5"/>
         </scene>
         <!--Tips View Controller-->
         <scene sceneID="Vkm-Hk-wbF">
@@ -568,7 +568,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="C2442991-B29F-4611-9F58-8B8907F77F36" translatesAutoresizingMaskIntoConstraints="NO" id="rMF-Xt-iP2">
+                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="94E009B7-2256-4602-9EEA-08F8617B73D1" translatesAutoresizingMaskIntoConstraints="NO" id="rMF-Xt-iP2">
                                                     <rect key="frame" x="8" y="-1" width="45" height="45"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="45" id="H8D-c5-OHK"/>
@@ -789,7 +789,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mqO-rA-hDk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-348" y="474.75333333333333"/>
+            <point key="canvasLocation" x="-464.5" y="474.5"/>
         </scene>
         <!--POKEDEX-->
         <scene sceneID="JqK-bf-LN2">
@@ -2430,7 +2430,7 @@
         <image name="2.png" width="120" height="120"/>
         <image name="4.png" width="120" height="120"/>
         <image name="5.png" width="120" height="120"/>
-        <image name="C2442991-B29F-4611-9F58-8B8907F77F36" width="120" height="120">
+        <image name="94E009B7-2256-4602-9EEA-08F8617B73D1" width="120" height="120">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
