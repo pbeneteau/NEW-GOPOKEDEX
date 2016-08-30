@@ -1,4 +1,4 @@
 
 # excludes this file from merges
 # treats it like binary file 
-*.pbxproj -crlf -diff -merge
+*.pbxproj merge=union
