@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="16A304a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="16A313a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="OpenSans-Bold.ttf">
-            <string>OpenSans-Bold</string>
-        </mutableArray>
         <mutableArray key="OpenSans-Semibold.ttf">
             <string>OpenSans-Semibold</string>
         </mutableArray>
@@ -21,14 +18,22 @@
                 <view clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ModalView" translatesAutoresizingMaskIntoConstraints="NO" id="N4v-pr-3h6">
                     <rect key="frame" x="0.0" y="0.0" width="280" height="300"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5om-b5-CRk">
-                            <rect key="frame" x="0.0" y="240" width="280" height="60"/>
-                            <color key="backgroundColor" red="0.90588235289999997" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stardustBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Ep6-Th-GtO">
+                            <rect key="frame" x="0.0" y="0.0" width="280" height="300"/>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2uP-nW-VEf">
+                            <rect key="frame" x="26" y="117" width="139" height="30"/>
+                            <color key="textColor" red="0.59590416909999999" green="0.58171597460000002" blue="0.58171597460000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5om-b5-CRk">
+                            <rect key="frame" x="171" y="113" width="96" height="37"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="60" id="t5B-LF-cBs"/>
+                                <constraint firstAttribute="width" constant="96" id="MAf-lb-Bsm"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                            <state key="normal" title="OK">
+                            <state key="normal" image="hpCloseButton">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -36,65 +41,28 @@
                                 <action selector="handleCloseButton:" destination="IM3-BH-u26" eventType="touchUpInside" id="gcf-oH-gha"/>
                             </connections>
                         </button>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2uP-nW-VEf">
-                            <rect key="frame" x="71" y="104" width="139" height="30"/>
-                            <color key="textColor" red="0.59590416909999999" green="0.58171597460000002" blue="0.58171597460000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                        </textField>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stardust" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNg-6p-3wP">
-                            <rect key="frame" x="79" y="49" width="124" height="47"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="47" id="NW5-VS-Dcg"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="24"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                     </subviews>
                     <color key="backgroundColor" red="0.98823529409999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="5om-b5-CRk" secondAttribute="trailing" id="C9Q-zQ-k1O"/>
-                        <constraint firstItem="tNg-6p-3wP" firstAttribute="leading" secondItem="N4v-pr-3h6" secondAttribute="leading" constant="79" id="DaC-dU-mOe"/>
-                        <constraint firstItem="2uP-nW-VEf" firstAttribute="centerX" secondItem="5om-b5-CRk" secondAttribute="centerX" id="PuC-wm-J3E"/>
-                        <constraint firstItem="2uP-nW-VEf" firstAttribute="leading" secondItem="N4v-pr-3h6" secondAttribute="leading" constant="71" id="eKP-Cs-FRN"/>
-                        <constraint firstItem="tNg-6p-3wP" firstAttribute="top" secondItem="N4v-pr-3h6" secondAttribute="top" constant="49" id="gjE-dr-L1f"/>
-                        <constraint firstAttribute="bottom" secondItem="5om-b5-CRk" secondAttribute="bottom" id="gyc-rN-Zpy"/>
-                        <constraint firstItem="5om-b5-CRk" firstAttribute="leading" secondItem="N4v-pr-3h6" secondAttribute="leading" id="idA-xt-FzU"/>
-                        <constraint firstItem="tNg-6p-3wP" firstAttribute="centerX" secondItem="2uP-nW-VEf" secondAttribute="centerX" id="rpP-Xa-g8e"/>
-                        <constraint firstItem="2uP-nW-VEf" firstAttribute="top" secondItem="tNg-6p-3wP" secondAttribute="bottom" constant="8" symbolic="YES" id="vSt-yH-0Ph"/>
+                        <constraint firstItem="5om-b5-CRk" firstAttribute="centerY" secondItem="2uP-nW-VEf" secondAttribute="centerY" id="StY-AR-kBh"/>
+                        <constraint firstItem="5om-b5-CRk" firstAttribute="top" secondItem="N4v-pr-3h6" secondAttribute="top" constant="113" id="TbC-fH-C0y"/>
+                        <constraint firstItem="5om-b5-CRk" firstAttribute="leading" secondItem="2uP-nW-VEf" secondAttribute="trailing" constant="6" id="eik-35-DHf"/>
+                        <constraint firstAttribute="trailing" secondItem="5om-b5-CRk" secondAttribute="trailing" constant="13" id="p6I-e6-Oav"/>
+                        <constraint firstItem="2uP-nW-VEf" firstAttribute="leading" secondItem="N4v-pr-3h6" secondAttribute="leading" constant="26" id="qwD-mT-lL3"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wM-FP-8AF">
-                    <rect key="frame" x="-10" y="-10" width="25" height="25"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="25" id="0pJ-rz-1YE"/>
-                        <constraint firstAttribute="width" constant="25" id="PLy-iH-7wr"/>
-                    </constraints>
-                    <inset key="imageEdgeInsets" minX="1" minY="1" maxX="1" maxY="1"/>
-                    <state key="normal" image="06CEE4F6-9F28-4BDB-8EA5-AAAB77B33539">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="handleBottomButton:" destination="IM3-BH-u26" eventType="touchUpInside" id="QZO-9O-boS"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="N4v-pr-3h6" secondAttribute="bottom" id="3if-q3-vRA"/>
                 <constraint firstAttribute="trailing" secondItem="N4v-pr-3h6" secondAttribute="trailing" id="Sd3-NO-PCI"/>
                 <constraint firstItem="N4v-pr-3h6" firstAttribute="leading" secondItem="IM3-BH-u26" secondAttribute="leading" id="rjX-FY-dab"/>
-                <constraint firstItem="2wM-FP-8AF" firstAttribute="top" secondItem="IM3-BH-u26" secondAttribute="top" constant="-10" id="usz-eT-sWr"/>
                 <constraint firstItem="N4v-pr-3h6" firstAttribute="top" secondItem="IM3-BH-u26" secondAttribute="top" id="yN0-fk-6V3"/>
-                <constraint firstItem="2wM-FP-8AF" firstAttribute="leading" secondItem="IM3-BH-u26" secondAttribute="leading" constant="-10" id="ycQ-WU-8Fs"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="bottomButton" destination="5om-b5-CRk" id="umm-Le-RVQ"/>
-                <outlet property="closeButton" destination="2wM-FP-8AF" id="M0H-in-XAT"/>
                 <outlet property="contentView" destination="N4v-pr-3h6" id="dy2-e7-Rms"/>
                 <outlet property="stardustTextField" destination="2uP-nW-VEf" id="vjT-cG-ngK"/>
             </connections>
@@ -102,21 +70,7 @@
         </view>
     </objects>
     <resources>
-        <image name="06CEE4F6-9F28-4BDB-8EA5-AAAB77B33539" width="64" height="64">
-            <mutableData key="keyedArchiveRepresentation">
-YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBMU
-GR4fJSYsLzU4VSRudWxs1QkKCwwNDg8QERJWTlNTaXplViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBz
-V05TQ29sb3KAAoAMEiTAAACAA4AKWHs2NCwgNjR90hUKFhhaTlMub2JqZWN0c6EXgASACdIVChoYohsc
-gAWABoAJEAXTIAohIiMkV05TLmJhc2VbTlMucmVsYXRpdmWAAIAIgAdfEHxmaWxlOi8vL0FwcGxpY2F0
-aW9ucy9YY29kZS5hcHAvQ29udGVudHMvUGx1Z0lucy9JREVJbnRlcmZhY2VCdWlsZGVyS2l0LmlkZXBs
-dWdpbi9Db250ZW50cy9SZXNvdXJjZXMvSUJNaXNzaW5nSW1hZ2VHbHlwaC50aWZm0icoKSpaJGNsYXNz
-bmFtZVgkY2xhc3Nlc1VOU1VSTKIpK1hOU09iamVjdNInKC0uV05TQXJyYXmiLSvTMDEKMjM0V05TV2hp
-dGVcTlNDb2xvclNwYWNlRDAgMAAQA4AL0icoNjdXTlNDb2xvcqI2K9InKDk6V05TSW1hZ2WiOStfEA9O
-U0tleWVkQXJjaGl2ZXLRPT5Ucm9vdIABAAgAEQAaACMALQAyADcARQBLAFYAXQBkAHEAeACAAIIAhACJ
-AIsAjQCWAJsApgCoAKoArACxALQAtgC4ALoAvADDAMsA1wDZANsA3QFcAWEBbAF1AXsBfgGHAYwBlAGX
-AZ4BpgGzAbgBugG8AcEByQHMAdEB2QHcAe4B8QH2AAAAAAAAAgEAAAAAAAAAPwAAAAAAAAAAAAAAAAAA
-Afg
-</mutableData>
-        </image>
+        <image name="hpCloseButton" width="71" height="37"/>
+        <image name="stardustBackground" width="280" height="300"/>
     </resources>
 </document>
