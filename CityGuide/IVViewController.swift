@@ -260,7 +260,6 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
         reloadDatas()
     }
     
-    
     func passHp(hp: Int) {
         self.hp = hp
         self.hpOK = true
