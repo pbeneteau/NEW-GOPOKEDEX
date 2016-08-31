@@ -88,7 +88,9 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
                 self.noCombinaisonLabel.hidden = false
                 self.noCombinaisonLabel2.hidden = false
                 self.hideAllStats(true)
+                self.resultsMainView.hidden = true
             } else {
+                self.resultsMainView.hidden = false
                 self.noCombinaisonLabel.hidden = true
                 self.noCombinaisonLabel2.hidden = true
                 self.hideAllStats(false)
