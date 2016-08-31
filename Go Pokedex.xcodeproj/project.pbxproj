@@ -15,12 +15,7 @@
 		0007B3631D72114700821141 /* IvCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0007B3621D72114700821141 /* IvCalculator.swift */; };
 		0007B3651D724A9200821141 /* GoPokedex_ChargeMovesFinal.csv in Resources */ = {isa = PBXBuildFile; fileRef = 0007B3641D724A9200821141 /* GoPokedex_ChargeMovesFinal.csv */; };
 		000B7AD51D68902300B39A1B /* PokedexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000B7AD41D68902300B39A1B /* PokedexViewController.swift */; };
-		000B7AD71D68921000B39A1B /* OpenSans-Bold.ttf in Sources */ = {isa = PBXBuildFile; fileRef = 00BD023D1D64E23F00EAAB9D /* OpenSans-Bold.ttf */; };
-		000B7ADB1D68921000B39A1B /* OpenSans-Italic.ttf in Sources */ = {isa = PBXBuildFile; fileRef = 00BD02411D64E23F00EAAB9D /* OpenSans-Italic.ttf */; };
-		000B7ADC1D68921000B39A1B /* OpenSans-Light.ttf in Sources */ = {isa = PBXBuildFile; fileRef = 00BD02421D64E23F00EAAB9D /* OpenSans-Light.ttf */; };
-		000B7ADF1D68921000B39A1B /* OpenSans-Semibold.ttf in Sources */ = {isa = PBXBuildFile; fileRef = 00BD02451D64E23F00EAAB9D /* OpenSans-Semibold.ttf */; };
 		000B7AE31D6892C700B39A1B /* Pokemon Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 000B7AE21D6892C700B39A1B /* Pokemon Solid.ttf */; };
-		000B7AE41D6892D800B39A1B /* Pokemon Solid.ttf in Sources */ = {isa = PBXBuildFile; fileRef = 000B7AE21D6892C700B39A1B /* Pokemon Solid.ttf */; };
 		0036E4251D73110A00C98905 /* IVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0036E4241D73110A00C98905 /* IVViewController.swift */; };
 		0036E42B1D73122000C98905 /* SevenSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0036E42A1D73122000C98905 /* SevenSwitch.swift */; };
 		0036E42F1D732FA800C98905 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0036E42E1D732FA800C98905 /* Assets.xcassets */; };
@@ -819,9 +814,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				000B7AE31D6892C700B39A1B /* Pokemon Solid.ttf in Resources */,
+				00BD02471D64E23F00EAAB9D /* OpenSans-Bold.ttf in Resources */,
+				00BD024C1D64E23F00EAAB9D /* OpenSans-Light.ttf in Resources */,
+				00BD024F1D64E23F00EAAB9D /* OpenSans-Semibold.ttf in Resources */,
+				00BD024B1D64E23F00EAAB9D /* OpenSans-Italic.ttf in Resources */,
 				00ECECDC1D67CDA000443918 /* Steel.jpg in Resources */,
 				008C6FC81D75BDBF00A8A7FB /* LevelModalView.xib in Resources */,
-				00BD02471D64E23F00EAAB9D /* OpenSans-Bold.ttf in Resources */,
 				00ECECDD1D67CDA000443918 /* Water.jpg in Resources */,
 				00ECECD31D67CDA000443918 /* Bug.jpg in Resources */,
 				006B88511D6B3BE500FC68C4 /* TipsHeaderView.xib in Resources */,
@@ -832,26 +831,22 @@
 				9562A81E1C343A30009C0411 /* LaunchScreen.storyboard in Resources */,
 				0007B35D1D71141500821141 /* GoPokedex_Descriptions.csv in Resources */,
 				00ECECD91D67CDA000443918 /* Normal.jpg in Resources */,
-				00BD024C1D64E23F00EAAB9D /* OpenSans-Light.ttf in Resources */,
 				00ECECD81D67CDA000443918 /* Ice.jpg in Resources */,
 				00ECECD71D67CDA000443918 /* Grass.jpg in Resources */,
 				0007B3611D71C28700821141 /* GoPokedex_SpeciesFinal.csv in Resources */,
 				008C6FC01D7594DA00A8A7FB /* CpModalView.xib in Resources */,
 				0007B3651D724A9200821141 /* GoPokedex_ChargeMovesFinal.csv in Resources */,
-				000B7AE31D6892C700B39A1B /* Pokemon Solid.ttf in Resources */,
 				0036E42F1D732FA800C98905 /* Assets.xcassets in Resources */,
 				0007B35B1D71021D00821141 /* GoPokedex_TypesFinal.csv in Resources */,
 				00ECECD61D67CDA000443918 /* Flying.jpg in Resources */,
 				00877C751D63A11700570241 /* Info.plist in Resources */,
 				00ECECDB1D67CDA000443918 /* Psychic.jpg in Resources */,
-				00BD024B1D64E23F00EAAB9D /* OpenSans-Italic.ttf in Resources */,
 				00ECECD51D67CDA000443918 /* Fighting.jpg in Resources */,
 				9562A8191C343A30009C0411 /* Main.storyboard in Resources */,
 				009A7F0B1D6D2ADF0024109F /* balea.gpx in Resources */,
 				00ECECDA1D67CDA000443918 /* Poison.jpg in Resources */,
 				009A7F091D6D27130024109F /* GoPokedex_Evolutions.csv in Resources */,
 				0007B3551D70FBA400821141 /* GoPokedex_QuickMovesFinal.csv in Resources */,
-				00BD024F1D64E23F00EAAB9D /* OpenSans-Semibold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -876,13 +871,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				000B7AE41D6892D800B39A1B /* Pokemon Solid.ttf in Sources */,
 				006B88531D6B3D2100FC68C4 /* TipsDescriptionl.swift in Sources */,
-				000B7AD71D68921000B39A1B /* OpenSans-Bold.ttf in Sources */,
-				000B7ADB1D68921000B39A1B /* OpenSans-Italic.ttf in Sources */,
 				008C6FBB1D751C2800A8A7FB /* HpModalView.swift in Sources */,
-				000B7ADC1D68921000B39A1B /* OpenSans-Light.ttf in Sources */,
-				000B7ADF1D68921000B39A1B /* OpenSans-Semibold.ttf in Sources */,
 				00877C791D63A11700570241 /* NVActivityIndicatorViewable.swift in Sources */,
 				9562A86B1C343CD4009C0411 /* CustomData.m in Sources */,
 				006B888F1D6C8D4C00FC68C4 /* QuickMove.swift in Sources */,
