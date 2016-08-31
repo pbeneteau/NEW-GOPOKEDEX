@@ -55,17 +55,17 @@ func testHpIv(hp: Int, iv: Int, multiplier: Double, pokemon: Pokemon) -> Bool{
 
 func determinePerfection(IV: IVstruct) -> Double{
     let perfection = Double(IV.attackIV + IV.defenseIV + IV.staminaIV) / 45.0
-    return floor(perfection * 100) / 100
+    return floor(perfection * 100)
 }
 
 func determinePerfectionBattle(IV: IVstruct) -> Double{
     let perfection = Double(IV.attackIV + IV.defenseIV) / 30.0
-    return floor(perfection * 100) / 100
+    return floor(perfection * 100)
 }
 
 func determinePerfectionHp(IV: IVstruct) -> Double{
     let perfection = Double(IV.staminaIV) / 15.0
-    return floor(perfection * 100) / 100
+    return floor(perfection * 100)
 }
 
 func testCP(cp: Int, attackIV: Int, defenseIV: Int, staminaIV: Int, cpMultiplier: Double, pokemon: Pokemon) -> Bool{
@@ -81,6 +81,7 @@ func determinePossibleIVs(pokemon: Pokemon, dust: Int, cp: Int, hp: Int, powered
     // OK
     var staminaIV = 0
     var potentialsHpIVs = [[hpIVstruct]]()
+    var possible: Bool = false
     potentialsHpIVs.removeAll()
     for level in levels {
         let cpMultiplier = getCpMultiplier(level)
@@ -115,23 +116,21 @@ func determinePossibleIVs(pokemon: Pokemon, dust: Int, cp: Int, hp: Int, powered
                         IV.staminaIV = staminaIV
                         IV.level = hpIV.level
                         levelsIVs.append(IV)
+                        possible = true
                     }
                 }
             }
         }
         potentialsIVs.append(levelsIVs)
     }
+    if !possible {
+        print("No combinaison")
+        return []
+    }
     
     return potentialsIVs
 }
 
-func possibleIVs (pokemon: Pokemon, cp: Int, hp: Int, dust: Int, powered: Bool) -> [[IVstruct]] {
-    let ivs = determinePossibleIVs(pokemon, dust: cp, cp: hp, hp: dust, powered: powered);
-    if (ivs.count == 0) {
-        print("No combinaison")
-    }
-    return ivs
-}
 
 func determineIVperLevel(potentialsIVs: [IVstruct]) {
     let level = potentialsIVs[0].level
@@ -148,9 +147,10 @@ func evaluate(pokemon: Pokemon, cp: Int, hp: Int, dust: Int, powered: Bool)-> [I
     let potentialIVs = determinePossibleIVs(pokemon, dust: dust, cp: cp, hp: hp, powered: powered)
     if potentialIVs.count == 0 {
         print("No combinaison")
+    } else {
+        return averageIvsPerLevel(potentialIVs)
     }
-    let finalPotentialsIVs = averageIvsPerLevel(potentialIVs)
-    return finalPotentialsIVs
+    return []
 }
 
 func averageIvsPerLevel(potentialsIVs: [[IVstruct]]) -> [IVstruct] {
@@ -170,7 +170,7 @@ func averageIvsPerLevel(potentialsIVs: [[IVstruct]]) -> [IVstruct] {
         IV.attackIV /= count
         IV.defenseIV /= count
         IV.staminaIV /= count
-        
+        print(IV)
         IVint.attackIV = Int(round(IV.attackIV))
         IVint.defenseIV = Int(round(IV.defenseIV))
         IVint.staminaIV = Int(round(IV.staminaIV))
