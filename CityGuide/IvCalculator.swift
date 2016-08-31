@@ -58,6 +58,16 @@ func determinePerfection(IV: IVstruct) -> Double{
     return floor(perfection * 100) / 100
 }
 
+func determinePerfectionBattle(IV: IVstruct) -> Double{
+    let perfection = Double(IV.attackIV + IV.defenseIV) / 30.0
+    return floor(perfection * 100) / 100
+}
+
+func determinePerfectionHp(IV: IVstruct) -> Double{
+    let perfection = Double(IV.staminaIV) / 15.0
+    return floor(perfection * 100) / 100
+}
+
 func testCP(cp: Int, attackIV: Int, defenseIV: Int, staminaIV: Int, cpMultiplier: Double, pokemon: Pokemon) -> Bool{
     let attackFactor = Double(Int(pokemon.attack)! + attackIV)
     let defenseFactor = pow(Double(pokemon.defense)! + Double(defenseIV), 0.5)

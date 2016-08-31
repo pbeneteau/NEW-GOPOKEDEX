@@ -29,7 +29,7 @@
                             </constraints>
                             <state key="normal" image="hpCloseButton"/>
                             <connections>
-                                <action selector="handleCloseButton:" destination="tcX-jT-eoT" eventType="touchUpInside" id="tMY-4M-HDv"/>
+                                <action selector="handleBottomButton:" destination="tcX-jT-eoT" eventType="touchUpInside" id="3lH-Wi-0VC"/>
                             </connections>
                         </button>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type here..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mr3-Nz-f1R">

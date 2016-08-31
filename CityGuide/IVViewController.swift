@@ -40,7 +40,7 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
     var pickerViewLevel = UIPickerView()
     
     var levels = [String]()
-    var IV = [IVstruct]()
+    var IVs = [IVstruct]()
     var hp = 53
     var cp = 504
     var stardust = 3000
@@ -71,11 +71,37 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
     }
     
     func reloadDatas() {
-        if hpOK && cpOK && stardustOK && levelOK {
+        if hpOK && cpOK && stardustOK {
             self.hpLabel.text = "\(self.hp)"
             self.cpLabel.text = "\(self.cp)"
             self.stardustLabel.text = "\(self.stardust)"
             self.levelLabel.text = "\(self.level)"
+            loadIVsForLevel()
+        }
+    }
+    
+    func loadIVsForLevel() {
+        if hpOK && cpOK && stardustOK && levelOK {
+            self.hideAllStats(false)
+            self.IVs = evaluate(self.selectedPokemon, cp: self.cp, hp: self.hp, dust: self.stardust, powered: powered)
+            if self.IVs.count == 0 {
+                self.noCombinaisonLabel.hidden = false
+                self.noCombinaisonLabel2.hidden = false
+                self.hideAllStats(true)
+            } else {
+                self.noCombinaisonLabel.hidden = true
+                self.noCombinaisonLabel2.hidden = true
+                self.hideAllStats(false)
+                for iv in IVs {
+                    if iv.level == self.level {
+                        self.attackDefenseIv.text = "\(iv.attackIV + iv.defenseIV)"
+                        self.staminaIv.text = "\(iv.staminaIV)"
+                        self.battleRatingPerCent.text = "\(determinePerfectionBattle(iv))%"
+                        self.hpPerCent.text = "\(determinePerfectionHp(iv))%"
+                        self.cpRatingPerCent.text = "\(determinePerfection(iv))%"
+                    }
+                }
+            }
         }
     }
     
@@ -126,6 +152,8 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
             poweredLabel.layer.shadowOpacity = 0
             poweredLabel.layer.masksToBounds = false
             poweredLabel.textColor = UIColor(red:0.60, green:0.58, blue:0.58, alpha:1.0)
+            self.level = findLevels(self.stardust, powered: powered)[0]
+            self.reloadDatas()
         } else {
             powered = true
             poweredLabel.layer.shadowColor = UIColor(red:0.18, green:0.80, blue:0.44, alpha:1.0).CGColor
@@ -134,6 +162,8 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
             poweredLabel.layer.shadowOffset = CGSizeZero
             poweredLabel.layer.masksToBounds = false
             poweredLabel.textColor = UIColor(red:0.18, green:0.80, blue:0.44, alpha:1.0)
+            self.level = findLevels(self.stardust, powered: powered)[0]
+            self.reloadDatas()
         }
     }
     
@@ -145,7 +175,7 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
         view.hpTextField.text = "\(self.hp)"
         modal.showMagnitude = 200.0
         modal.closeMagnitude = 130.0
-                view.bottomButtonHandler = {[weak modal] in
+        view.bottomButtonHandler = {[weak modal] in
             modal?.closeWithLeansRandom()
             return
         }
@@ -174,7 +204,7 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
         view.stardustTextField.text = "\(self.stardust)"
         modal.showMagnitude = 200.0
         modal.closeMagnitude = 130.0
-            view.bottomButtonHandler = {[weak modal] in
+        view.bottomButtonHandler = {[weak modal] in
             modal?.closeWithLeansRandom()
             return
         }
@@ -221,44 +251,38 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-            self.selectedPokemon = pokemonList[indexPath.row]
-            self.pokemonImage.hidden = false
-            self.addButton.hidden = true
-            self.pokemonImage.setImage(pokemonList[indexPath.row].img, forState: .Normal)
-            self.tableView.hidden = true
-            self.navigationItem.title = selectedPokemon.name
+        self.selectedPokemon = pokemonList[indexPath.row]
+        self.pokemonImage.hidden = false
+        self.addButton.hidden = true
+        self.pokemonImage.setImage(pokemonList[indexPath.row].img, forState: .Normal)
+        self.tableView.hidden = true
+        self.navigationItem.title = selectedPokemon.name
+        reloadDatas()
     }
     
     
     func passHp(hp: Int) {
         self.hp = hp
-        print(self.hp)
-        print("hp sent")
         self.hpOK = true
         reloadDatas()
     }
     
     func passCp(cp: Int) {
         self.cp = cp
-        print(self.cp)
-        print("cp sent")
         self.cpOK = true
         reloadDatas()
     }
     
     func passStardust(stardust: Int) {
         self.stardust = stardust
-        print(self.stardust)
-        print("stardust sent")
         self.stardustOK = true
         self.levelCanBePressed = true
+        self.level = findLevels(self.stardust, powered: powered)[0]
         reloadDatas()
     }
     
     func passLevel(level: String) {
         self.level = level
-        print(self.level)
-        print("level sent")
         self.levelOK = true
         reloadDatas()
     }
