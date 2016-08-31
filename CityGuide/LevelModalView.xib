@@ -42,7 +42,7 @@
                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                         </textField>
                     </subviews>
-                    <color key="backgroundColor" red="0.98823529409999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="ezJ-pe-Afe" firstAttribute="centerY" secondItem="8rn-z6-Wd9" secondAttribute="centerY" constant="0.5" id="3pb-H7-vGr"/>
                         <constraint firstAttribute="trailing" secondItem="8rn-z6-Wd9" secondAttribute="trailing" constant="26" id="8tT-yQ-RBO"/>

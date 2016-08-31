@@ -39,6 +39,7 @@
                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                         </textField>
                     </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="mr3-Nz-f1R" firstAttribute="leading" secondItem="EDf-bK-x6Y" secondAttribute="leading" constant="26" id="Cg5-uZ-YwY"/>
                         <constraint firstItem="mr3-Nz-f1R" firstAttribute="centerY" secondItem="uCC-j1-lH5" secondAttribute="centerY" id="Jwq-Wc-wFD"/>
