@@ -46,23 +46,22 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
     var stardust = 3000
     var level = "21.0"
     
-    var hpOK: Bool! = false
-    var cpOK: Bool! = false
-    var stardustOK: Bool! = false
-    var levelOK: Bool! = false
-    var levelCanBePressed = false
+    var hpOK: Bool! = true
+    var cpOK: Bool! = true
+    var stardustOK: Bool! = true
+    var levelOK: Bool! = true
+    var levelCanBePressed = true
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initSwitch()
-        self.tableView.hidden = true
     }
     override func viewDidAppear(animated: Bool) {
-        selectedPokemon = pokemonList[3]
+        self.selectedPokemon = pokemonList[3]
         self.pokemonImage.hidden = true
-        initStats()
-        hideAllStats(true)
+        self.hideAllStats(true)
+        self.reloadDatas()
     }
     
     
@@ -71,26 +70,13 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
         // Dispose of any resources that can be recreated.
     }
     
-    func initStats() {
-        self.hpLabel.text = "\(self.hp)"
-        self.cpLabel.text = "\(self.cp)"
-        self.stardustLabel.text = "\(self.stardust)"
-        self.levelLabel.text = level
-    }
-    
     func reloadDatas() {
-        
-    }
-    
-    @IBAction func addButtonPressed(sender: AnyObject) {
-        self.tableView.hidden = false
-        self.navigationItem.title = "Choose your pokemon"
-        self.tableView.reloadData()
-    }
-    @IBAction func pokemonPressed(sender: AnyObject) {
-        self.tableView.hidden = false
-        self.tableView.reloadData()
-        self.navigationItem.title = "Choose your pokemon"
+        if hpOK && cpOK && stardustOK && levelOK {
+            self.hpLabel.text = "\(self.hp)"
+            self.cpLabel.text = "\(self.cp)"
+            self.stardustLabel.text = "\(self.stardust)"
+            self.levelLabel.text = "\(self.level)"
+        }
     }
     
     func hideAllStats(hide: Bool) {
@@ -120,6 +106,17 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
         poweredSwitchView.addSubview(mySwitch)
     }
     
+    @IBAction func addButtonPressed(sender: AnyObject) {
+        self.tableView.hidden = false
+        self.navigationItem.title = "Choose your pokemon"
+        self.tableView.reloadData()
+    }
+    @IBAction func pokemonPressed(sender: AnyObject) {
+        self.tableView.hidden = false
+        self.tableView.reloadData()
+        self.navigationItem.title = "Choose your pokemon"
+    }
+    
     
     func switchChanged(sender: SevenSwitch) {
         if powered {
@@ -129,7 +126,6 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
             poweredLabel.layer.shadowOpacity = 0
             poweredLabel.layer.masksToBounds = false
             poweredLabel.textColor = UIColor(red:0.60, green:0.58, blue:0.58, alpha:1.0)
-            self.levelLabel.text = findLevels(self.stardust, powered: powered)[0]
         } else {
             powered = true
             poweredLabel.layer.shadowColor = UIColor(red:0.18, green:0.80, blue:0.44, alpha:1.0).CGColor
@@ -138,7 +134,6 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
             poweredLabel.layer.shadowOffset = CGSizeZero
             poweredLabel.layer.masksToBounds = false
             poweredLabel.textColor = UIColor(red:0.18, green:0.80, blue:0.44, alpha:1.0)
-            self.levelLabel.text = findLevels(self.stardust, powered: powered)[0]
         }
     }
     
@@ -237,36 +232,35 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
     
     func passHp(hp: Int) {
         self.hp = hp
-        self.hpLabel.text = "\(self.hp)"
         print(self.hp)
         print("hp sent")
         self.hpOK = true
+        reloadDatas()
     }
     
     func passCp(cp: Int) {
         self.cp = cp
-        self.cpLabel.text = "\(self.cp)"
         print(self.cp)
         print("cp sent")
         self.cpOK = true
+        reloadDatas()
     }
     
     func passStardust(stardust: Int) {
         self.stardust = stardust
-        self.stardustLabel.text = "\(self.stardust)"
         print(self.stardust)
         print("stardust sent")
         self.stardustOK = true
         self.levelCanBePressed = true
-        self.levelLabel.text = findLevels(self.stardust, powered: powered)[0]
+        reloadDatas()
     }
     
     func passLevel(level: String) {
         self.level = level
-        self.levelLabel.text = "\(self.level)"
         print(self.level)
         print("level sent")
         self.levelOK = true
+        reloadDatas()
     }
     
     

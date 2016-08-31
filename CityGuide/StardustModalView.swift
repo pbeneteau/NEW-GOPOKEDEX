@@ -44,6 +44,7 @@ class StardustModalView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
         } else {
             print("bad entry")
             vc.stardustOK = true
+            vc.levelCanBePressed = false
         }
         
     }
