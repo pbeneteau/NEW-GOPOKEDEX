@@ -34,7 +34,7 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
     
     let mySwitch = SevenSwitch()
     var powered: Bool = false
-    var selectedPokemon = Pokemon(id: "", name: "")
+    var selectedPokemon: Pokemon!
     
     var pickerViewStardust = UIPickerView()
     var pickerViewLevel = UIPickerView()
