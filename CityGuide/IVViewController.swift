@@ -40,16 +40,16 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
     var pickerViewLevel = UIPickerView()
     
     var levels = [String]()
-    var IV: [String:[Double]]! = nil
+    var IV = [IVstruct]()
     var hp = 53
     var cp = 504
     var stardust = 3000
     var level = "21.0"
     
-    var hpOK: Bool! = true
-    var cpOK: Bool! = true
-    var stardustOK: Bool! = true
-    var levelOK: Bool! = true
+    var hpOK: Bool! = false
+    var cpOK: Bool! = false
+    var stardustOK: Bool! = false
+    var levelOK: Bool! = false
     var levelCanBePressed = false
     
     
@@ -63,9 +63,6 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
         self.pokemonImage.hidden = true
         initStats()
         hideAllStats(true)
-        getAllIV()
-        loadIVForLevel()
-        self.tableView.reloadData()
     }
     
     
@@ -81,14 +78,18 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
         self.levelLabel.text = level
     }
     
+    func reloadDatas() {
+        
+    }
+    
     @IBAction func addButtonPressed(sender: AnyObject) {
         self.tableView.hidden = false
         self.navigationItem.title = "Choose your pokemon"
+        self.tableView.reloadData()
     }
     @IBAction func pokemonPressed(sender: AnyObject) {
         self.tableView.hidden = false
-        
-        
+        self.tableView.reloadData()
         self.navigationItem.title = "Choose your pokemon"
     }
     
@@ -120,34 +121,6 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
     }
     
     
-    
-    func getAllIV() {
-        if (hpOK && cpOK && stardustOK && levelOK) {
-            IV = getIV(selectedPokemon, cp: self.cp, hp: self.hp, stardust: self.stardust, powered: powered)
-            self.hideAllStats(false)
-        }
-    }
-    
-    func loadIVForLevel() {
-        if (IV != nil) {
-            if IV[self.level]![0] != 1111.11111 {
-                let stamina = Double(IV[self.level]![0])/15.0
-                let attackDefense = Double(IV[self.level]![1])/30.0
-                attackDefenseIv.text = "\(IV[self.level]![1])"
-                staminaIv.text = "\(IV[self.level]![0])"
-                battleRatingPerCent.text = "\(floor(((attackDefense)) * 100))%"
-                hpPerCent.text = "\(floor((stamina) * 100))%"
-                cpRatingPerCent.text = "\((floor((stamina) * 100) + floor(((attackDefense)) * 100)) / 2.0)%"
-                self.noCombinaisonLabel.hidden = true
-                self.noCombinaisonLabel2.hidden = true
-            } else {
-                self.resultsMainView.hidden = true
-                self.noCombinaisonLabel.hidden = false
-                self.noCombinaisonLabel2.hidden = false
-            }
-        }
-    }
-    
     func switchChanged(sender: SevenSwitch) {
         if powered {
             powered = false
@@ -157,8 +130,6 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
             poweredLabel.layer.masksToBounds = false
             poweredLabel.textColor = UIColor(red:0.60, green:0.58, blue:0.58, alpha:1.0)
             self.levelLabel.text = findLevels(self.stardust, powered: powered)[0]
-            getAllIV()
-            loadIVForLevel()
         } else {
             powered = true
             poweredLabel.layer.shadowColor = UIColor(red:0.18, green:0.80, blue:0.44, alpha:1.0).CGColor
@@ -168,10 +139,7 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
             poweredLabel.layer.masksToBounds = false
             poweredLabel.textColor = UIColor(red:0.18, green:0.80, blue:0.44, alpha:1.0)
             self.levelLabel.text = findLevels(self.stardust, powered: powered)[0]
-            getAllIV()
-            loadIVForLevel()
         }
-        print(powered)
     }
     
     @IBAction func hpPressed(sender: AnyObject) {
@@ -273,8 +241,6 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
         print(self.hp)
         print("hp sent")
         self.hpOK = true
-        getAllIV()
-        loadIVForLevel()
     }
     
     func passCp(cp: Int) {
@@ -283,8 +249,6 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
         print(self.cp)
         print("cp sent")
         self.cpOK = true
-        getAllIV()
-        loadIVForLevel()
     }
     
     func passStardust(stardust: Int) {
@@ -303,9 +267,6 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
         print(self.level)
         print("level sent")
         self.levelOK = true
-        self.hideAllStats(false)
-        getAllIV()
-        loadIVForLevel()
     }
     
     
