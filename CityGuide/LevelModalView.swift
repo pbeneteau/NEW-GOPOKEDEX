@@ -11,12 +11,12 @@ import UIKit
 class LevelModalView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
 
     var bottomButtonHandler: (() -> Void)?
-    var closeButtonHandler: (() -> Void)?
+
     
     @IBOutlet weak var levelTextField: UITextField!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet private weak var bottomButton: UIButton!
-    @IBOutlet weak var closeButton: UIButton!
+
     var vc: IVViewController!
     var pickerView = UIPickerView()
     var levelsToPick = [String]()
@@ -34,12 +34,7 @@ class LevelModalView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     private func configure() {
-        self.contentView.layer.cornerRadius = 5.0
-        self.closeButton.layer.cornerRadius = CGRectGetHeight(self.closeButton.bounds) / 2.0
-        self.closeButton.layer.shadowColor = UIColor.blackColor().CGColor
-        self.closeButton.layer.shadowOffset = CGSizeZero
-        self.closeButton.layer.shadowOpacity = 0.3
-        self.closeButton.layer.shadowRadius = 2.0
+        self.contentView.layer.cornerRadius = 5
     }
     
     @IBAction func handleBottomButton(sender: UIButton) {
@@ -53,17 +48,7 @@ class LevelModalView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
         }
         
     }
-    @IBAction func handleCloseButton(sender: UIButton) {
-        self.closeButtonHandler?()
-        if let text = levelTextField.text where !text.isEmpty
-        {
-            vc.passLevel(levelTextField.text!)
-        } else {
-            print("bad entry")
-            vc.levelOK = false
-        }
-    }
-    
+
     func initTextField(textField: UITextField, pickerView: UIPickerView) {
         pickerView.delegate = self
         pickerView.dataSource = self

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A304a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A313a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -568,7 +568,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="097861E1-3130-4AC7-8BFF-1415E64235EE" translatesAutoresizingMaskIntoConstraints="NO" id="rMF-Xt-iP2">
+                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="E41EA5E2-EDA8-433A-99ED-D7D01534CB98" translatesAutoresizingMaskIntoConstraints="NO" id="rMF-Xt-iP2">
                                                     <rect key="frame" x="8" y="-1" width="45" height="45"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="45" id="H8D-c5-OHK"/>
@@ -1309,7 +1309,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="17" id="47u-ax-f3N">
-                                        <rect key="frame" x="0.0" y="236.5" width="375" height="17"/>
+                                        <rect key="frame" x="0.0" y="237" width="375" height="17"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="47u-ax-f3N" id="zAQ-Cq-XNe">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="17"/>
@@ -1318,11 +1318,8 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BCB-x2-JyW">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="17"/>
                                                     <subviews>
-                                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gbV-je-GUh">
+                                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gbV-je-GUh">
                                                             <rect key="frame" x="-1" y="0.0" width="375" height="17"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="17" id="6oq-6W-hHr"/>
-                                                            </constraints>
                                                             <color key="progressTintColor" red="0.17807602959999999" green="0.7696736099" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         </progressView>
@@ -1334,13 +1331,13 @@
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="1bp-z1-wCc" secondAttribute="bottom" id="Mo0-Xv-Kno"/>
-                                                        <constraint firstItem="1bp-z1-wCc" firstAttribute="leading" secondItem="gbV-je-GUh" secondAttribute="leading" constant="1" id="NFB-76-pvQ"/>
-                                                        <constraint firstItem="1bp-z1-wCc" firstAttribute="top" secondItem="gbV-je-GUh" secondAttribute="top" id="Rn3-ff-W7a"/>
-                                                        <constraint firstAttribute="trailing" secondItem="gbV-je-GUh" secondAttribute="trailing" constant="1" id="Y7d-Ij-siX"/>
-                                                        <constraint firstItem="gbV-je-GUh" firstAttribute="trailing" secondItem="1bp-z1-wCc" secondAttribute="trailing" constant="-1" id="aN8-9L-BYn"/>
-                                                        <constraint firstItem="gbV-je-GUh" firstAttribute="top" secondItem="BCB-x2-JyW" secondAttribute="top" id="aX7-xH-yuw"/>
-                                                        <constraint firstItem="1bp-z1-wCc" firstAttribute="leading" secondItem="BCB-x2-JyW" secondAttribute="leading" id="mMU-8J-GIu"/>
+                                                        <constraint firstAttribute="trailing" secondItem="1bp-z1-wCc" secondAttribute="trailing" id="DEC-zK-hMc"/>
+                                                        <constraint firstAttribute="bottom" secondItem="1bp-z1-wCc" secondAttribute="bottom" id="Dni-ya-e5i"/>
+                                                        <constraint firstItem="1bp-z1-wCc" firstAttribute="top" secondItem="gbV-je-GUh" secondAttribute="top" id="Sbh-Wh-Qku"/>
+                                                        <constraint firstItem="1bp-z1-wCc" firstAttribute="leading" secondItem="BCB-x2-JyW" secondAttribute="leading" id="cyL-lr-tuO"/>
+                                                        <constraint firstAttribute="trailing" secondItem="gbV-je-GUh" secondAttribute="trailing" constant="1" id="htM-Sj-XL6"/>
+                                                        <constraint firstItem="gbV-je-GUh" firstAttribute="leading" secondItem="BCB-x2-JyW" secondAttribute="leading" constant="-1" id="lMR-Hy-5BP"/>
+                                                        <constraint firstItem="gbV-je-GUh" firstAttribute="top" secondItem="BCB-x2-JyW" secondAttribute="top" id="pvg-Ok-fzX"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -2424,7 +2421,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="097861E1-3130-4AC7-8BFF-1415E64235EE" width="120" height="120">
+        <image name="1" width="120" height="120"/>
+        <image name="1.png" width="120" height="120"/>
+        <image name="10.png" width="120" height="120"/>
+        <image name="2.png" width="120" height="120"/>
+        <image name="4.png" width="120" height="120"/>
+        <image name="5.png" width="120" height="120"/>
+        <image name="E41EA5E2-EDA8-433A-99ED-D7D01534CB98" width="120" height="120">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -3435,12 +3438,6 @@ AL8AxADbAN0A3+qB6obqkeqa6q3qseq86sXqyurS6tXq2urp6u3q9Or86wnrDusQ6xLrF+sf6yLrJ+sv
 6zLrROtH60wAAAAAAAACAQAAAAAAAABBAAAAAAAAAAAAAAAAAADrTg
 </mutableData>
         </image>
-        <image name="1" width="120" height="120"/>
-        <image name="1.png" width="120" height="120"/>
-        <image name="10.png" width="120" height="120"/>
-        <image name="2.png" width="120" height="120"/>
-        <image name="4.png" width="120" height="120"/>
-        <image name="5.png" width="120" height="120"/>
         <image name="Poke Ball" width="320" height="568"/>
         <image name="Psychic.jpg" width="800" height="533"/>
         <image name="SplashScreen" width="320" height="568"/>

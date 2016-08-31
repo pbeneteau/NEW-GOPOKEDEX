@@ -182,11 +182,7 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
         view.hpTextField.text = "\(self.hp)"
         modal.showMagnitude = 200.0
         modal.closeMagnitude = 130.0
-        view.closeButtonHandler = {[weak modal] in
-            modal?.closeWithLeansRandom()
-            return
-        }
-        view.bottomButtonHandler = {[weak modal] in
+                view.bottomButtonHandler = {[weak modal] in
             modal?.closeWithLeansRandom()
             return
         }
@@ -200,10 +196,6 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
         view.cpTextField.text = "\(self.cp)"
         modal.showMagnitude = 200.0
         modal.closeMagnitude = 130.0
-        view.closeButtonHandler = {[weak modal] in
-            modal?.closeWithLeansRandom()
-            return
-        }
         view.bottomButtonHandler = {[weak modal] in
             modal?.closeWithLeansRandom()
             return
@@ -219,11 +211,7 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
         view.stardustTextField.text = "\(self.stardust)"
         modal.showMagnitude = 200.0
         modal.closeMagnitude = 130.0
-        view.closeButtonHandler = {[weak modal] in
-            modal?.closeWithLeansRandom()
-            return
-        }
-        view.bottomButtonHandler = {[weak modal] in
+            view.bottomButtonHandler = {[weak modal] in
             modal?.closeWithLeansRandom()
             return
         }
@@ -240,10 +228,6 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
             view.pickerView.selectRow(0, inComponent: 0, animated: true)
             modal.showMagnitude = 200.0
             modal.closeMagnitude = 130.0
-            view.closeButtonHandler = {[weak modal] in
-                modal?.closeWithLeansRandom()
-                return
-            }
             view.bottomButtonHandler = {[weak modal] in
                 modal?.closeWithLeansRandom()
                 return
@@ -325,6 +309,6 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
     }
     
     
-       
+    
     
 }

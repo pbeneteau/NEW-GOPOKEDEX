@@ -13,12 +13,10 @@ protocol hpModalViewProtocol {
 
 class HpModalView: UIView {
     var bottomButtonHandler: (() -> Void)?
-    var closeButtonHandler: (() -> Void)?
     
     @IBOutlet weak var hpTextField: UITextField!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet private weak var bottomButton: UIButton!
-    @IBOutlet weak var closeButton: UIButton!
     var vc: IVViewController!
     
     class func instantiateFromNib() -> HpModalView {
@@ -34,12 +32,8 @@ class HpModalView: UIView {
     }
     
     private func configure() {
-        self.contentView.layer.cornerRadius = 5.0
-        self.closeButton.layer.cornerRadius = CGRectGetHeight(self.closeButton.bounds) / 2.0
-        self.closeButton.layer.shadowColor = UIColor.blackColor().CGColor
-        self.closeButton.layer.shadowOffset = CGSizeZero
-        self.closeButton.layer.shadowOpacity = 0.3
-        self.closeButton.layer.shadowRadius = 2.0
+        self.contentView.layer.cornerRadius = 5
+        self.hpTextField.layer.cornerRadius = 4
     }
     
     @IBAction func handleBottomButton(sender: UIButton) {
@@ -52,16 +46,6 @@ class HpModalView: UIView {
             vc.hpOK = true
         }
 
-    }
-    @IBAction func handleCloseButton(sender: UIButton) {
-        self.closeButtonHandler?()
-        if let text = hpTextField.text where !text.isEmpty
-        {
-            vc.passHp(Int(hpTextField.text!)!)
-        } else {
-            print("bad entry")
-            vc.hpOK = true
-        }
     }
     
     func initTextField(textField: UITextField) {
