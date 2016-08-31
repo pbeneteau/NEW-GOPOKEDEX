@@ -286,7 +286,4 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
         reloadDatas()
     }
     
-    
-    
-    
 }
