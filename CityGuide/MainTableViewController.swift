@@ -32,7 +32,7 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
     var animated = false
     
     var needClose: Bool = false
-    var index: String = 0
+    var index: Int = 0
    
     
     override func viewDidLoad() {
