@@ -11,6 +11,7 @@ import UIKit
 class MenuViewController: UIViewController {
     let blurEffectMenu = UIBlurEffect(style: .Dark)
     let blurViewMenu = UIVisualEffectView(frame:CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height))
+    let viewForBlur = UIView()
     
     @IBOutlet weak var pokedexContainer: UIView!
     @IBOutlet weak var tipsContainer: UIView!
@@ -23,6 +24,9 @@ class MenuViewController: UIViewController {
         blurViewMenu.effect = blurEffectMenu
         let menu = createrMenu(self.view)
         menu.delegate = self
+        viewForBlur.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height)
+        viewForBlur.backgroundColor = UIColor.clearColor()
+        viewForBlur.addSubview(blurViewMenu)
         
         pokedexContainer.hidden = false
         tipsContainer.hidden = true

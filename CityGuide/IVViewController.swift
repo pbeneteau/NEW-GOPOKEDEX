@@ -10,7 +10,7 @@ import UIKit
 import QuartzCore
 
 
-class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataSource, hpModalViewProtocol, cpModalViewProtocol {
+class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataSource, hpModalViewProtocol, cpModalViewProtocol, UISearchBarDelegate {
     
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var pokemonImage: UIButton!
@@ -31,6 +31,10 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var battleRatingPerCent: UILabel!
     @IBOutlet weak var cpRatingPerCent: UILabel!
     @IBOutlet weak var hpPerCent: UILabel!
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    var filteredPokemons = Array<Pokemon>()
+    var inSearchMode = false
     
     let mySwitch = SevenSwitch()
     var powered: Bool = false
@@ -56,9 +60,11 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
         initSwitch()
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont (name: "OpenSans-Bold", size: 21)!,  NSForegroundColorAttributeName: UIColor.whiteColor()]
     }
     override func viewDidAppear(animated: Bool) {
         self.selectedPokemon = pokemonList[3]
+        initSearch()
         self.pokemonImage.hidden = true
         self.hideAllStats(true)
         self.reloadDatas()
@@ -68,6 +74,40 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func initSearch() {
+        searchBar.delegate = self
+        searchBar.returnKeyType = UIReturnKeyType.Done
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        view.endEditing(true)
+    }
+    
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        searchBar.showsCancelButton = true
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchBar.text = ""
+        view.endEditing(true)
+        searchBar.showsCancelButton = false
+        filteredPokemons = pokemonList
+        self.tableView.reloadData()
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text == nil || searchBar.text == "" {
+            inSearchMode = false
+            view.endEditing(true)
+            self.tableView.reloadData()
+        } else {
+            inSearchMode = true
+            let lowercaseString = searchBar.text!.lowercaseString
+            filteredPokemons = pokemonList.filter({(($0.name).lowercaseString.rangeOfString(lowercaseString) != nil)})
+            self.tableView.reloadData()
+        }
     }
     
     func reloadDatas() {
@@ -239,27 +279,49 @@ class IVViewController: UIViewController , UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return pokemonList.count
+        if inSearchMode {
+            return filteredPokemons.count
+        } else {
+            return pokemonList.count
+        }
     }
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
         
-        (cell.viewWithTag(100) as! UIImageView).image = pokemonList[indexPath.row].img
-        (cell.viewWithTag(101) as! UILabel).text = pokemonList[indexPath.row].name
+        var pokemonCopy: Pokemon
+        if inSearchMode {
+            pokemonCopy = filteredPokemons[indexPath.row]
+        } else {
+            pokemonCopy = pokemonList[indexPath.row]
+        }
+        
+        (cell.viewWithTag(100) as! UIImageView).image = pokemonCopy.img
+        (cell.viewWithTag(101) as! UILabel).text = pokemonCopy.name
         
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.selectedPokemon = pokemonList[indexPath.row]
+        if inSearchMode {
+            self.selectedPokemon = filteredPokemons[indexPath.row]
+            self.pokemonImage.setImage(filteredPokemons[indexPath.row].img, forState: .Normal)
+        } else {
+            self.selectedPokemon = pokemonList[indexPath.row]
+            self.pokemonImage.setImage(pokemonList[indexPath.row].img, forState: .Normal)
+        }
+        
         self.pokemonImage.hidden = false
         self.addButton.hidden = true
-        self.pokemonImage.setImage(pokemonList[indexPath.row].img, forState: .Normal)
         self.tableView.hidden = true
         self.navigationItem.title = selectedPokemon.name
         reloadDatas()
+        searchBar.text = ""
+        view.endEditing(true)
+        searchBar.showsCancelButton = false
+        filteredPokemons = pokemonList
+        self.tableView.reloadData()
     }
     
     func passHp(hp: Int) {

@@ -87,7 +87,6 @@
 		008C6FC61D75BDAC00A8A7FB /* LevelModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008C6FC51D75BDAC00A8A7FB /* LevelModalView.swift */; };
 		008C6FC81D75BDBF00A8A7FB /* LevelModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008C6FC71D75BDBF00A8A7FB /* LevelModalView.xib */; };
 		009A7F091D6D27130024109F /* GoPokedex_Evolutions.csv in Resources */ = {isa = PBXBuildFile; fileRef = 009A7F081D6D27130024109F /* GoPokedex_Evolutions.csv */; };
-		009A7F0B1D6D2ADF0024109F /* balea.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 009A7F0A1D6D2ADF0024109F /* balea.gpx */; };
 		009A7F131D6F4D6A0024109F /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009A7F121D6F4D6A0024109F /* MenuViewController.swift */; };
 		009A7F161D6F62DC0024109F /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009A7F151D6F62DC0024109F /* ItemsViewController.swift */; };
 		00A4AA301D69B7140013B4A2 /* PathMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A4AA2E1D69B7140013B4A2 /* PathMenu.swift */; };
@@ -237,7 +236,6 @@
 		008C6FC51D75BDAC00A8A7FB /* LevelModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelModalView.swift; sourceTree = "<group>"; };
 		008C6FC71D75BDBF00A8A7FB /* LevelModalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LevelModalView.xib; sourceTree = "<group>"; };
 		009A7F081D6D27130024109F /* GoPokedex_Evolutions.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GoPokedex_Evolutions.csv; sourceTree = "<group>"; };
-		009A7F0A1D6D2ADF0024109F /* balea.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = balea.gpx; sourceTree = "<group>"; };
 		009A7F121D6F4D6A0024109F /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		009A7F151D6F62DC0024109F /* ItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 		00A4AA2E1D69B7140013B4A2 /* PathMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathMenu.swift; sourceTree = "<group>"; };
@@ -574,13 +572,13 @@
 			name = Menu;
 			sourceTree = "<group>";
 		};
-		00A4AA331D69B7330013B4A2 /* TableView */ = {
+		00A4AA331D69B7330013B4A2 /* Pokedex Cells */ = {
 			isa = PBXGroup;
 			children = (
 				00BD02361D64DF4A00EAAB9D /* FoldingCell.swift */,
 				00BD02381D64E04600EAAB9D /* DemoCell.swift */,
 			);
-			name = TableView;
+			name = "Pokedex Cells";
 			sourceTree = "<group>";
 		};
 		00BD023C1D64E22800EAAB9D /* Fonts */ = {
@@ -606,7 +604,6 @@
 		9562A8071C343A30009C0411 = {
 			isa = PBXGroup;
 			children = (
-				009A7F0A1D6D2ADF0024109F /* balea.gpx */,
 				DB24BCC81C3583A2006B129C /* Frameworks */,
 				9562A8701C3445A0009C0411 /* Resources */,
 				9562A8121C343A30009C0411 /* CityGuide */,
@@ -633,10 +630,10 @@
 				006B88831D6C8C0400FC68C4 /* Database */,
 				006B88821D6C8BF200FC68C4 /* Utils */,
 				006B88811D6C8BE000FC68C4 /* Classes */,
-				00A4AA331D69B7330013B4A2 /* TableView */,
 				00A4AA321D69B71F0013B4A2 /* Menu */,
 				006B884F1D6B3B3C00FC68C4 /* Tips */,
 				38F07F2A1D7046D4008B1E91 /* Items */,
+				00A4AA331D69B7330013B4A2 /* Pokedex Cells */,
 				006B884E1D6B3B2600FC68C4 /* PokemonDetails */,
 				0036E4231D7310E500C98905 /* IV Calculator */,
 				9562A8131C343A30009C0411 /* AppDelegate.swift */,
@@ -843,7 +840,6 @@
 				00ECECDB1D67CDA000443918 /* Psychic.jpg in Resources */,
 				00ECECD51D67CDA000443918 /* Fighting.jpg in Resources */,
 				9562A8191C343A30009C0411 /* Main.storyboard in Resources */,
-				009A7F0B1D6D2ADF0024109F /* balea.gpx in Resources */,
 				00ECECDA1D67CDA000443918 /* Poison.jpg in Resources */,
 				009A7F091D6D27130024109F /* GoPokedex_Evolutions.csv in Resources */,
 				0007B3551D70FBA400821141 /* GoPokedex_QuickMovesFinal.csv in Resources */,
@@ -1099,11 +1095,10 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/parse-library-1.11.0",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = CityGuide/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tastyapp.gopokedex;
@@ -1126,11 +1121,10 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/parse-library-1.11.0",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = CityGuide/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tastyapp.gopokedex;

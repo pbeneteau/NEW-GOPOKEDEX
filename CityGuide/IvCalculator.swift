@@ -132,17 +132,6 @@ func determinePossibleIVs(pokemon: Pokemon, dust: Int, cp: Int, hp: Int, powered
 }
 
 
-func determineIVperLevel(potentialsIVs: [IVstruct]) {
-    let level = potentialsIVs[0].level
-    var ivsPerLevel = [IVstruct]()
-    ivsPerLevel.removeAll()
-    for iv in potentialsIVs {
-        if iv.level == level {
-            
-        }
-    }
-}
-
 func evaluate(pokemon: Pokemon, cp: Int, hp: Int, dust: Int, powered: Bool)-> [IVstruct] {
     let potentialIVs = determinePossibleIVs(pokemon, dust: dust, cp: cp, hp: hp, powered: powered)
     if potentialIVs.count == 0 {
@@ -157,26 +146,28 @@ func averageIvsPerLevel(potentialsIVs: [[IVstruct]]) -> [IVstruct] {
     var finalPotentialsIVs = [IVstruct]()
     finalPotentialsIVs.removeAll()
     for block in potentialsIVs {
-        var  IV = FinalIV()
-        var IVint = IVstruct()
-        var count = 0.0
-        for iv in block {
-            IV.attackIV += Double(iv.attackIV)
-            IV.defenseIV += Double(iv.defenseIV)
-            IV.staminaIV += Double(iv.staminaIV)
-            IV.level = iv.level
-            count += 1.0
+        if block.count != 0 {
+            var  IV = FinalIV()
+            var IVint = IVstruct()
+            var count = 0.0
+            for iv in block {
+                IV.attackIV += Double(iv.attackIV)
+                IV.defenseIV += Double(iv.defenseIV)
+                IV.staminaIV += Double(iv.staminaIV)
+                IV.level = iv.level
+                count += 1.0
+            }
+            IV.attackIV /= count
+            IV.defenseIV /= count
+            IV.staminaIV /= count
+            print(IV)
+            IVint.attackIV = Int(round(IV.attackIV))
+            IVint.defenseIV = Int(round(IV.defenseIV))
+            IVint.staminaIV = Int(round(IV.staminaIV))
+            IVint.level = IV.level
+            
+            finalPotentialsIVs.append(IVint)
         }
-        IV.attackIV /= count
-        IV.defenseIV /= count
-        IV.staminaIV /= count
-        print(IV)
-        IVint.attackIV = Int(round(IV.attackIV))
-        IVint.defenseIV = Int(round(IV.defenseIV))
-        IVint.staminaIV = Int(round(IV.staminaIV))
-        IVint.level = IV.level
-        
-        finalPotentialsIVs.append(IVint)
     }
     return finalPotentialsIVs
 }

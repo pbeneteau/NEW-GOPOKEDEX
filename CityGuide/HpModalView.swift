@@ -14,7 +14,8 @@ protocol hpModalViewProtocol {
 class HpModalView: UIView {
     var bottomButtonHandler: (() -> Void)?
     
-    @IBOutlet weak var hpTextField: UITextField!
+
+    @IBOutlet weak var hpTextField: CustomUITextField!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet private weak var bottomButton: UIButton!
     var vc: IVViewController!

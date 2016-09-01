@@ -10,6 +10,8 @@ import UIKit
 
 class DemoCell: FoldingCell {
     
+    var pokemonId: Int!
+    
     @IBOutlet weak var _imgBack: UIView!
     @IBOutlet weak var _img: UIImageView!
    // @IBOutlet weak var _idLabel: UILabel!
@@ -45,6 +47,7 @@ class DemoCell: FoldingCell {
 
     @IBOutlet weak var noEvolutionLabel: UILabel!
     
+    @IBOutlet weak var moreButton: UIButton!
     
     
     private var _name: String!
@@ -52,7 +55,10 @@ class DemoCell: FoldingCell {
     var number: Int = 0 {
         didSet {
         }
+        
     }
+    
+    var vc = MainTableViewController()
     
     func initHeader(pokemon: Pokemon) {
         self._img.image = pokemon.img
@@ -118,6 +124,11 @@ class DemoCell: FoldingCell {
             self._arrowEvo1.hide()
             self.noEvolutionLabel.hidden = false
         }
+    }
+    
+    
+    @IBAction func moreButtonPressed(sender: AnyObject) {
+        self.vc.selectedPokemon = self.pokemonId
     }
     
     override func prepareForReuse() {

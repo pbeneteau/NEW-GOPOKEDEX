@@ -87,13 +87,13 @@ extension MenuViewController: PathMenuDelegate {
     
     func pathMenuWillAnimateOpen(menu: PathMenu) {
         print("Menu will open!")
-        self.view.insertSubview(self.blurViewMenu, atIndex: 7)
-        self.blurViewMenu.fadeInMenu()
+        self.view.insertSubview(self.viewForBlur, atIndex: 7)
+        self.viewForBlur.fadeInMenu()
     }
     
     func pathMenuWillAnimateClose(menu: PathMenu) {
         print("Menu will close!")
-        self.blurViewMenu.fadeOutMenu()
+        self.viewForBlur.fadeOutMenu()
     }
     
     func pathMenuDidFinishAnimationOpen(menu: PathMenu) {

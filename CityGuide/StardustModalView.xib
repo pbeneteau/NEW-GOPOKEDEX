@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="16A304a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -21,7 +22,7 @@
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stardustBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Ep6-Th-GtO">
                             <rect key="frame" x="0.0" y="0.0" width="280" height="300"/>
                         </imageView>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2uP-nW-VEf">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2uP-nW-VEf" customClass="CustomUITextField" customModule="Go_Pokedex" customModuleProvider="target">
                             <rect key="frame" x="26" y="117" width="139" height="30"/>
                             <color key="textColor" red="0.59590416909999999" green="0.58171597460000002" blue="0.58171597460000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="14"/>
@@ -64,7 +65,7 @@
             <connections>
                 <outlet property="bottomButton" destination="5om-b5-CRk" id="umm-Le-RVQ"/>
                 <outlet property="contentView" destination="N4v-pr-3h6" id="dy2-e7-Rms"/>
-                <outlet property="stardustTextField" destination="2uP-nW-VEf" id="vjT-cG-ngK"/>
+                <outlet property="stardustTextField" destination="2uP-nW-VEf" id="bhZ-L9-o1Y"/>
             </connections>
             <point key="canvasLocation" x="129" y="292"/>
         </view>

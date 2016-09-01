@@ -16,7 +16,8 @@ class CpModalView: UIView {
 
     var bottomButtonHandler: (() -> Void)?
     
-    @IBOutlet weak var cpTextField: UITextField!
+
+    @IBOutlet weak var cpTextField: CustomUITextField!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet private weak var bottomButton: UIButton!
     var vc: IVViewController!

@@ -13,7 +13,8 @@ class StardustModalView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
     var bottomButtonHandler: (() -> Void)?
     
     
-    @IBOutlet weak var stardustTextField: UITextField!
+
+    @IBOutlet weak var stardustTextField: CustomUITextField!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet private weak var bottomButton: UIButton!
     

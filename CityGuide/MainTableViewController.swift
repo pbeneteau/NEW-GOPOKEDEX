@@ -32,6 +32,8 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
     var animated = false
     
     var needClose: Bool = false
+    
+    var index = 0
    
     
     override func viewDidLoad() {
@@ -46,21 +48,18 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
         initPokemon()
         initSearch()
         animateTable()
-        delay(1.5) {
-            self.tableview.backgroundColor = UIColor(red:0.16, green:0.50, blue:0.73, alpha:1.0)
-        }
-            }
-   
-    func delay(delay: Double, closure: ()->()) {
-        dispatch_after(
-            dispatch_time(
-                DISPATCH_TIME_NOW,
-                Int64(delay * Double(NSEC_PER_SEC))
-            ),
-            dispatch_get_main_queue(),
-            closure
-        )
     }
+   
+//    func delay(delay: Double, closure: ()->()) {
+//        dispatch_after(
+//            dispatch_time(
+//                DISPATCH_TIME_NOW,
+//                Int64(delay * Double(NSEC_PER_SEC))
+//            ),
+//            dispatch_get_main_queue(),
+//            closure
+//        )
+//    }
     
     func initPokemon() {
         pokemonList = initAllPokemons()
@@ -169,6 +168,8 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
         cell.initHeader(pokemonCopy)
         cell.initMidCell(pokemonCopy)
         cell.initEvolution(pokemonCopy)
+        cell.vc = self
+        cell.pokemonId = indexPath.row
         
         return cell
     }
@@ -182,7 +183,6 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         let cell = tableView.cellForRowAtIndexPath(indexPath) as! FoldingCell
-        selectedPokemon = indexPath.row
         if cell.isAnimating() {
             return
         }
@@ -196,7 +196,7 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
             cellHeights[indexPath.row] = kOpenCellHeight
             cell.selectedAnimation(true, animated: true, completion: nil)
             duration = 0.5
-        } else {// close cell
+        } else { // close cell
             cellHeights[indexPath.row] = kCloseCellHeight
             cell.selectedAnimation(false, animated: true, completion: nil)
             duration = 0.8
@@ -215,20 +215,20 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
         let cells = tableview.visibleCells
         let tableHeight: CGFloat = tableview.bounds.size.height
         
-        for i in cells {
-            let cell: UITableViewCell = i as UITableViewCell
-            cell.transform = CGAffineTransformMakeTranslation(0, tableHeight)
-        }
-        
-        var index = 0
-        
-        for a in cells {
-            let cell: UITableViewCell = a as UITableViewCell
-            UIView.animateWithDuration(1.5, delay: 0.05 * Double(index), usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: UIViewAnimationOptions.CurveEaseIn , animations: {
-                cell.transform = CGAffineTransformMakeTranslation(0, 0);
-                }, completion: nil)
+        if index <= cells.count {
+            for i in cells {
+                let cell: UITableViewCell = i as UITableViewCell
+                cell.transform = CGAffineTransformMakeTranslation(0, tableHeight)
+            }
             
-            index += 1
+            for a in cells {
+                let cell: UITableViewCell = a as UITableViewCell
+                UIView.animateWithDuration(1.0, delay: 0.05 * Double(index), usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: UIViewAnimationOptions.CurveEaseIn , animations: {
+                    cell.transform = CGAffineTransformMakeTranslation(0, 0);
+                    }, completion: nil)
+                
+                self.index += 1
+            }
         }
     }
 
