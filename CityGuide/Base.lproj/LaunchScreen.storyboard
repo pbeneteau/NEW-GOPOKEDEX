@@ -39,6 +39,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cover.jpg" width="135" height="38"/>
+        <image name="cover.jpg" width="26" height="26"/>
     </resources>
 </document>

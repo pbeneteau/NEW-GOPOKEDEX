@@ -94,6 +94,14 @@
 		00A4AA351D69B8660013B4A2 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A4AA341D69B8660013B4A2 /* MenuController.swift */; };
 		00A4AA3E1D6A52AE0013B4A2 /* Fire.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00A4AA3D1D6A52AE0013B4A2 /* Fire.jpg */; };
 		00A4AA421D6A75640013B4A2 /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A4AA411D6A75640013B4A2 /* TipsViewController.swift */; };
+		00BA7C5D1D78983E004D9466 /* pokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA7C5C1D78983E004D9466 /* pokemonDetailViewController.swift */; };
+		00BA7C5F1D789C2B004D9466 /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA7C5E1D789C2B004D9466 /* CAPSPageMenu.swift */; };
+		00BA7C681D789DCF004D9466 /* Infos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA7C671D789DCF004D9466 /* Infos.swift */; };
+		00BA7C6A1D789DD7004D9466 /* Spell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA7C691D789DD7004D9466 /* Spell.swift */; };
+		00BA7C6C1D789DE3004D9466 /* AdvWeak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA7C6B1D789DE3004D9466 /* AdvWeak.swift */; };
+		00BA7C6E1D789DF0004D9466 /* infos.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00BA7C6D1D789DF0004D9466 /* infos.xib */; };
+		00BA7C701D789DF7004D9466 /* Spell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00BA7C6F1D789DF7004D9466 /* Spell.xib */; };
+		00BA7C721D789DFE004D9466 /* AdvWeak.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00BA7C711D789DFE004D9466 /* AdvWeak.xib */; };
 		00BD02371D64DF4A00EAAB9D /* FoldingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD02361D64DF4A00EAAB9D /* FoldingCell.swift */; };
 		00BD02391D64E04600EAAB9D /* DemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD02381D64E04600EAAB9D /* DemoCell.swift */; };
 		00BD023B1D64E0E100EAAB9D /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD023A1D64E0E100EAAB9D /* MainTableViewController.swift */; };
@@ -243,6 +251,14 @@
 		00A4AA341D69B8660013B4A2 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		00A4AA3D1D6A52AE0013B4A2 /* Fire.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Fire.jpg; sourceTree = "<group>"; };
 		00A4AA411D6A75640013B4A2 /* TipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
+		00BA7C5C1D78983E004D9466 /* pokemonDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pokemonDetailViewController.swift; sourceTree = "<group>"; };
+		00BA7C5E1D789C2B004D9466 /* CAPSPageMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAPSPageMenu.swift; sourceTree = "<group>"; };
+		00BA7C671D789DCF004D9466 /* Infos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Infos.swift; sourceTree = "<group>"; };
+		00BA7C691D789DD7004D9466 /* Spell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spell.swift; sourceTree = "<group>"; };
+		00BA7C6B1D789DE3004D9466 /* AdvWeak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvWeak.swift; sourceTree = "<group>"; };
+		00BA7C6D1D789DF0004D9466 /* infos.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = infos.xib; sourceTree = "<group>"; };
+		00BA7C6F1D789DF7004D9466 /* Spell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Spell.xib; sourceTree = "<group>"; };
+		00BA7C711D789DFE004D9466 /* AdvWeak.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdvWeak.xib; sourceTree = "<group>"; };
 		00BD02361D64DF4A00EAAB9D /* FoldingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoldingCell.swift; sourceTree = "<group>"; };
 		00BD02381D64E04600EAAB9D /* DemoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCell.swift; sourceTree = "<group>"; };
 		00BD023A1D64E0E100EAAB9D /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
@@ -341,6 +357,7 @@
 		0036E4231D7310E500C98905 /* IV Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				008C6FB31D75129100A8A7FB /* PathDynamicModal.swift */,
 				008C6FC51D75BDAC00A8A7FB /* LevelModalView.swift */,
 				008C6FC71D75BDBF00A8A7FB /* LevelModalView.xib */,
 				008C6FC31D75B7BF00A8A7FB /* StardustModalView.swift */,
@@ -363,6 +380,8 @@
 				95CE1E551C3549F600D51E3B /* DetailViewController.swift */,
 				00D0A9DB1D606FAF0005E3E2 /* quickMovesViewController.swift */,
 				00ECECDE1D67CDBF00443918 /* chargeMovesViewController.swift */,
+				00BA7C5C1D78983E004D9466 /* pokemonDetailViewController.swift */,
+				00BA7C601D789D57004D9466 /* TabViews */,
 			);
 			name = PokemonDetails;
 			sourceTree = "<group>";
@@ -581,6 +600,19 @@
 			name = "Pokedex Cells";
 			sourceTree = "<group>";
 		};
+		00BA7C601D789D57004D9466 /* TabViews */ = {
+			isa = PBXGroup;
+			children = (
+				00BA7C6D1D789DF0004D9466 /* infos.xib */,
+				00BA7C671D789DCF004D9466 /* Infos.swift */,
+				00BA7C6F1D789DF7004D9466 /* Spell.xib */,
+				00BA7C691D789DD7004D9466 /* Spell.swift */,
+				00BA7C711D789DFE004D9466 /* AdvWeak.xib */,
+				00BA7C6B1D789DE3004D9466 /* AdvWeak.swift */,
+			);
+			name = TabViews;
+			sourceTree = "<group>";
+		};
 		00BD023C1D64E22800EAAB9D /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -638,11 +670,11 @@
 				0036E4231D7310E500C98905 /* IV Calculator */,
 				9562A8131C343A30009C0411 /* AppDelegate.swift */,
 				9562A8151C343A30009C0411 /* ViewController.swift */,
-				008C6FB31D75129100A8A7FB /* PathDynamicModal.swift */,
 				0036E42E1D732FA800C98905 /* Assets.xcassets */,
 				0007B3471D706CB300821141 /* Settings */,
 				9562A8171C343A30009C0411 /* Main.storyboard */,
 				9562A81C1C343A30009C0411 /* LaunchScreen.storyboard */,
+				00BA7C5E1D789C2B004D9466 /* CAPSPageMenu.swift */,
 				9562A81F1C343A30009C0411 /* Info.plist */,
 				9562A86A1C343CD4009C0411 /* CustomData.m */,
 			);
@@ -819,6 +851,7 @@
 				00ECECDC1D67CDA000443918 /* Steel.jpg in Resources */,
 				008C6FC81D75BDBF00A8A7FB /* LevelModalView.xib in Resources */,
 				00ECECDD1D67CDA000443918 /* Water.jpg in Resources */,
+				00BA7C701D789DF7004D9466 /* Spell.xib in Resources */,
 				00ECECD31D67CDA000443918 /* Bug.jpg in Resources */,
 				006B88511D6B3BE500FC68C4 /* TipsHeaderView.xib in Resources */,
 				00A4AA3E1D6A52AE0013B4A2 /* Fire.jpg in Resources */,
@@ -831,12 +864,14 @@
 				00ECECD81D67CDA000443918 /* Ice.jpg in Resources */,
 				00ECECD71D67CDA000443918 /* Grass.jpg in Resources */,
 				0007B3611D71C28700821141 /* GoPokedex_SpeciesFinal.csv in Resources */,
+				00BA7C721D789DFE004D9466 /* AdvWeak.xib in Resources */,
 				008C6FC01D7594DA00A8A7FB /* CpModalView.xib in Resources */,
 				0007B3651D724A9200821141 /* GoPokedex_ChargeMovesFinal.csv in Resources */,
 				0036E42F1D732FA800C98905 /* Assets.xcassets in Resources */,
 				0007B35B1D71021D00821141 /* GoPokedex_TypesFinal.csv in Resources */,
 				00ECECD61D67CDA000443918 /* Flying.jpg in Resources */,
 				00877C751D63A11700570241 /* Info.plist in Resources */,
+				00BA7C6E1D789DF0004D9466 /* infos.xib in Resources */,
 				00ECECDB1D67CDA000443918 /* Psychic.jpg in Resources */,
 				00ECECD51D67CDA000443918 /* Fighting.jpg in Resources */,
 				9562A8191C343A30009C0411 /* Main.storyboard in Resources */,
@@ -869,6 +904,7 @@
 			files = (
 				006B88531D6B3D2100FC68C4 /* TipsDescriptionl.swift in Sources */,
 				008C6FBB1D751C2800A8A7FB /* HpModalView.swift in Sources */,
+				00BA7C5F1D789C2B004D9466 /* CAPSPageMenu.swift in Sources */,
 				00877C791D63A11700570241 /* NVActivityIndicatorViewable.swift in Sources */,
 				9562A86B1C343CD4009C0411 /* CustomData.m in Sources */,
 				006B888F1D6C8D4C00FC68C4 /* QuickMove.swift in Sources */,
@@ -908,6 +944,7 @@
 				006B88941D6C8D6C00FC68C4 /* Constants.swift in Sources */,
 				00A4AA311D69B7140013B4A2 /* PathMenuItem.swift in Sources */,
 				9562A8141C343A30009C0411 /* AppDelegate.swift in Sources */,
+				00BA7C681D789DCF004D9466 /* Infos.swift in Sources */,
 				00877C2A1D63A06600570241 /* RAMAnimatedTabBarController.swift in Sources */,
 				006B88571D6B409600FC68C4 /* RoundImage.swift in Sources */,
 				00877C581D63A11700570241 /* NVActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
@@ -917,6 +954,7 @@
 				006B885B1D6B73D900FC68C4 /* TipsRow.swift in Sources */,
 				00877C781D63A11700570241 /* NVActivityIndicatorView.swift in Sources */,
 				00877C681D63A11700570241 /* NVActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
+				00BA7C6A1D789DD7004D9466 /* Spell.swift in Sources */,
 				00877C271D63A06600570241 /* RAMFumeAnimation.swift in Sources */,
 				006B88971D6C8D6C00FC68C4 /* utils.swift in Sources */,
 				00BD023B1D64E0E100EAAB9D /* MainTableViewController.swift in Sources */,
@@ -935,6 +973,7 @@
 				00877C691D63A11700570241 /* NVActivityIndicatorAnimationBlank.swift in Sources */,
 				00D0A9DC1D606FAF0005E3E2 /* quickMovesViewController.swift in Sources */,
 				0007B3531D70F87300821141 /* Types.swift in Sources */,
+				00BA7C6C1D789DE3004D9466 /* AdvWeak.swift in Sources */,
 				00877C6C1D63A11700570241 /* NVActivityIndicatorAnimationLineScaleParty.swift in Sources */,
 				00877C701D63A11700570241 /* NVActivityIndicatorAnimationOrbit.swift in Sources */,
 				009A7F161D6F62DC0024109F /* ItemsViewController.swift in Sources */,
@@ -947,6 +986,7 @@
 				006B88551D6B3D8E00FC68C4 /* TipsHeaderView.swift in Sources */,
 				00877C281D63A06600570241 /* RAMRotationAnimation.swift in Sources */,
 				00877C2C1D63A06600570241 /* RAMItemAnimationProtocol.swift in Sources */,
+				00BA7C5D1D78983E004D9466 /* pokemonDetailViewController.swift in Sources */,
 				00877C5C1D63A11700570241 /* NVActivityIndicatorAnimationBallPulse.swift in Sources */,
 				006B888E1D6C8D4C00FC68C4 /* Pokemon.swift in Sources */,
 			);
