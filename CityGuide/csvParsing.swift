@@ -48,7 +48,7 @@ public class CSVReader {
         var i = 0
         for line in _lines {
             if line.isEmpty {
-                _lines.removeAtIndex(i--)
+                _lines.removeAtIndex(i++)
             }
             i += 1
         }

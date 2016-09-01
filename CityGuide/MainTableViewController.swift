@@ -32,6 +32,8 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
     var animated = false
     
     var needClose: Bool = false
+    
+    var animatonNumber: Int = 0
    
     
     override func viewDidLoad() {
@@ -45,7 +47,12 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidAppear(animated: Bool) {
         initPokemon()
         initSearch()
+        
+        if animatonNumber == 0 {
         animateTable()
+        animatonNumber = 1
+        }
+        
         delay(1.5) {
             self.tableview.backgroundColor = UIColor(red:0.16, green:0.50, blue:0.73, alpha:1.0)
         }

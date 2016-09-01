@@ -916,7 +916,6 @@
 				006B88571D6B409600FC68C4 /* RoundImage.swift in Sources */,
 				00877C581D63A11700570241 /* NVActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
 				000B7AD51D68902300B39A1B /* PokedexViewController.swift in Sources */,
-				006B88951D6C8D6C00FC68C4 /* csvParsing.swift in Sources */,
 				00877C6F1D63A11700570241 /* NVActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				006B885B1D6B73D900FC68C4 /* TipsRow.swift in Sources */,
 				00877C781D63A11700570241 /* NVActivityIndicatorView.swift in Sources */,
@@ -953,6 +952,7 @@
 				00877C2C1D63A06600570241 /* RAMItemAnimationProtocol.swift in Sources */,
 				00877C5C1D63A11700570241 /* NVActivityIndicatorAnimationBallPulse.swift in Sources */,
 				006B888E1D6C8D4C00FC68C4 /* Pokemon.swift in Sources */,
+				006B88951D6C8D6C00FC68C4 /* csvParsing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
