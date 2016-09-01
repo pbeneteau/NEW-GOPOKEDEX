@@ -32,8 +32,6 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
     var animated = false
     
     var needClose: Bool = false
-    
-    var animatonNumber: Int = 0
    
     
     override func viewDidLoad() {
@@ -47,12 +45,7 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidAppear(animated: Bool) {
         initPokemon()
         initSearch()
-        
-        if animatonNumber == 0 {
         animateTable()
-        animatonNumber = 1
-        }
-        
         delay(1.5) {
             self.tableview.backgroundColor = UIColor(red:0.16, green:0.50, blue:0.73, alpha:1.0)
         }
@@ -69,16 +62,7 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
         )
     }
    
-//    func delay(delay: Double, closure: ()->()) {
-//        dispatch_after(
-//            dispatch_time(
-//                DISPATCH_TIME_NOW,
-//                Int64(delay * Double(NSEC_PER_SEC))
-//            ),
-//            dispatch_get_main_queue(),
-//            closure
-//        )
-//    }
+
     
     func initPokemon() {
         pokemonList = initAllPokemons()
