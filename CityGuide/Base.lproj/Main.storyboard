@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A304a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="HelveticaNeue.ttc">
@@ -560,9 +560,15 @@
                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WQD-Y2-QaY">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="GcK-m1-fIt">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <color key="barTintColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="XpL-US-cEs">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="72" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XpL-US-cEs" id="2aL-3Z-ChF">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -683,6 +689,7 @@
                         <outlet property="poweredLabel" destination="lgw-IW-bQl" id="JXf-t6-m2q"/>
                         <outlet property="poweredSwitchView" destination="7Oj-68-u7f" id="wjU-eD-v0t"/>
                         <outlet property="resultsMainView" destination="Zk9-4p-rNH" id="xSZ-5G-XL2"/>
+                        <outlet property="searchBar" destination="GcK-m1-fIt" id="EKp-8r-ADq"/>
                         <outlet property="staminaIv" destination="Kcl-pe-BgE" id="1pH-8T-9DH"/>
                         <outlet property="stardustLabel" destination="yyZ-1F-O98" id="xgi-0y-aSq"/>
                         <outlet property="tableView" destination="WQD-Y2-QaY" id="UeU-7d-sbb"/>
@@ -2228,10 +2235,8 @@
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <connections>
-                                                                <segue destination="teR-9m-ZqF" kind="push" identifier="DetailSegue" id="0Iq-ZC-BOt">
-                                                                    <segue key="commit" inheritsFrom="parent" id="bTf-zk-0gf"/>
-                                                                    <segue key="preview" inheritsFrom="commit" id="9jh-li-QZx"/>
-                                                                </segue>
+                                                                <action selector="moreButtonPressed:" destination="eBE-Pb-8ue" eventType="touchUpInside" id="aUg-OL-o0I"/>
+                                                                <segue destination="teR-9m-ZqF" kind="push" identifier="DetailSegue" id="fXf-B9-S8A"/>
                                                             </connections>
                                                         </button>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OU2-kN-35o">
@@ -2382,6 +2387,7 @@
                                     <outlet property="containerViewTop" destination="NV6-BV-FSV" id="dqY-JB-qGo"/>
                                     <outlet property="foregroundView" destination="JIM-RJ-gcu" id="GzA-F7-DVN"/>
                                     <outlet property="foregroundViewTop" destination="IIZ-Eu-gUd" id="evJ-hU-WEw"/>
+                                    <outlet property="moreButton" destination="gme-hc-EVQ" id="zGM-n6-Nfu"/>
                                     <outlet property="noEvolutionLabel" destination="pOc-tg-Qt0" id="P8b-3v-MN4"/>
                                     <outlet property="typeCase1View" destination="5nc-e6-8C8" id="Kct-Wn-b5c"/>
                                     <outlet property="typeCase2View" destination="jfp-Ck-q5J" id="Hst-ew-VBS"/>
@@ -2417,7 +2423,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wym-ZZ-Tzu" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="2Wo-7f-bf2" customClass="RAMBounceAnimation" customModule="Go_Pokedex" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="510" y="537"/>
+            <point key="canvasLocation" x="405" y="537"/>
         </scene>
     </scenes>
     <resources>
@@ -2438,7 +2444,4 @@
         <image name="pokedex" width="15" height="26"/>
         <image name="red_headerIV" width="375" height="335"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="bTf-zk-0gf"/>
-    </inferredMetricsTieBreakers>
 </document>

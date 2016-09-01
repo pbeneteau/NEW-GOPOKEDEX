@@ -13,7 +13,7 @@ class LevelModalView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     var bottomButtonHandler: (() -> Void)?
 
     
-    @IBOutlet weak var levelTextField: UITextField!
+    @IBOutlet weak var levelTextField: CustomUITextField!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet private weak var bottomButton: UIButton!
 

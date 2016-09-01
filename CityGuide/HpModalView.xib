@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="16A304a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -32,7 +33,7 @@
                                 <action selector="handleBottomButton:" destination="tcX-jT-eoT" eventType="touchUpInside" id="3lH-Wi-0VC"/>
                             </connections>
                         </button>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type here..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mr3-Nz-f1R">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type here..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mr3-Nz-f1R" customClass="CustomUITextField" customModule="Go_Pokedex" customModuleProvider="target">
                             <rect key="frame" x="26" y="117" width="139" height="30"/>
                             <color key="textColor" red="0.59590416909999999" green="0.58171597460000002" blue="0.58171597460000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="14"/>
@@ -62,7 +63,7 @@
             <connections>
                 <outlet property="bottomButton" destination="uCC-j1-lH5" id="c4f-Oz-f9H"/>
                 <outlet property="contentView" destination="EDf-bK-x6Y" id="Xg6-Y8-hGL"/>
-                <outlet property="hpTextField" destination="mr3-Nz-f1R" id="Od5-O8-A83"/>
+                <outlet property="hpTextField" destination="mr3-Nz-f1R" id="Qwk-xc-MCy"/>
             </connections>
             <point key="canvasLocation" x="-5" y="185"/>
         </view>

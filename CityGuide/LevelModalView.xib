@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="16A313a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="16A304a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -35,7 +36,7 @@
                                 <action selector="handleBottomButton:" destination="bwp-sz-6ZP" eventType="touchUpInside" id="CBV-Dm-Z73"/>
                             </connections>
                         </button>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ezJ-pe-Afe">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ezJ-pe-Afe" customClass="CustomUITextField" customModule="Go_Pokedex" customModuleProvider="target">
                             <rect key="frame" x="26" y="117" width="139" height="30"/>
                             <color key="textColor" red="0.59590416909999999" green="0.58171597460000002" blue="0.58171597460000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="14"/>
@@ -65,7 +66,7 @@
             <connections>
                 <outlet property="bottomButton" destination="8rn-z6-Wd9" id="ffh-Ef-eDH"/>
                 <outlet property="contentView" destination="9lv-7i-zpe" id="etf-PC-Z6x"/>
-                <outlet property="levelTextField" destination="ezJ-pe-Afe" id="Mya-9Q-RpW"/>
+                <outlet property="levelTextField" destination="ezJ-pe-Afe" id="dtx-bw-dhc"/>
             </connections>
             <point key="canvasLocation" x="361" y="291"/>
         </view>

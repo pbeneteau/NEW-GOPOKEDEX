@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="16A304a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -35,7 +36,7 @@
                                 <action selector="handleBottomButton:" destination="TOX-af-jo4" eventType="touchUpInside" id="lyb-z7-Wv8"/>
                             </connections>
                         </button>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sOX-nY-gIa">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sOX-nY-gIa" customClass="CustomUITextField" customModule="Go_Pokedex" customModuleProvider="target">
                             <rect key="frame" x="26" y="117" width="139" height="30"/>
                             <color key="textColor" red="0.59590416909999999" green="0.58171597460000002" blue="0.58171597460000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="14"/>
@@ -65,7 +66,7 @@
             <connections>
                 <outlet property="bottomButton" destination="sxe-xB-c9D" id="c5a-x0-MGb"/>
                 <outlet property="contentView" destination="mcz-YZ-PUu" id="YXb-2z-GzD"/>
-                <outlet property="cpTextField" destination="sOX-nY-gIa" id="xVs-SM-Bvg"/>
+                <outlet property="cpTextField" destination="sOX-nY-gIa" id="OEc-Pb-4eW"/>
             </connections>
             <point key="canvasLocation" x="135" y="301"/>
         </view>
