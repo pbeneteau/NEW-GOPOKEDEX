@@ -241,9 +241,9 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "DetailSegue" {
             if inSearchMode {
-                (segue.destinationViewController as! DetailViewController).pokemon = filteredPokemons[selectedPokemon]
+                (segue.destinationViewController as! pokemonDetailViewController).pokemon = filteredPokemons[selectedPokemon]
             } else {
-                (segue.destinationViewController as! DetailViewController).pokemon = pokemonList[selectedPokemon]
+                (segue.destinationViewController as! pokemonDetailViewController).pokemon = pokemonList[selectedPokemon]
             }
         }
     }

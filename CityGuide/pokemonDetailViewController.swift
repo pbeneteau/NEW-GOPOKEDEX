@@ -8,9 +8,10 @@
 
 import UIKit
 
-class pokemonDetailViewController: UIViewController {
+class pokemonDetailViewController: UIViewController, CAPSPageMenuDelegate {
 
     var pageMenu : CAPSPageMenu?
+    var pokemon: Pokemon!
     
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var headerView: UIImageView!
@@ -20,15 +21,17 @@ class pokemonDetailViewController: UIViewController {
         // Array to keep track of controllers in page menu
         var controllerArray : [UIViewController] = []
         
-        // Create variables for all view controllers you want to put in the
-        // page menu, initialize them, and add each to the controller array.
-        // (Can be any UIViewController subclass)
-        // Make sure the title property of all view controllers is set
-        // Example:
+
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
         let controller : UIViewController = UIViewController(nibName: "infos", bundle: nil)
         controller.title = "INFO"
         controllerArray.append(controller)
-        let controller2 : UIViewController = UIViewController(nibName: "Spell", bundle: nil)
+        let controller2 : SpellViewController = storyboard.instantiateViewControllerWithIdentifier("spellViewController") as! SpellViewController
+        if pokemonList.count != 0 {
+            controller2.pokemon = self.pokemon
+        }
+        
         controller2.title = "SPELL"
         controllerArray.append(controller2)
         let controller3 : UIViewController = UIViewController(nibName: "AdvWeak", bundle: nil)
@@ -57,9 +60,13 @@ class pokemonDetailViewController: UIViewController {
         pageMenu = CAPSPageMenu(viewControllers: controllerArray, frame: mainView.bounds, pageMenuOptions: parameters)
         pageMenu?.selectionIndicatorView.frame = CGRectMake((pageMenu?.menuItemWidth)!/2 - (pageMenu?.selectionIndicatorView.frame.width)!/2, 35, (pageMenu?.selectionIndicatorView.frame.width)!, (pageMenu?.selectionIndicatorView.frame.height)!)
         
+        pageMenu!.delegate = self
+        
         // Lastly add page menu as subview of base view controller view
         // or use pageMenu controller in you view hierachy as desired
+        self.addChildViewController(pageMenu!)
         self.mainView.addSubview(pageMenu!.view)
+        pageMenu!.didMoveToParentViewController(self)
     }
 
     override func didReceiveMemoryWarning() {
