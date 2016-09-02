@@ -52,7 +52,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DESCRIPTION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsW-hj-P0F">
                     <rect key="frame" x="13" y="174" width="349" height="41"/>
                     <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="23"/>
-                    <color key="textColor" red="0.0" green="0.34901960780000002" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.60784313725490191" green="0.047058823529411764" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
