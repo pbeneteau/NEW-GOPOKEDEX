@@ -13,12 +13,12 @@
 		0007B35D1D71141500821141 /* GoPokedex_Descriptions.csv in Resources */ = {isa = PBXBuildFile; fileRef = 0007B35C1D71141500821141 /* GoPokedex_Descriptions.csv */; };
 		0007B3611D71C28700821141 /* GoPokedex_SpeciesFinal.csv in Resources */ = {isa = PBXBuildFile; fileRef = 0007B3601D71C28700821141 /* GoPokedex_SpeciesFinal.csv */; };
 		0007B3631D72114700821141 /* IvCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0007B3621D72114700821141 /* IvCalculator.swift */; };
-		0007B3651D724A9200821141 /* GoPokedex_ChargeMovesFinal.csv in Resources */ = {isa = PBXBuildFile; fileRef = 0007B3641D724A9200821141 /* GoPokedex_ChargeMovesFinal.csv */; };
 		000B7AD51D68902300B39A1B /* PokedexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000B7AD41D68902300B39A1B /* PokedexViewController.swift */; };
 		000B7AE31D6892C700B39A1B /* Pokemon Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 000B7AE21D6892C700B39A1B /* Pokemon Solid.ttf */; };
 		0036E4251D73110A00C98905 /* IVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0036E4241D73110A00C98905 /* IVViewController.swift */; };
 		0036E42B1D73122000C98905 /* SevenSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0036E42A1D73122000C98905 /* SevenSwitch.swift */; };
 		0036E42F1D732FA800C98905 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0036E42E1D732FA800C98905 /* Assets.xcassets */; };
+		005789EE1D790A1900B625CE /* GoPokedex_ChargeMovesFinal.csv in Resources */ = {isa = PBXBuildFile; fileRef = 005789ED1D790A1900B625CE /* GoPokedex_ChargeMovesFinal.csv */; };
 		006B88511D6B3BE500FC68C4 /* TipsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006B88501D6B3BE500FC68C4 /* TipsHeaderView.xib */; };
 		006B88531D6B3D2100FC68C4 /* TipsDescriptionl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006B88521D6B3D2100FC68C4 /* TipsDescriptionl.swift */; };
 		006B88551D6B3D8E00FC68C4 /* TipsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006B88541D6B3D8E00FC68C4 /* TipsHeaderView.swift */; };
@@ -168,12 +168,12 @@
 		0007B35C1D71141500821141 /* GoPokedex_Descriptions.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GoPokedex_Descriptions.csv; sourceTree = "<group>"; };
 		0007B3601D71C28700821141 /* GoPokedex_SpeciesFinal.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GoPokedex_SpeciesFinal.csv; sourceTree = "<group>"; };
 		0007B3621D72114700821141 /* IvCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IvCalculator.swift; sourceTree = "<group>"; };
-		0007B3641D724A9200821141 /* GoPokedex_ChargeMovesFinal.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GoPokedex_ChargeMovesFinal.csv; sourceTree = "<group>"; };
 		000B7AD41D68902300B39A1B /* PokedexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokedexViewController.swift; sourceTree = "<group>"; };
 		000B7AE21D6892C700B39A1B /* Pokemon Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pokemon Solid.ttf"; sourceTree = "<group>"; };
 		0036E4241D73110A00C98905 /* IVViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IVViewController.swift; sourceTree = "<group>"; };
 		0036E42A1D73122000C98905 /* SevenSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SevenSwitch.swift; sourceTree = "<group>"; };
 		0036E42E1D732FA800C98905 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		005789ED1D790A1900B625CE /* GoPokedex_ChargeMovesFinal.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GoPokedex_ChargeMovesFinal.csv; sourceTree = "<group>"; };
 		006B88501D6B3BE500FC68C4 /* TipsHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TipsHeaderView.xib; sourceTree = "<group>"; };
 		006B88521D6B3D2100FC68C4 /* TipsDescriptionl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsDescriptionl.swift; sourceTree = "<group>"; };
 		006B88541D6B3D8E00FC68C4 /* TipsHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsHeaderView.swift; sourceTree = "<group>"; };
@@ -424,12 +424,12 @@
 		006B88831D6C8C0400FC68C4 /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				0007B3641D724A9200821141 /* GoPokedex_ChargeMovesFinal.csv */,
 				0007B35A1D71021D00821141 /* GoPokedex_TypesFinal.csv */,
 				0007B3541D70FBA400821141 /* GoPokedex_QuickMovesFinal.csv */,
 				009A7F081D6D27130024109F /* GoPokedex_Evolutions.csv */,
 				0007B35C1D71141500821141 /* GoPokedex_Descriptions.csv */,
 				0007B3601D71C28700821141 /* GoPokedex_SpeciesFinal.csv */,
+				005789ED1D790A1900B625CE /* GoPokedex_ChargeMovesFinal.csv */,
 			);
 			name = Database;
 			sourceTree = "<group>";
@@ -862,12 +862,12 @@
 				0007B3611D71C28700821141 /* GoPokedex_SpeciesFinal.csv in Resources */,
 				00BA7C721D789DFE004D9466 /* AdvWeak.xib in Resources */,
 				008C6FC01D7594DA00A8A7FB /* CpModalView.xib in Resources */,
-				0007B3651D724A9200821141 /* GoPokedex_ChargeMovesFinal.csv in Resources */,
 				0036E42F1D732FA800C98905 /* Assets.xcassets in Resources */,
 				0007B35B1D71021D00821141 /* GoPokedex_TypesFinal.csv in Resources */,
 				00ECECD61D67CDA000443918 /* Flying.jpg in Resources */,
 				00877C751D63A11700570241 /* Info.plist in Resources */,
 				00BA7C6E1D789DF0004D9466 /* infos.xib in Resources */,
+				005789EE1D790A1900B625CE /* GoPokedex_ChargeMovesFinal.csv in Resources */,
 				00ECECDB1D67CDA000443918 /* Psychic.jpg in Resources */,
 				00ECECD51D67CDA000443918 /* Fighting.jpg in Resources */,
 				9562A8191C343A30009C0411 /* Main.storyboard in Resources */,

@@ -15,6 +15,7 @@ class ChargeMove {
     private var _type: Type
     private var _cooldown: String!
     private var _trueDps: String!
+    private var _stabDps: String!
     private var _energyCost: String!
     private var _pow: String!
     private var _crit: String!
@@ -56,6 +57,10 @@ class ChargeMove {
             _trueDps = "?"
         }
         return _trueDps
+    }
+    
+    var stabDps: String {
+        return _stabDps
     }
     
     var energyCost: String {
@@ -105,7 +110,7 @@ class ChargeMove {
         self._type = Type()
     }
     
-    func initSpecies(cooldown: String, trueDps: String, energyCost: String, pow: String, crit: String, damageFullCharge: String, damage1Charge: String, typeString: String) {
+    func initSpecies(cooldown: String, trueDps: String, energyCost: String, pow: String, crit: String, damageFullCharge: String, damage1Charge: String, typeString: String, stabDps: String) {
         self._cooldown = cooldown
         self._trueDps = trueDps
         self._energyCost = energyCost
@@ -114,6 +119,7 @@ class ChargeMove {
         self._damageFullCharge = damageFullCharge
         self._damage1Charge = damage1Charge
         self._typeString = typeString
+        self._stabDps = stabDps
     }
     
     func addType(type: Type) {
@@ -128,7 +134,7 @@ func initAllChargeMoves() -> [ChargeMove]{
     chargeMovesList.removeAll()
     for row in chargeMovesCSV.rows {
         let chargeMove = ChargeMove(id: row["ID"]!, name: row["Name"]!)
-        chargeMove.initSpecies(row["Duration (ms)"]!, trueDps: row["(PW) DPS"]!, energyCost: row["NRG Cost"]!, pow: row["PW"]!, crit: row["Crit%"]!, damageFullCharge: row["(PW) Damage from Full Energy"]!, damage1Charge: row["(PW) DPS w/ 1s Charge"]!, typeString: row["Type"]!)
+        chargeMove.initSpecies(row["Duration (ms)"]!, trueDps: row["(PW) DPS"]!, energyCost: row["NRG Cost"]!, pow: row["PW"]!, crit: row["Crit%"]!, damageFullCharge: row["(PW) Damage from Full Energy"]!, damage1Charge: row["(PW) DPS w/ 1s Charge"]!, typeString: row["Type"]!, stabDps: row["STAB DPS"]!)
         chargeMovesList.append(chargeMove)
     }
     return chargeMovesList
@@ -159,9 +165,48 @@ func addTypes(chargeMoveList: [ChargeMove], typeList: [Type]) {
     }
 }
 
+func sortChargeMoveList(chargeMoveList1: [ChargeMove]) -> [ChargeMove]{
+    var sortedList = chargeMoveList1
+    sortedList.sortInPlace({ convertStringToFloat($0.trueDps) > convertStringToFloat($1.trueDps) })
+    
+    return sortedList
+}
 
-
-
+func sortChargeMoveListStab(chargeMoveList1: [ChargeMove], types: [Type])-> [ChargeMove] {
+    var sortedList = chargeMoveList1
+    sortedList.sortInPlace({ (chargeMove1: ChargeMove, chargeMove2: ChargeMove)-> Bool in
+        if types.count == 2 {
+            if chargeMove1.type.name == types[0].name || chargeMove1.type.name == types[1].name{
+                if chargeMove2.type.name == types[0].name || chargeMove2.type.name == types[1].name{
+                    return convertStringToFloat(chargeMove1.stabDps) > convertStringToFloat(chargeMove2.stabDps)
+                } else {
+                    return convertStringToFloat(chargeMove1.stabDps) > convertStringToFloat(chargeMove2.trueDps)
+                }
+            } else if chargeMove2.type.name == types[0].name || chargeMove2.type.name == types[1].name{
+                return convertStringToFloat(chargeMove1.trueDps) > convertStringToFloat(chargeMove2.stabDps)
+            } else {
+                return convertStringToFloat(chargeMove1.trueDps) > convertStringToFloat(chargeMove2.trueDps)
+            }
+        } else {
+            if types.count == 1 {
+                if chargeMove1.type.name == types[0].name{
+                    if chargeMove2.type.name == types[0].name{
+                        return convertStringToFloat(chargeMove1.stabDps) > convertStringToFloat(chargeMove2.stabDps)
+                    } else {
+                        return convertStringToFloat(chargeMove1.stabDps) > convertStringToFloat(chargeMove2.trueDps)
+                    }
+                } else if chargeMove2.type.name == types[0].name{
+                    return convertStringToFloat(chargeMove1.trueDps) > convertStringToFloat(chargeMove2.stabDps)
+                } else {
+                    return convertStringToFloat(chargeMove1.trueDps) > convertStringToFloat(chargeMove2.trueDps)
+                }
+            }
+        }
+        return convertStringToFloat(chargeMove1.trueDps) > convertStringToFloat(chargeMove2.trueDps)
+    })
+    
+    return sortedList
+}
 
 
 

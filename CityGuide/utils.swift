@@ -55,4 +55,8 @@ extension UIImageView {
     }
 }
 
+func convertStringToFloat(string: String) -> Float{
+    return NSString(string: string).floatValue
+}
+
 

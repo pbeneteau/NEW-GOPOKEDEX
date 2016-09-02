@@ -196,3 +196,46 @@ func addQuickMoves(pokemonList: [Pokemon], quickMoveList: [QuickMove]) {
 }
 
 
+func sortQuickMoveList(quickMoveList1: [QuickMove]) -> [QuickMove]{
+    var sortedList = quickMoveList1
+    sortedList.sortInPlace({ convertStringToFloat($0.trueDps) > convertStringToFloat($1.trueDps) })
+    
+    return sortedList
+}
+
+func sortQuickMoveListStab(quickMoveList1: [QuickMove], types: [Type])-> [QuickMove] {
+    var sortedList = quickMoveList1
+    sortedList.sortInPlace({ (quickMove1: QuickMove, quickMove2: QuickMove)-> Bool in
+        if types.count == 2 {
+            if quickMove1.type.name == types[0].name || quickMove1.type.name == types[1].name{
+                if quickMove2.type.name == types[0].name || quickMove2.type.name == types[1].name{
+                    return convertStringToFloat(quickMove1.stabDps) > convertStringToFloat(quickMove2.stabDps)
+                } else {
+                    return convertStringToFloat(quickMove1.stabDps) > convertStringToFloat(quickMove2.trueDps)
+                }
+            } else if quickMove2.type.name == types[0].name || quickMove2.type.name == types[1].name{
+                return convertStringToFloat(quickMove1.trueDps) > convertStringToFloat(quickMove2.stabDps)
+            } else {
+                return convertStringToFloat(quickMove1.trueDps) > convertStringToFloat(quickMove2.trueDps)
+            }
+        } else {
+            if types.count == 1 {
+                if quickMove1.type.name == types[0].name{
+                    if quickMove2.type.name == types[0].name{
+                        return convertStringToFloat(quickMove1.stabDps) > convertStringToFloat(quickMove2.stabDps)
+                    } else {
+                        return convertStringToFloat(quickMove1.stabDps) > convertStringToFloat(quickMove2.trueDps)
+                    }
+                } else if quickMove2.type.name == types[0].name{
+                    return convertStringToFloat(quickMove1.trueDps) > convertStringToFloat(quickMove2.stabDps)
+                } else {
+                    return convertStringToFloat(quickMove1.trueDps) > convertStringToFloat(quickMove2.trueDps)
+                }
+            }
+        }
+        return convertStringToFloat(quickMove1.trueDps) > convertStringToFloat(quickMove2.trueDps)
+    })
+    
+    return sortedList
+}
+
