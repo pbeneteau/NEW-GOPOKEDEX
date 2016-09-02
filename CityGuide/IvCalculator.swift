@@ -160,7 +160,7 @@ func averageIvsPerLevel(potentialsIVs: [[IVstruct]]) -> [IVstruct] {
             IV.attackIV /= count
             IV.defenseIV /= count
             IV.staminaIV /= count
-            print(IV)
+            
             IVint.attackIV = Int(round(IV.attackIV))
             IVint.defenseIV = Int(round(IV.defenseIV))
             IVint.staminaIV = Int(round(IV.staminaIV))

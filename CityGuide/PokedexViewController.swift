@@ -19,7 +19,6 @@ class PokedexViewController: UIViewController {
         
         // func start
         func showRateMe() {
-            print("func rate started")
             let alert = UIAlertController(title: "Rate us!", message: "Thanks for using GO Pokedex", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Rate our app", style: UIAlertActionStyle.Default, handler: { alertAction in
                 NSUserDefaults.standardUserDefaults().setBool(true, forKey: "neverRate")
@@ -57,8 +56,6 @@ class PokedexViewController: UIViewController {
         }
         
         NSUserDefaults.standardUserDefaults().setInteger(numLaunches, forKey: "numLaunches")
-        
-        print("numLaunches= \(numLaunches)")
         
         ////////////////END RATE MY APP/////////////////
     }
