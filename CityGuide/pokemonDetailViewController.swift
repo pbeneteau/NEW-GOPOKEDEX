@@ -13,8 +13,14 @@ class pokemonDetailViewController: UIViewController, CAPSPageMenuDelegate {
     var pageMenu : CAPSPageMenu?
     var pokemon: Pokemon!
     
+    @IBOutlet weak var pokemonImage: UIImageView!
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var headerView: UIImageView!
+    @IBOutlet weak var type1Label: UILabel!
+    @IBOutlet weak var type2Label: UILabel!
+    @IBOutlet weak var type1View: UIView!
+    @IBOutlet weak var type2View: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -67,11 +73,29 @@ class pokemonDetailViewController: UIViewController, CAPSPageMenuDelegate {
         self.addChildViewController(pageMenu!)
         self.mainView.addSubview(pageMenu!.view)
         pageMenu!.didMoveToParentViewController(self)
+        
+        initPokemonHeader()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    func initPokemonHeader() {
+        self.pokemonImage.image = pokemon.img
+        if pokemon.types.count == 2 {
+            if pokemon.types[1].name == "" {
+                self.type1View.backgroundColor = pokemon.types[0].color
+                self.type2View.backgroundColor = pokemon.types[0].color
+                self.type1Label.text = pokemon.types[0].name
+                self.type2Label.text = ""
+            } else {
+                self.type1View.backgroundColor = pokemon.types[0].color
+                self.type2View.backgroundColor = pokemon.types[1].color
+                self.type1Label.text = pokemon.types[0].name
+                self.type2Label.text = pokemon.types[1].name
+            }
+        }
+    }
 }

@@ -1241,6 +1241,11 @@
                     <connections>
                         <outlet property="headerView" destination="UWD-w9-zhl" id="K9R-ib-3xE"/>
                         <outlet property="mainView" destination="LhL-d6-aP3" id="gM0-xU-7uv"/>
+                        <outlet property="pokemonImage" destination="ZVV-9N-qBe" id="DPy-5b-zPh"/>
+                        <outlet property="type1Label" destination="YdP-7v-hDz" id="caS-a8-O7J"/>
+                        <outlet property="type1View" destination="clr-aM-gFv" id="AfB-Yg-CQi"/>
+                        <outlet property="type2Label" destination="yG5-l2-ar4" id="3dN-7v-dVo"/>
+                        <outlet property="type2View" destination="R8m-X0-8Aa" id="c5G-ne-dDx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z8H-jB-Mo3" userLabel="First Responder" sceneMemberID="firstResponder"/>
