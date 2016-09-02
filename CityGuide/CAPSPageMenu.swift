@@ -456,20 +456,7 @@ public class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureReco
             }
         }
         
-        // Configure selection indicator view
-        var selectionIndicatorFrame : CGRect = CGRect()
-        
-        if useMenuLikeSegmentedControl {
-            selectionIndicatorFrame = CGRectMake(0.0, menuHeight - 5, self.view.frame.width / CGFloat(controllerArray.count), selectionIndicatorHeight)
-        } else if menuItemWidthBasedOnTitleTextWidth {
-            selectionIndicatorFrame = CGRectMake(menuMargin, menuHeight - 5, menuItemWidths[0], selectionIndicatorHeight)
-        } else {
-            if centerMenuItems  {
-                selectionIndicatorFrame = CGRectMake(startingMenuMargin + menuMargin, menuHeight - 5, menuItemWidth, selectionIndicatorHeight)
-            } else {
-                selectionIndicatorFrame = CGRectMake(menuMargin, menuHeight - 5, menuItemWidth, selectionIndicatorHeight)
-            }
-        }
+
         
         
         selectionIndicatorView = UIImageView(image: UIImage(named: "tabSeparator"))

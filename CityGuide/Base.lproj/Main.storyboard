@@ -226,7 +226,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="281" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ROU-YP-efF">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="281" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ROU-YP-efF">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -265,7 +265,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ROU-YP-efF" firstAttribute="top" secondItem="jKi-xD-AOP" secondAttribute="bottom" id="N6j-F9-7nk"/>
+                            <constraint firstItem="ROU-YP-efF" firstAttribute="top" secondItem="jKi-xD-AOP" secondAttribute="bottom" constant="-44" id="N6j-F9-7nk"/>
                             <constraint firstItem="dul-EV-89t" firstAttribute="top" secondItem="ROU-YP-efF" secondAttribute="bottom" id="aZi-8J-W9J"/>
                             <constraint firstAttribute="trailing" secondItem="ROU-YP-efF" secondAttribute="trailing" id="ah5-QW-xST"/>
                             <constraint firstItem="ROU-YP-efF" firstAttribute="leading" secondItem="Tvk-A9-Cd6" secondAttribute="leading" id="fJe-2K-k6l"/>
