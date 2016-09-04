@@ -44,7 +44,6 @@ func createrMenu(view: UIView) ->PathMenu{
 
 extension MenuViewController: PathMenuDelegate {
     func pathMenu(menu: PathMenu, didSelectIndex idx: Int) {
-        print("Select the index : \(idx)")
         switch idx {
         case 0:
             self.itemsContainer.hidden = false
@@ -86,22 +85,18 @@ extension MenuViewController: PathMenuDelegate {
     }
     
     func pathMenuWillAnimateOpen(menu: PathMenu) {
-        print("Menu will open!")
         self.view.insertSubview(self.viewForBlur, atIndex: 7)
         self.viewForBlur.fadeInMenu()
     }
     
     func pathMenuWillAnimateClose(menu: PathMenu) {
-        print("Menu will close!")
         self.viewForBlur.fadeOutMenu()
     }
     
     func pathMenuDidFinishAnimationOpen(menu: PathMenu) {
-        print("Menu was open!")
     }
     
     func pathMenuDidFinishAnimationClose(menu: PathMenu) {
-        print("Menu was closed!")
     }
     
     

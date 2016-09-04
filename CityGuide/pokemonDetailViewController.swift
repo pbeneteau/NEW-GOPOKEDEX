@@ -30,7 +30,7 @@ class pokemonDetailViewController: UIViewController, CAPSPageMenuDelegate {
 
         let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let controller : UIViewController = UIViewController(nibName: "infos", bundle: nil)
+        let controller : UIViewController = storyboard.instantiateViewControllerWithIdentifier("infoViewController") as! Infos
         controller.title = "INFO"
         controllerArray.append(controller)
         let controller2 : SpellViewController = storyboard.instantiateViewControllerWithIdentifier("spellViewController") as! SpellViewController

@@ -99,7 +99,6 @@
 		00BA7C5F1D789C2B004D9466 /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA7C5E1D789C2B004D9466 /* CAPSPageMenu.swift */; };
 		00BA7C681D789DCF004D9466 /* Infos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA7C671D789DCF004D9466 /* Infos.swift */; };
 		00BA7C6C1D789DE3004D9466 /* AdvWeak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA7C6B1D789DE3004D9466 /* AdvWeak.swift */; };
-		00BA7C6E1D789DF0004D9466 /* infos.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00BA7C6D1D789DF0004D9466 /* infos.xib */; };
 		00BA7C721D789DFE004D9466 /* AdvWeak.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00BA7C711D789DFE004D9466 /* AdvWeak.xib */; };
 		00BD02371D64DF4A00EAAB9D /* FoldingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD02361D64DF4A00EAAB9D /* FoldingCell.swift */; };
 		00BD02391D64E04600EAAB9D /* DemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD02381D64E04600EAAB9D /* DemoCell.swift */; };
@@ -255,7 +254,6 @@
 		00BA7C5E1D789C2B004D9466 /* CAPSPageMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAPSPageMenu.swift; sourceTree = "<group>"; };
 		00BA7C671D789DCF004D9466 /* Infos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Infos.swift; sourceTree = "<group>"; };
 		00BA7C6B1D789DE3004D9466 /* AdvWeak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvWeak.swift; sourceTree = "<group>"; };
-		00BA7C6D1D789DF0004D9466 /* infos.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = infos.xib; sourceTree = "<group>"; };
 		00BA7C711D789DFE004D9466 /* AdvWeak.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdvWeak.xib; sourceTree = "<group>"; };
 		00BD02361D64DF4A00EAAB9D /* FoldingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoldingCell.swift; sourceTree = "<group>"; };
 		00BD02381D64E04600EAAB9D /* DemoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCell.swift; sourceTree = "<group>"; };
@@ -601,7 +599,6 @@
 		00BA7C601D789D57004D9466 /* TabViews */ = {
 			isa = PBXGroup;
 			children = (
-				00BA7C6D1D789DF0004D9466 /* infos.xib */,
 				00BA7C671D789DCF004D9466 /* Infos.swift */,
 				0094A10C1D78E08900D77593 /* SpellViewController.swift */,
 				00BA7C711D789DFE004D9466 /* AdvWeak.xib */,
@@ -866,7 +863,6 @@
 				0007B35B1D71021D00821141 /* GoPokedex_TypesFinal.csv in Resources */,
 				00ECECD61D67CDA000443918 /* Flying.jpg in Resources */,
 				00877C751D63A11700570241 /* Info.plist in Resources */,
-				00BA7C6E1D789DF0004D9466 /* infos.xib in Resources */,
 				005789EE1D790A1900B625CE /* GoPokedex_ChargeMovesFinal.csv in Resources */,
 				00ECECDB1D67CDA000443918 /* Psychic.jpg in Resources */,
 				00ECECD51D67CDA000443918 /* Fighting.jpg in Resources */,

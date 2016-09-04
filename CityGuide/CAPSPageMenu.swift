@@ -278,9 +278,9 @@ public class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureReco
         // Set up menu scroll view
         menuScrollView.translatesAutoresizingMaskIntoConstraints = false
         
-        biggerView.frame = CGRectMake(0.0, 0.0, self.view.frame.width, menuHeight + 15)
+        biggerView.frame = CGRectMake(0.0, 0.0, screenWidth, menuHeight + 15)
         menuScrollView.layer.borderColor = UIColor.whiteColor().CGColor
-        menuScrollView.frame = CGRectMake(0.0, 0.0, self.view.frame.width, menuHeight)
+        menuScrollView.frame = CGRectMake(0.0, 0.0, screenWidth, menuHeight)
         
         
         biggerView.insertSubview(menuScrollView, atIndex: 0)
