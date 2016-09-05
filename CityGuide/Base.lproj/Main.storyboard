@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A304a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A313a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -1179,8 +1179,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="clr-aM-gFv" userLabel="typeView1">
                                 <rect key="frame" x="0.0" y="0.0" width="160" height="53"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NORMAL" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YdP-7v-hDz">
-                                        <rect key="frame" x="8" y="0.0" width="144" height="53"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NORMAL" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YdP-7v-hDz">
+                                        <rect key="frame" x="0.0" y="0.0" width="144" height="53"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="20"/>
                                         <color key="textColor" red="0.99917961219999996" green="1" blue="0.96381070390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1189,8 +1189,8 @@
                                 <color key="backgroundColor" red="0.011764705882352941" green="0.76470588235294112" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="YdP-7v-hDz" firstAttribute="top" secondItem="clr-aM-gFv" secondAttribute="top" id="7qN-Ph-SHG"/>
-                                    <constraint firstItem="YdP-7v-hDz" firstAttribute="leading" secondItem="clr-aM-gFv" secondAttribute="leading" constant="8" id="9c1-pX-PIE"/>
-                                    <constraint firstAttribute="trailing" secondItem="YdP-7v-hDz" secondAttribute="trailing" constant="8" id="K07-e9-WUH"/>
+                                    <constraint firstItem="YdP-7v-hDz" firstAttribute="leading" secondItem="clr-aM-gFv" secondAttribute="leading" id="9c1-pX-PIE"/>
+                                    <constraint firstAttribute="trailing" secondItem="YdP-7v-hDz" secondAttribute="trailing" constant="16" id="K07-e9-WUH"/>
                                     <constraint firstAttribute="height" constant="53" id="RQj-YZ-QkC"/>
                                     <constraint firstAttribute="bottom" secondItem="YdP-7v-hDz" secondAttribute="bottom" id="uKP-aO-t6l"/>
                                 </constraints>
@@ -1198,8 +1198,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R8m-X0-8Aa" userLabel="typeView2">
                                 <rect key="frame" x="160" y="0.0" width="160" height="53"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIGHTING" textAlignment="right" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yG5-l2-ar4">
-                                        <rect key="frame" x="8" y="0.0" width="144" height="53"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIGHTING" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yG5-l2-ar4">
+                                        <rect key="frame" x="16" y="0.0" width="144" height="53"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="20"/>
                                         <color key="textColor" red="0.99917961219999996" green="1" blue="0.96381070390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1207,10 +1207,10 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.75686274509803919" green="0.18431372549019609" blue="0.54117647058823526" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="yG5-l2-ar4" secondAttribute="trailing" constant="8" id="FoI-GK-mHa"/>
+                                    <constraint firstAttribute="trailing" secondItem="yG5-l2-ar4" secondAttribute="trailing" id="FoI-GK-mHa"/>
                                     <constraint firstAttribute="bottom" secondItem="yG5-l2-ar4" secondAttribute="bottom" id="Md2-g5-qhb"/>
                                     <constraint firstItem="yG5-l2-ar4" firstAttribute="top" secondItem="R8m-X0-8Aa" secondAttribute="top" id="Ptc-Cc-ZeC"/>
-                                    <constraint firstItem="yG5-l2-ar4" firstAttribute="leading" secondItem="R8m-X0-8Aa" secondAttribute="leading" constant="8" id="Zgw-oh-2n8"/>
+                                    <constraint firstItem="yG5-l2-ar4" firstAttribute="leading" secondItem="R8m-X0-8Aa" secondAttribute="leading" constant="16" id="Zgw-oh-2n8"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v8j-el-jQN" userLabel="baseLineTypes">
