@@ -69,10 +69,10 @@ class DetailViewController: UITableViewController, GADInterstitialDelegate {
     
     func initGeneralStats() {
         // DESCRIPTION
-        self.weightLabel.text = "Weight: \(pokemon.weight)"
-        self.heightLabel.text = "Height: \(pokemon.height)"
-        self.jumpsMinLabel.text = "Jumps/min: \(pokemon.jumps)"
-        self.jumpsDurationLabel.text = "Jumps duration: \(pokemon.jumpDuration)"
+        self.weightLabel.text = "Weight: \(pokemon.weight)kg"
+        self.heightLabel.text = "Height: \(pokemon.height)m"
+        self.jumpsMinLabel.text = "Jumps/min: \(pokemon.jumps) jumps"
+        self.jumpsDurationLabel.text = "Jumps duration: \(pokemon.jumpDuration)s"
         // RARETY
         self.baseCatchLabel.text = pokemon.baseFlee
         self.baseFleeLabel.text = pokemon.baseCatch

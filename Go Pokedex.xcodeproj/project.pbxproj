@@ -107,6 +107,7 @@
 		00BD024B1D64E23F00EAAB9D /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00BD02411D64E23F00EAAB9D /* OpenSans-Italic.ttf */; };
 		00BD024C1D64E23F00EAAB9D /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00BD02421D64E23F00EAAB9D /* OpenSans-Light.ttf */; };
 		00BD024F1D64E23F00EAAB9D /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00BD02451D64E23F00EAAB9D /* OpenSans-Semibold.ttf */; };
+		00C139E81D7DCDF2003BB941 /* AdvWeakDefenseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C139E71D7DCDF2003BB941 /* AdvWeakDefenseTableViewController.swift */; };
 		00D0A9DC1D606FAF0005E3E2 /* quickMovesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D0A9DB1D606FAF0005E3E2 /* quickMovesViewController.swift */; };
 		00ECECD31D67CDA000443918 /* Bug.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00ECECC81D67CDA000443918 /* Bug.jpg */; };
 		00ECECD41D67CDA000443918 /* Dragon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00ECECC91D67CDA000443918 /* Dragon.jpg */; };
@@ -262,6 +263,7 @@
 		00BD02411D64E23F00EAAB9D /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
 		00BD02421D64E23F00EAAB9D /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
 		00BD02451D64E23F00EAAB9D /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		00C139E71D7DCDF2003BB941 /* AdvWeakDefenseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvWeakDefenseTableViewController.swift; sourceTree = "<group>"; };
 		00D0A9DB1D606FAF0005E3E2 /* quickMovesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = quickMovesViewController.swift; sourceTree = "<group>"; };
 		00ECECC81D67CDA000443918 /* Bug.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Bug.jpg; sourceTree = "<group>"; };
 		00ECECC91D67CDA000443918 /* Dragon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Dragon.jpg; sourceTree = "<group>"; };
@@ -602,6 +604,7 @@
 				00BA7C671D789DCF004D9466 /* Infos.swift */,
 				0094A10C1D78E08900D77593 /* SpellViewController.swift */,
 				005789EF1D7C788100B625CE /* AdvWeakTableViewController.swift */,
+				00C139E71D7DCDF2003BB941 /* AdvWeakDefenseTableViewController.swift */,
 				00BA7C6B1D789DE3004D9466 /* AdvWeak.swift */,
 			);
 			name = TabViews;
@@ -935,6 +938,7 @@
 				00ECECDF1D67CDBF00443918 /* chargeMovesViewController.swift in Sources */,
 				006B88941D6C8D6C00FC68C4 /* Constants.swift in Sources */,
 				00A4AA311D69B7140013B4A2 /* PathMenuItem.swift in Sources */,
+				00C139E81D7DCDF2003BB941 /* AdvWeakDefenseTableViewController.swift in Sources */,
 				9562A8141C343A30009C0411 /* AppDelegate.swift in Sources */,
 				00BA7C681D789DCF004D9466 /* Infos.swift in Sources */,
 				00877C2A1D63A06600570241 /* RAMAnimatedTabBarController.swift in Sources */,
