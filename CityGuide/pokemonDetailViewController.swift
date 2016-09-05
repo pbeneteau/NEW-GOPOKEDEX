@@ -20,6 +20,7 @@ class pokemonDetailViewController: UIViewController, CAPSPageMenuDelegate {
     @IBOutlet weak var type2Label: UILabel!
     @IBOutlet weak var type1View: UIView!
     @IBOutlet weak var type2View: UIView!
+    @IBOutlet weak var idLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +31,9 @@ class pokemonDetailViewController: UIViewController, CAPSPageMenuDelegate {
 
         let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let controller : UIViewController = storyboard.instantiateViewControllerWithIdentifier("infoViewController") as! Infos
+        let controller : Infos = storyboard.instantiateViewControllerWithIdentifier("infoViewController") as! Infos
         controller.title = "INFO"
+        controller.pokemon = self.pokemon
         controllerArray.append(controller)
         let controller2 : SpellViewController = storyboard.instantiateViewControllerWithIdentifier("spellViewController") as! SpellViewController
         if pokemonList.count != 0 {
@@ -40,15 +42,16 @@ class pokemonDetailViewController: UIViewController, CAPSPageMenuDelegate {
         
         controller2.title = "SPELL"
         controllerArray.append(controller2)
-        let controller3 : UIViewController = UIViewController(nibName: "AdvWeak", bundle: nil)
+        let controller3 : AdvWeak = storyboard.instantiateViewControllerWithIdentifier("AdvantageWeakViewController") as! AdvWeak
         controller3.title = "AD/WE"
+        controller3.pokemon = self.pokemon
         controllerArray.append(controller3)
         
         // Customize page menu to your liking (optional) or use default settings by sending nil for 'options' in the init
         // Example:
         let parameters: [CAPSPageMenuOption] = [
             .ScrollMenuBackgroundColor(UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)),
-            .ViewBackgroundColor(UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)),
+            .ViewBackgroundColor(UIColor(red: 28.5/255.0, green: 28.5/255.0, blue: 28.5/255.0, alpha: 1.0)),
             .SelectionIndicatorColor(UIColor ( red: 0.2039, green: 0.2863, blue: 0.3686, alpha: 1.0 )),
             .BottomMenuHairlineColor(UIColor.whiteColor()),
             .MenuItemFont(UIFont(name: "OpenSans-Semibold", size: 19.0)!),
@@ -97,5 +100,6 @@ class pokemonDetailViewController: UIViewController, CAPSPageMenuDelegate {
                 self.type2Label.text = pokemon.types[1].name
             }
         }
+        self.idLabel.text = "#\(pokemon.id)"
     }
 }

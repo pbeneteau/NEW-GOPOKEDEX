@@ -59,4 +59,15 @@ func convertStringToFloat(string: String) -> Float{
     return NSString(string: string).floatValue
 }
 
+extension Double {
+    func roundToPlaces(places:Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return round(self * divisor) / divisor
+    }
+}
+
+func roundToPlaces(value:Double, places:Int) -> Double {
+    let divisor = pow(10.0, Double(places))
+    return round(value * divisor) / divisor
+}
 

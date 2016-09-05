@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0007B3531D70F87300821141 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0007B3521D70F87300821141 /* Types.swift */; };
 		0007B3551D70FBA400821141 /* GoPokedex_QuickMovesFinal.csv in Resources */ = {isa = PBXBuildFile; fileRef = 0007B3541D70FBA400821141 /* GoPokedex_QuickMovesFinal.csv */; };
-		0007B35B1D71021D00821141 /* GoPokedex_TypesFinal.csv in Resources */ = {isa = PBXBuildFile; fileRef = 0007B35A1D71021D00821141 /* GoPokedex_TypesFinal.csv */; };
 		0007B35D1D71141500821141 /* GoPokedex_Descriptions.csv in Resources */ = {isa = PBXBuildFile; fileRef = 0007B35C1D71141500821141 /* GoPokedex_Descriptions.csv */; };
 		0007B3611D71C28700821141 /* GoPokedex_SpeciesFinal.csv in Resources */ = {isa = PBXBuildFile; fileRef = 0007B3601D71C28700821141 /* GoPokedex_SpeciesFinal.csv */; };
 		0007B3631D72114700821141 /* IvCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0007B3621D72114700821141 /* IvCalculator.swift */; };
@@ -19,6 +18,7 @@
 		0036E42B1D73122000C98905 /* SevenSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0036E42A1D73122000C98905 /* SevenSwitch.swift */; };
 		0036E42F1D732FA800C98905 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0036E42E1D732FA800C98905 /* Assets.xcassets */; };
 		005789EE1D790A1900B625CE /* GoPokedex_ChargeMovesFinal.csv in Resources */ = {isa = PBXBuildFile; fileRef = 005789ED1D790A1900B625CE /* GoPokedex_ChargeMovesFinal.csv */; };
+		005789F01D7C788100B625CE /* AdvWeakTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005789EF1D7C788100B625CE /* AdvWeakTableViewController.swift */; };
 		006B88511D6B3BE500FC68C4 /* TipsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006B88501D6B3BE500FC68C4 /* TipsHeaderView.xib */; };
 		006B88531D6B3D2100FC68C4 /* TipsDescriptionl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006B88521D6B3D2100FC68C4 /* TipsDescriptionl.swift */; };
 		006B88551D6B3D8E00FC68C4 /* TipsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006B88541D6B3D8E00FC68C4 /* TipsHeaderView.swift */; };
@@ -32,6 +32,7 @@
 		006B88941D6C8D6C00FC68C4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006B88901D6C8D6C00FC68C4 /* Constants.swift */; };
 		006B88951D6C8D6C00FC68C4 /* csvParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006B88911D6C8D6C00FC68C4 /* csvParsing.swift */; };
 		006B88971D6C8D6C00FC68C4 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006B88931D6C8D6C00FC68C4 /* utils.swift */; };
+		0073529B1D7C955E00451C60 /* GoPokedex_TypesFinal.csv in Resources */ = {isa = PBXBuildFile; fileRef = 0073529A1D7C955E00451C60 /* GoPokedex_TypesFinal.csv */; };
 		00877C251D63A06600570241 /* RAMBounceAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00877C181D63A06600570241 /* RAMBounceAnimation.swift */; };
 		00877C261D63A06600570241 /* RAMFrameItemAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00877C1A1D63A06600570241 /* RAMFrameItemAnimation.swift */; };
 		00877C271D63A06600570241 /* RAMFumeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00877C1C1D63A06600570241 /* RAMFumeAnimation.swift */; };
@@ -99,7 +100,6 @@
 		00BA7C5F1D789C2B004D9466 /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA7C5E1D789C2B004D9466 /* CAPSPageMenu.swift */; };
 		00BA7C681D789DCF004D9466 /* Infos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA7C671D789DCF004D9466 /* Infos.swift */; };
 		00BA7C6C1D789DE3004D9466 /* AdvWeak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA7C6B1D789DE3004D9466 /* AdvWeak.swift */; };
-		00BA7C721D789DFE004D9466 /* AdvWeak.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00BA7C711D789DFE004D9466 /* AdvWeak.xib */; };
 		00BD02371D64DF4A00EAAB9D /* FoldingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD02361D64DF4A00EAAB9D /* FoldingCell.swift */; };
 		00BD02391D64E04600EAAB9D /* DemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD02381D64E04600EAAB9D /* DemoCell.swift */; };
 		00BD023B1D64E0E100EAAB9D /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD023A1D64E0E100EAAB9D /* MainTableViewController.swift */; };
@@ -163,7 +163,6 @@
 /* Begin PBXFileReference section */
 		0007B3521D70F87300821141 /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Types.swift; path = ../Types.swift; sourceTree = "<group>"; };
 		0007B3541D70FBA400821141 /* GoPokedex_QuickMovesFinal.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GoPokedex_QuickMovesFinal.csv; sourceTree = "<group>"; };
-		0007B35A1D71021D00821141 /* GoPokedex_TypesFinal.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GoPokedex_TypesFinal.csv; sourceTree = "<group>"; };
 		0007B35C1D71141500821141 /* GoPokedex_Descriptions.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GoPokedex_Descriptions.csv; sourceTree = "<group>"; };
 		0007B3601D71C28700821141 /* GoPokedex_SpeciesFinal.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GoPokedex_SpeciesFinal.csv; sourceTree = "<group>"; };
 		0007B3621D72114700821141 /* IvCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IvCalculator.swift; sourceTree = "<group>"; };
@@ -173,6 +172,7 @@
 		0036E42A1D73122000C98905 /* SevenSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SevenSwitch.swift; sourceTree = "<group>"; };
 		0036E42E1D732FA800C98905 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		005789ED1D790A1900B625CE /* GoPokedex_ChargeMovesFinal.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GoPokedex_ChargeMovesFinal.csv; sourceTree = "<group>"; };
+		005789EF1D7C788100B625CE /* AdvWeakTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvWeakTableViewController.swift; sourceTree = "<group>"; };
 		006B88501D6B3BE500FC68C4 /* TipsHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TipsHeaderView.xib; sourceTree = "<group>"; };
 		006B88521D6B3D2100FC68C4 /* TipsDescriptionl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsDescriptionl.swift; sourceTree = "<group>"; };
 		006B88541D6B3D8E00FC68C4 /* TipsHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsHeaderView.swift; sourceTree = "<group>"; };
@@ -186,6 +186,7 @@
 		006B88901D6C8D6C00FC68C4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		006B88911D6C8D6C00FC68C4 /* csvParsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = csvParsing.swift; sourceTree = "<group>"; };
 		006B88931D6C8D6C00FC68C4 /* utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
+		0073529A1D7C955E00451C60 /* GoPokedex_TypesFinal.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GoPokedex_TypesFinal.csv; sourceTree = "<group>"; };
 		00877C181D63A06600570241 /* RAMBounceAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMBounceAnimation.swift; sourceTree = "<group>"; };
 		00877C1A1D63A06600570241 /* RAMFrameItemAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMFrameItemAnimation.swift; sourceTree = "<group>"; };
 		00877C1C1D63A06600570241 /* RAMFumeAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMFumeAnimation.swift; sourceTree = "<group>"; };
@@ -254,7 +255,6 @@
 		00BA7C5E1D789C2B004D9466 /* CAPSPageMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAPSPageMenu.swift; sourceTree = "<group>"; };
 		00BA7C671D789DCF004D9466 /* Infos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Infos.swift; sourceTree = "<group>"; };
 		00BA7C6B1D789DE3004D9466 /* AdvWeak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvWeak.swift; sourceTree = "<group>"; };
-		00BA7C711D789DFE004D9466 /* AdvWeak.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdvWeak.xib; sourceTree = "<group>"; };
 		00BD02361D64DF4A00EAAB9D /* FoldingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoldingCell.swift; sourceTree = "<group>"; };
 		00BD02381D64E04600EAAB9D /* DemoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCell.swift; sourceTree = "<group>"; };
 		00BD023A1D64E0E100EAAB9D /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
@@ -373,7 +373,6 @@
 			children = (
 				000B7AD41D68902300B39A1B /* PokedexViewController.swift */,
 				00BD023A1D64E0E100EAAB9D /* MainTableViewController.swift */,
-				95CE1E551C3549F600D51E3B /* DetailViewController.swift */,
 				00D0A9DB1D606FAF0005E3E2 /* quickMovesViewController.swift */,
 				00ECECDE1D67CDBF00443918 /* chargeMovesViewController.swift */,
 				00BA7C5C1D78983E004D9466 /* pokemonDetailViewController.swift */,
@@ -422,12 +421,12 @@
 		006B88831D6C8C0400FC68C4 /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				0007B35A1D71021D00821141 /* GoPokedex_TypesFinal.csv */,
 				0007B3541D70FBA400821141 /* GoPokedex_QuickMovesFinal.csv */,
 				009A7F081D6D27130024109F /* GoPokedex_Evolutions.csv */,
 				0007B35C1D71141500821141 /* GoPokedex_Descriptions.csv */,
 				0007B3601D71C28700821141 /* GoPokedex_SpeciesFinal.csv */,
 				005789ED1D790A1900B625CE /* GoPokedex_ChargeMovesFinal.csv */,
+				0073529A1D7C955E00451C60 /* GoPokedex_TypesFinal.csv */,
 			);
 			name = Database;
 			sourceTree = "<group>";
@@ -599,9 +598,10 @@
 		00BA7C601D789D57004D9466 /* TabViews */ = {
 			isa = PBXGroup;
 			children = (
+				95CE1E551C3549F600D51E3B /* DetailViewController.swift */,
 				00BA7C671D789DCF004D9466 /* Infos.swift */,
 				0094A10C1D78E08900D77593 /* SpellViewController.swift */,
-				00BA7C711D789DFE004D9466 /* AdvWeak.xib */,
+				005789EF1D7C788100B625CE /* AdvWeakTableViewController.swift */,
 				00BA7C6B1D789DE3004D9466 /* AdvWeak.swift */,
 			);
 			name = TabViews;
@@ -847,6 +847,7 @@
 				00ECECDD1D67CDA000443918 /* Water.jpg in Resources */,
 				00ECECD31D67CDA000443918 /* Bug.jpg in Resources */,
 				006B88511D6B3BE500FC68C4 /* TipsHeaderView.xib in Resources */,
+				0073529B1D7C955E00451C60 /* GoPokedex_TypesFinal.csv in Resources */,
 				00A4AA3E1D6A52AE0013B4A2 /* Fire.jpg in Resources */,
 				008C6FBC1D751C2800A8A7FB /* HpModalView.xib in Resources */,
 				00ECECD41D67CDA000443918 /* Dragon.jpg in Resources */,
@@ -857,10 +858,8 @@
 				00ECECD81D67CDA000443918 /* Ice.jpg in Resources */,
 				00ECECD71D67CDA000443918 /* Grass.jpg in Resources */,
 				0007B3611D71C28700821141 /* GoPokedex_SpeciesFinal.csv in Resources */,
-				00BA7C721D789DFE004D9466 /* AdvWeak.xib in Resources */,
 				008C6FC01D7594DA00A8A7FB /* CpModalView.xib in Resources */,
 				0036E42F1D732FA800C98905 /* Assets.xcassets in Resources */,
-				0007B35B1D71021D00821141 /* GoPokedex_TypesFinal.csv in Resources */,
 				00ECECD61D67CDA000443918 /* Flying.jpg in Resources */,
 				00877C751D63A11700570241 /* Info.plist in Resources */,
 				005789EE1D790A1900B625CE /* GoPokedex_ChargeMovesFinal.csv in Resources */,
@@ -944,6 +943,7 @@
 				000B7AD51D68902300B39A1B /* PokedexViewController.swift in Sources */,
 				00877C6F1D63A11700570241 /* NVActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				006B885B1D6B73D900FC68C4 /* TipsRow.swift in Sources */,
+				005789F01D7C788100B625CE /* AdvWeakTableViewController.swift in Sources */,
 				00877C781D63A11700570241 /* NVActivityIndicatorView.swift in Sources */,
 				00877C681D63A11700570241 /* NVActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
 				00877C271D63A06600570241 /* RAMFumeAnimation.swift in Sources */,

@@ -9,6 +9,8 @@
 import UIKit
 
 class AdvWeak: UIViewController {
+    
+    var pokemon: Pokemon!
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -29,4 +31,9 @@ class AdvWeak: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "weakStrongSegue" {
+            (segue.destinationViewController as! AdvWeakTableViewController).pokemon = self.pokemon
+        }
+    }
 }

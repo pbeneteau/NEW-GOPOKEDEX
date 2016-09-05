@@ -17,6 +17,10 @@ var quickMoveList = [QuickMove]()
 var chargeMoveList = [ChargeMove]()
 var typeList = [Type]()
 
+var tabForTypesDouble = [ "Normal" : 1.0,"Fire" : 1.0,"Water" : 1.0,"Electric" : 1.0,"Grass" : 1.0,"Ice" : 1.0,"Fighting" : 1.0,"Poison" : 1.0,"Ground" : 1.0,"Flying" : 1.0,"Psychic" : 1.0,"Bug" : 1.0,"Rock" : 1.0,"Ghost" : 1.0,"Dragon" : 1.0,"Dark" : 1.0,"Steel" : 1.0,"Fairy" : 1.0]
+var tabForTypesAdvWeak = [ "Normal" : 0,"Fire" : 0,"Water" : 0,"Electric" : 0,"Grass" : 0,"Ice" : 0,"Fighting" : 0,"Poison" : 0,"Ground" : 0,"Flying" : 0,"Psychic" : 0,"Bug" : 0,"Rock" : 0,"Ghost" : 0,"Dragon" : 0,"Dark" : 0,"Steel" : 0,"Fairy" : 0]
+var tabForTypes = [ "Normal","Fire","Water" ,"Electric" ,"Grass" ,"Ice" ,"Fighting" ,"Poison" ,"Ground" ,"Flying" ,"Psychic" ,"Bug" ,"Rock" ,"Ghost" ,"Dragon" ,"Dark" ,"Steel", "Fairy"]
+
 let TYPES = [
     "Normal": ["1", UIColor(red:0.9827, green:0.8694, blue:0.5867, alpha:1.0)],
     "Fighting": ["2", UIColor(red:0.95, green:0.61, blue:0.07, alpha:1.0)],

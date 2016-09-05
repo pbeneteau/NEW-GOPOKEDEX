@@ -9,7 +9,12 @@
 import UIKit
 
 class Infos: UIViewController {
+    
+    var pokemon: Pokemon!
 
+    @IBOutlet weak var descriptionText: UITextView!
+    
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
@@ -20,13 +25,22 @@ class Infos: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+        self.descriptionText.text = pokemon.description
+        self.descriptionText.font = UIFont(name: "OpenSans-Light", size: 14.0)!
+        self.descriptionText.textColor = UIColor.whiteColor()
+        self.descriptionText.textAlignment = .Natural
+        self.descriptionText.selectable = false
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "generalDetailsSegue" {
+            (segue.destinationViewController as! DetailViewController).pokemon = self.pokemon
+        }
     }
 
 }

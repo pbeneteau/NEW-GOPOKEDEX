@@ -38,6 +38,8 @@ class Pokemon {
     private var _chargeMoves: [ChargeMove]!
     private var _quickMoves: [QuickMove]!
     private var _description: String!
+    private var _attackTypes = [String:Double]()
+    private var _defenseTypes = [String:Double]()
     
     var id: String {
         if _id == nil {
@@ -123,7 +125,7 @@ class Pokemon {
     var speed: String {
         return _speed
     }
-
+    
     var tankiness: String {
         return _tankiness
     }
@@ -209,6 +211,14 @@ class Pokemon {
         return _quickMovesString
     }
     
+    var attackTypes: [String:Double] {
+        return _attackTypes
+    }
+    
+    var defenseTypes: [String:Double] {
+        return _defenseTypes
+    }
+    
     
     init(id: String, name: String) {
         self._id = id
@@ -227,6 +237,8 @@ class Pokemon {
         self._quickMovesString.removeAll()
         self._evoIDs = []
         self._evoIDs.removeAll()
+        self._attackTypes = tabForTypesDouble
+        self._defenseTypes = tabForTypesDouble
     }
     
     func initSpecies(attack: String, defense: String, stamina: String, tankiness: String, minCP: String, maxCP: String, jumps: String, jumpDuration: String, baseCatch: String, baseFlee: String, typesString: [String], chargeMovesString: [String], quickMovesString: [String], attackSpeed: String, defenseSpeed: String, speed: String) {
@@ -246,6 +258,8 @@ class Pokemon {
         self._attackSpeed = attackSpeed
         self._defenseSpeed = defenseSpeed
         self._speed = speed
+        self._attackTypes = tabForTypesDouble
+        self._defenseTypes = tabForTypesDouble
     }
     
     func initTypes(types: [Type]) {
@@ -263,7 +277,6 @@ class Pokemon {
         self._avMultiplier = avMultiplier
     }
     
-    
     func addQuickMove(quickMove: QuickMove) {
         self._quickMoves.append(quickMove)
     }
@@ -274,6 +287,21 @@ class Pokemon {
     
     func addType(type: Type, index: Int) {
         self._types[index] = type
+    }
+    
+    func addAttackAdvWeak(attackTypes: [String: Double]) {
+        self._attackTypes = attackTypes
+    }
+    func addDefenseAdvWeak(defenseTypes: [String:Double]) {
+        self._defenseTypes = defenseTypes
+    }
+    
+    func multiply(type: String, stat: String, number: Double) {
+        if stat == "Attack" {
+            self._attackTypes[type] = self._attackTypes[type]! * number
+        } else if stat == "Defense" {
+            self._defenseTypes[type] = self._defenseTypes[type]! * number
+        }
     }
 }
 
@@ -338,10 +366,33 @@ func initAllPokemonInfos(pokemonList: [Pokemon], quickMoveList: [QuickMove], cha
     addEvolutions(pokemonList)
     addQuickMoves(pokemonList, quickMoveList: quickMoveList)
     addChargeMoves(pokemonList, chargeMoveList: chargeMoveList)
+    for pokemon in pokemonList {
+        getFinalAttackTypes(pokemon)
+        getFinalDefenseTypes(pokemon)
+    }
 }
 
+func getFinalAttackTypes(pokemon: Pokemon) {
+    if pokemon.types.count == 2 {
+        for a in TypesResultAttack(pokemon)[1] {
+            pokemon.multiply(a, stat: "Attack", number: 0.80)
+        }
+        for a in TypesResultAttack(pokemon)[3] {
+            pokemon.multiply(a, stat: "Attack", number: 1.25)
+        }
+    }
+}
 
-
+func getFinalDefenseTypes(pokemon: Pokemon) {
+    if pokemon.types.count == 2 {
+        for a in TypesResultDefense(pokemon)[1] {
+            pokemon.multiply(a, stat: "Defense", number: 0.80)
+        }
+        for a in TypesResultDefense(pokemon)[3] {
+            pokemon.multiply(a, stat: "Defense", number: 1.25)
+        }
+    }
+}
 
 
 
