@@ -12,6 +12,7 @@ class AdvWeak: UIViewController {
     
     var pokemon: Pokemon!
 
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var attackContainer: UIView!
     @IBOutlet weak var defenseContainer: UIView!
     
@@ -31,12 +32,14 @@ class AdvWeak: UIViewController {
         self.attackContainer.hidden = true
         self.backButton.hidden = false
         self.nextButton.hidden = true
+        self.titleLabel.text = "Defense"
     }
     @IBAction func backButtonPushed(sender: AnyObject) {
         self.attackContainer.hidden = false
         self.defenseContainer.hidden = true
         self.nextButton.hidden = false
         self.backButton.hidden = true
+        self.titleLabel.text = "Attack"
     }
     override func viewDidLoad() {
         super.viewDidLoad()
