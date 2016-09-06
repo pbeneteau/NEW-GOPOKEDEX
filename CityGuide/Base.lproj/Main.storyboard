@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A313a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A304a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -2575,7 +2575,7 @@
                                                             <rect key="frame" x="0.0" y="3" width="188" height="38"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Base catch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8Y-ke-JAV">
-                                                                    <rect key="frame" x="0.0" y="23" width="188" height="15"/>
+                                                                    <rect key="frame" x="0.0" y="22" width="188" height="15"/>
                                                                     <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="9"/>
                                                                     <color key="textColor" red="0.42352941179999998" green="0.47843137250000001" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -2589,8 +2589,8 @@
                                                             </subviews>
                                                             <color key="backgroundColor" red="0.92143106460000002" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
-                                                                <constraint firstItem="I8Y-ke-JAV" firstAttribute="top" secondItem="WFj-U4-4Zl" secondAttribute="top" constant="23" id="9Y7-Qp-ajW"/>
-                                                                <constraint firstAttribute="bottom" secondItem="I8Y-ke-JAV" secondAttribute="bottom" id="BOS-e3-gtV"/>
+                                                                <constraint firstItem="I8Y-ke-JAV" firstAttribute="top" secondItem="WFj-U4-4Zl" secondAttribute="top" constant="22" id="9Y7-Qp-ajW"/>
+                                                                <constraint firstAttribute="bottom" secondItem="I8Y-ke-JAV" secondAttribute="bottom" constant="1" id="BOS-e3-gtV"/>
                                                                 <constraint firstItem="wf2-pL-VAH" firstAttribute="trailing" secondItem="I8Y-ke-JAV" secondAttribute="trailing" id="LFl-RB-Xfv"/>
                                                                 <constraint firstItem="wf2-pL-VAH" firstAttribute="leading" secondItem="I8Y-ke-JAV" secondAttribute="leading" id="SKk-bG-bgd"/>
                                                                 <constraint firstAttribute="bottom" secondItem="wf2-pL-VAH" secondAttribute="bottom" constant="5.5" id="XHA-Y8-EzV"/>
@@ -2603,7 +2603,7 @@
                                                             <rect key="frame" x="187" y="3" width="188" height="38"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Base flee" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eP5-HN-W32">
-                                                                    <rect key="frame" x="0.0" y="23" width="188" height="13.5"/>
+                                                                    <rect key="frame" x="0.0" y="22" width="188" height="13.5"/>
                                                                     <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="9"/>
                                                                     <color key="textColor" red="0.42352941179999998" green="0.47843137250000001" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -2619,8 +2619,8 @@
                                                             <constraints>
                                                                 <constraint firstItem="FNz-Ro-V4O" firstAttribute="top" secondItem="XOC-UO-N3w" secondAttribute="top" id="4Rw-oQ-uak"/>
                                                                 <constraint firstItem="FNz-Ro-V4O" firstAttribute="leading" secondItem="XOC-UO-N3w" secondAttribute="leading" id="8WW-em-50R"/>
-                                                                <constraint firstAttribute="bottom" secondItem="eP5-HN-W32" secondAttribute="bottom" constant="1.5" id="IZV-ey-24T"/>
-                                                                <constraint firstItem="eP5-HN-W32" firstAttribute="top" secondItem="XOC-UO-N3w" secondAttribute="top" constant="23" id="MsT-Hz-Bwc"/>
+                                                                <constraint firstAttribute="bottom" secondItem="eP5-HN-W32" secondAttribute="bottom" constant="2.5" id="IZV-ey-24T"/>
+                                                                <constraint firstItem="eP5-HN-W32" firstAttribute="top" secondItem="XOC-UO-N3w" secondAttribute="top" constant="22" id="MsT-Hz-Bwc"/>
                                                                 <constraint firstItem="FNz-Ro-V4O" firstAttribute="leading" secondItem="eP5-HN-W32" secondAttribute="leading" id="b1z-Ol-eby"/>
                                                                 <constraint firstItem="FNz-Ro-V4O" firstAttribute="trailing" secondItem="eP5-HN-W32" secondAttribute="trailing" id="cdb-s3-WPE"/>
                                                                 <constraint firstAttribute="trailing" secondItem="FNz-Ro-V4O" secondAttribute="trailing" id="ilV-z9-GH6"/>
@@ -2898,7 +2898,7 @@
                         <outlet property="attackLabel" destination="8Uj-eq-HIf" id="is2-IC-bQl"/>
                         <outlet property="attackProgressView" destination="rXG-49-VzQ" id="axf-1e-XXA"/>
                         <outlet property="baseCatchLabel" destination="wf2-pL-VAH" id="LSg-Ja-qt8"/>
-                        <outlet property="baseFleeLabel" destination="eP5-HN-W32" id="qUd-ko-GWc"/>
+                        <outlet property="baseFleeLabel" destination="FNz-Ro-V4O" id="hBd-lv-ZgU"/>
                         <outlet property="cpMaxLabel" destination="bDT-EE-dAy" id="u5R-kp-Mor"/>
                         <outlet property="cpMaxProgressView" destination="Yy7-fr-uHP" id="Q8M-Vt-Ahd"/>
                         <outlet property="cpMinLabel" destination="w02-gN-EZd" id="jVT-Ty-k3y"/>
